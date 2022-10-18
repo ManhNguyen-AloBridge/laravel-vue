@@ -20064,6 +20064,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       router.push("/product/edit/".concat(id));
     };
 
+    var deleteProduct = function deleteProduct(id) {
+      Swal.fire({
+        title: "Are you sure ?",
+        text: "You can't go back",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonText: "Cancel",
+        confirmButtonText: "Yes, delete it!"
+      }).then(function (result) {
+        if (result.value) {
+          axios.get("/api/product/delete/".concat(id)).then(function () {
+            Swal.fire("Delete", "Product delete successfully", "Success");
+            getProducts();
+          })["catch"](function (error) {
+            Swal.fire("Failed!", "There was something wrong.", "Warning");
+          });
+        }
+      });
+    };
+
     var __returned__ = {
       router: router,
       products: products,
@@ -20071,6 +20092,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       getProducts: getProducts,
       ourImage: ourImage,
       onEdit: onEdit,
+      deleteProduct: deleteProduct,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       useRouter: vue_router__WEBPACK_IMPORTED_MODULE_1__.useRouter
@@ -20579,25 +20601,25 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_14 = [_hoisted_13];
+var _hoisted_15 = ["onClick"];
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn-icon btn-icon-danger"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-trash-alt"
-})], -1
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_16 = {
+var _hoisted_17 = [_hoisted_16];
+var _hoisted_18 = {
   key: 1,
   "class": "table--items products__list__item"
 };
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Product not found", -1
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Product not found", -1
 /* HOISTED */
 );
 
-var _hoisted_18 = [_hoisted_17];
+var _hoisted_20 = [_hoisted_19];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "btn btn-secondary my-1",
@@ -20632,10 +20654,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }
     }, _hoisted_14, 8
     /* PROPS */
-    , _hoisted_12), _hoisted_15])]);
+    , _hoisted_12), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      "class": "btn-icon btn-icon-danger",
+      onClick: function onClick($event) {
+        return $setup.deleteProduct(item.id);
+      }
+    }, _hoisted_17, 8
+    /* PROPS */
+    , _hoisted_15)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_16, _hoisted_18))])]);
+  )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, _hoisted_20))])]);
 }
 
 /***/ }),
@@ -20749,10 +20778,10 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.createRouter)({
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/sweetalert2/dist/sweetalert2.css":
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/sweetalert2/dist/sweetalert2.css ***!
-  \***************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/sweetalert2/dist/sweetalert2.css":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/sweetalert2/dist/sweetalert2.css ***!
+  \*****************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -38281,7 +38310,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./sweetalert2.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/sweetalert2/dist/sweetalert2.css");
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_10_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./sweetalert2.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/sweetalert2/dist/sweetalert2.css");
 
             
 
@@ -38290,11 +38319,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

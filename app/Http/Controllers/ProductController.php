@@ -51,7 +51,7 @@ class ProductController extends Controller
         return response()->json(['product' => $product], 200);
     }
 
-    public function update(Request $request, $id): void
+    public function update(Request $request, int $id): void
     {
         $product = Product::find($id);
         $product->name = $request->name;
@@ -79,5 +79,16 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->save();
+    }
+
+    public function delete(int $id): void
+    {
+        $product = Product::findOrFail($id);
+        $image_path = public_path() . '/upload/';
+        $image = $image_path . $product->photo;
+        if (file_exists($image)) {
+            @unlink($image);
+        }
+        $product->delete();
     }
 }
