@@ -11,6 +11,7 @@ class ProductController extends Controller
 {
     public function getAll(): JsonResponse
     {
+        dd(123);
         $products = Product::all();
         return response()->json([
             'products' => $products

@@ -6,9 +6,10 @@
 
         <title>Laravel</title>
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <script type="module" src="{{ asset('js/app.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ mix('vue/css/app.css') }}">
+
+        <script type="module" src="{{ mix('vue/js/app.js') }}" defer></script>
 
     </head>
     <body class="antialiased">

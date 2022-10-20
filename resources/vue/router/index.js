@@ -4,11 +4,11 @@ import productIndex from "../components/products/index.vue";
 import productCreate from "../components/products/create.vue";
 import productEdit from "../components/products/edit.vue";
 
-import notFound from "../components/notFound.vue";
+import notFound from "../notFound.vue";
 
 const routes = [
     {
-        path: "/",
+        path: "/1",
         component: productIndex,
     },
     {

@@ -225,7 +225,7 @@ const updateProduct = () => {
     console.log(formData);
     console.log(form.value);
     axios
-        .post(`/api/product/${form.value.id}`, formData)
+        .post(`/api/product1/${form.value.id}`, formData)
         .then((response) => {
             (form.value.name = ""),
                 (form.value.description = ""),
