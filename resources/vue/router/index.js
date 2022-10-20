@@ -8,15 +8,15 @@ import notFound from "../notFound.vue";
 
 const routes = [
     {
-        path: "/1",
+        path: "/",
         component: productIndex,
     },
     {
-        path: "/product1/create",
+        path: "/product/create",
         component: productCreate,
     },
     {
-        path: "/product1/edit/:id",
+        path: "/product/edit/:id",
         component: productEdit,
         props: true,
     },

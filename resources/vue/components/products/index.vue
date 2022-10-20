@@ -1,7 +1,6 @@
 <script>
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
-const router = useRouter();
 
 export default {
     data() {
@@ -11,18 +10,17 @@ export default {
     },
     methods: {
         newProduct() {
-            router.push("/product1/create");
+            this.$router.push("/product/create");
         },
         async getProducts() {
-            this.products = await axios.get("/api/product1/get-list");
-            console.log(this.products);
-            // this.products.value = response.data.products;
+            const response = await axios.get("/api/product/get-list");
+            this.products = response.data.products;
         },
         ourImage(img) {
             return "/upload/" + img;
         },
         onEdit(id) {
-            router.push(`/product1/edit/${id}`);
+            this.$router.push(`/product/edit/${id}`);
         },
         deleteProduct(id) {
             Swal.fire({
@@ -36,7 +34,7 @@ export default {
             }).then((result) => {
                 if (result.value) {
                     axios
-                        .get(`/api/product1/delete/${id}`)
+                        .get(`/api/product/delete/${id}`)
                         .then(() => {
                             Swal.fire(
                                 "Delete",
@@ -62,63 +60,6 @@ export default {
         await this.getProducts();
     },
 };
-
-// const router = useRouter();
-// let products = ref([]);
-
-// onMounted(async () => {
-//     getProducts();
-// });
-
-// const newProduct = () => {
-//     router.push("/product1/create");
-// };
-
-const getProducts = async () => {
-    let response = await axios.get("/api/product1/get-list");
-    console.log(response);
-};
-
-// const ourImage = (img) => {
-//     return "/upload/" + img;
-// };
-
-// const onEdit = (id) => {
-//     router.push(`/product1/edit/${id}`);
-// };
-
-// const deleteProduct = (id) => {
-//     Swal.fire({
-//         title: "Are you sure ?",
-//         text: "You can't go back",
-//         icon: "warning",
-//         showCancelButton: true,
-//         confirmButtonColor: "#3085d6",
-//         cancelButtonText: "Cancel",
-//         confirmButtonText: "Yes, delete it!",
-//     }).then((result) => {
-//         if (result.value) {
-//             axios
-//                 .get(`/api/product1/delete/${id}`)
-//                 .then(() => {
-//                     Swal.fire(
-//                         "Delete",
-//                         "Product delete successfully",
-//                         "Success"
-//                     );
-
-//                     getProducts();
-//                 })
-//                 .catch((error) => {
-//                     Swal.fire(
-//                         "Failed!",
-//                         "There was something wrong.",
-//                         "Warning"
-//                     );
-//                 });
-//         }
-//     });
-// };
 </script>
 <template>
     <div class="container">

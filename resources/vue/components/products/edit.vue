@@ -34,14 +34,18 @@
                         "
                     >
                         <p class="mb-1">Name</p>
-                        <input type="text" class="input" v-model="form.name" />
+                        <input
+                            type="text"
+                            class="input"
+                            v-model="dataRecord.name"
+                        />
 
                         <p class="my-1">Description (optional)</p>
                         <textarea
                             cols="10"
                             rows="5"
                             class="textarea"
-                            v-model="form.description"
+                            v-model="dataRecord.description"
                         >
                         </textarea>
 
@@ -112,7 +116,7 @@
                             <input
                                 type="text"
                                 class="input"
-                                v-model="form.type"
+                                v-model="dataRecord.type"
                             />
                         </div>
                         <hr />
@@ -123,7 +127,7 @@
                             <input
                                 type="text"
                                 class="input"
-                                v-model="form.quantity"
+                                v-model="dataRecord.quantity"
                             />
                         </div>
                         <hr />
@@ -134,7 +138,7 @@
                             <input
                                 type="text"
                                 class="input"
-                                v-model="form.price"
+                                v-model="dataRecord.price"
                             />
                         </div>
                     </div>
@@ -151,96 +155,92 @@
     </div>
 </template>
 
-<script setup>
-import { onMounted, ref } from "vue";
-import { useRouter } from "vue-router";
+<script>
+// import { onMounted, ref } from "vue";
+// import { useRouter } from "vue-router";
 
-let form = ref({
-    name: "",
-    description: "",
-    photo: "",
-    type: "",
-    quantity: "",
-    price: "",
-});
-
-const router = useRouter();
-
-onMounted(async () => {
-    getsingleProduct();
-});
-
-const props = defineProps({
-    id: {
-        type: String,
-        default: "",
+export default {
+    props: {
+        id: {
+            type: String,
+            default: "",
+        },
     },
-});
+    data() {
+        return {
+            dataRecord: {
+                name: "",
+                description: "",
+                photo: "",
+                type: "",
+                quantity: "",
+                price: "",
+            },
+        };
+    },
+    methods: {
+        async getsingleProduct() {
+            let response = await axios.get(`/api/product/${this.id}`);
 
-const getsingleProduct = async () => {
-    let response = await axios.get(`/api/product/${props.id}`);
+            console.log(response.data.product);
 
-    console.log(response);
+            this.dataRecord = response.data.product;
+        },
+        getPhoto() {
+            let photo = "/upload/image.png";
+            if (this.dataRecord.photo) {
+                if (this.dataRecord.photo.indexOf("base64") != -1) {
+                    photo = this.dataRecord.photo;
+                } else {
+                    photo = "/upload/" + this.dataRecord.photo;
+                }
+            }
 
-    form.value = response.data.product;
-};
+            return photo;
+        },
+        updatePhoto(e) {
+            let file = e.target.files[0];
+            let reader = new FileReader();
+            let limit = 1024 * 1024 * 2;
+            if (file["size"] > limit) {
+                return false;
+            }
 
-const getPhoto = () => {
-    let photo = "/upload/image.png";
-    if (form.value.photo) {
-        if (form.value.photo.indexOf("base64") != -1) {
-            photo = form.value.photo;
-        } else {
-            photo = "/upload/" + form.value.photo;
-        }
-    }
+            reader.onloadend = (file) => {
+                this.dataRecord.value.photo = reader.result;
+            };
 
-    return photo;
-};
+            reader.readAsDataURL(file);
+        },
+        updateProduct() {
+            // formData.append("name", this.dataRecord.name);
+            // formData.append("description", this.dataRecord.description);
+            // formData.append("photo", this.dataRecord.photo);
+            // formData.append("type", this.dataRecord.type);
+            // formData.append("quantity", this.dataRecord.quantity);
+            // formData.append("price", this.dataRecord.price);
 
-const updatePhoto = (e) => {
-    let file = e.target.files[0];
-    let reader = new FileReader();
-    let limit = 1024 * 1024 * 2;
-    if (file["size"] > limit) {
-        return false;
-    }
+            console.log("this.dataRecord");
+            console.log(this.dataRecord);
 
-    reader.onloadend = (file) => {
-        form.value.photo = reader.result;
-    };
+            axios
+                .post(`/api/product/${this.id}`, this.dataRecord)
+                .then((response) => {
+                    this.$router.push("/");
 
-    reader.readAsDataURL(file);
-};
-
-const updateProduct = () => {
-    const formData = new FormData();
-    formData.append("name", form.value.name);
-    formData.append("description", form.value.description);
-    formData.append("photo", form.value.photo);
-    formData.append("type", form.value.type);
-    formData.append("quantity", form.value.quantity);
-    formData.append("price", form.value.price);
-
-    console.log(formData);
-    console.log(form.value);
-    axios
-        .post(`/api/product1/${form.value.id}`, formData)
-        .then((response) => {
-            (form.value.name = ""),
-                (form.value.description = ""),
-                (form.value.photo = ""),
-                (form.value.type = ""),
-                (form.value.quantity = ""),
-                (form.value.price = ""),
-                router.push("/");
-
-            toast.fire({
-                icon: "success",
-                title: "Product update successfully!",
-            });
-        })
-        .catch((error) => {});
+                    toast.fire({
+                        icon: "success",
+                        title: "Product update successfully!",
+                    });
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+    },
+    async created() {
+        await this.getsingleProduct();
+    },
 };
 </script>
 
