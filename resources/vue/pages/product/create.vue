@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div class="products__edit">
+    <div class="product-page">
+        <div class="products__create">
             <div
                 class="
                     products__create__titlebar
@@ -10,12 +10,12 @@
                 "
             >
                 <div class="products__create__titlebar--item">
-                    <h1 class="my-1">Edit Product</h1>
+                    <h1 class="my-1">Add Product</h1>
                 </div>
                 <div class="products__create__titlebar--item">
                     <button
                         class="btn btn-secondary ml-1"
-                        @click="updateProduct()"
+                        @click="saveProduct()"
                     >
                         Save
                     </button>
@@ -37,7 +37,7 @@
                         <input
                             type="text"
                             class="input"
-                            v-model="dataRecord.name"
+                            v-model="formData.name"
                         />
 
                         <p class="my-1">Description (optional)</p>
@@ -45,9 +45,8 @@
                             cols="10"
                             rows="5"
                             class="textarea"
-                            v-model="dataRecord.description"
-                        >
-                        </textarea>
+                            v-model="formData.description"
+                        ></textarea>
 
                         <div class="products__create__main--media--images mt-2">
                             <ul
@@ -71,10 +70,10 @@
                                                 products__create__main--media--images--item--img
                                             "
                                             :src="getPhoto()"
+                                            alt=""
                                         />
                                     </div>
                                 </li>
-
                                 <!-- upload image small -->
                                 <li
                                     class="
@@ -116,7 +115,7 @@
                             <input
                                 type="text"
                                 class="input"
-                                v-model="dataRecord.type"
+                                v-model="formData.type"
                             />
                         </div>
                         <hr />
@@ -127,7 +126,7 @@
                             <input
                                 type="text"
                                 class="input"
-                                v-model="dataRecord.quantity"
+                                v-model="formData.quatity"
                             />
                         </div>
                         <hr />
@@ -138,7 +137,7 @@
                             <input
                                 type="text"
                                 class="input"
-                                v-model="dataRecord.price"
+                                v-model="formData.price"
                             />
                         </div>
                     </div>
@@ -147,7 +146,7 @@
             <!-- Footer Bar -->
             <div class="dflex justify-content-between align-items-center my-3">
                 <p></p>
-                <button class="btn btn-secondary" @click="updateProduct()">
+                <button class="btn btn-secondary" @click="saveProduct()">
                     Save
                 </button>
             </div>
@@ -156,19 +155,11 @@
 </template>
 
 <script>
-// import { onMounted, ref } from "vue";
-// import { useRouter } from "vue-router";
-
 export default {
-    props: {
-        id: {
-            type: String,
-            default: "",
-        },
-    },
+    components: {},
     data() {
         return {
-            dataRecord: {
+            formData: {
                 name: "",
                 description: "",
                 photo: "",
@@ -179,20 +170,13 @@ export default {
         };
     },
     methods: {
-        async getsingleProduct() {
-            let response = await axios.get(`/api/product/${this.id}`);
-
-            console.log(response.data.product);
-
-            this.dataRecord = response.data.product;
-        },
         getPhoto() {
             let photo = "/upload/image.png";
-            if (this.dataRecord.photo) {
-                if (this.dataRecord.photo.indexOf("base64") != -1) {
-                    photo = this.dataRecord.photo;
+            if (this.formData.photo) {
+                if (this.formData.photo.indexOf("base64") != -1) {
+                    photo = formData.photo;
                 } else {
-                    photo = "/upload/" + this.dataRecord.photo;
+                    photo = "/upload/" + this.formData.photo;
                 }
             }
 
@@ -207,39 +191,40 @@ export default {
             }
 
             reader.onloadend = (file) => {
-                this.dataRecord.value.photo = reader.result;
+                this.formData.photo = reader.result;
             };
 
             reader.readAsDataURL(file);
         },
-        updateProduct() {
-            // formData.append("name", this.dataRecord.name);
-            // formData.append("description", this.dataRecord.description);
-            // formData.append("photo", this.dataRecord.photo);
-            // formData.append("type", this.dataRecord.type);
-            // formData.append("quantity", this.dataRecord.quantity);
-            // formData.append("price", this.dataRecord.price);
-
-            console.log("this.dataRecord");
-            console.log(this.dataRecord);
+        saveProduct() {
+            const form = new FormData();
+            form.append("name", this.formData.name);
+            form.append("description", this.formData.description);
+            form.append("photo", this.formData.photo);
+            form.append("type", this.formData.type);
+            form.append("quantity", this.formData.quantity);
+            form.append("price", this.formData.price);
 
             axios
-                .post(`/api/product/${this.id}`, this.dataRecord)
+                .post("/api/product/create", formData)
                 .then((response) => {
-                    this.$router.push("/");
+                    (this.formData.name = ""),
+                        (this.formData.description = ""),
+                        (this.formData.photo = ""),
+                        (this.formData.type = ""),
+                        (this.formData.quantity = ""),
+                        (this.formData.price = ""),
+                        this.$router.push("/");
 
                     toast.fire({
                         icon: "success",
-                        title: "Product update successfully!",
+                        title: "Product add successfully!",
                     });
                 })
                 .catch((error) => {
                     console.log(error);
                 });
         },
-    },
-    async created() {
-        await this.getsingleProduct();
     },
 };
 </script>

@@ -1,24 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import productIndex from "../components/products/index.vue";
-import productCreate from "../components/products/create.vue";
-import productEdit from "../components/products/edit.vue";
+import product from "./product.js";
 
+import dashboard from "../pages/dashboard.vue";
 import notFound from "../notFound.vue";
 
 const routes = [
+    ...product,
     {
         path: "/",
-        component: productIndex,
-    },
-    {
-        path: "/product/create",
-        component: productCreate,
-    },
-    {
-        path: "/product/edit/:id",
-        component: productEdit,
-        props: true,
+        component: dashboard,
     },
     {
         path: "/:pathMath(.*)*",
