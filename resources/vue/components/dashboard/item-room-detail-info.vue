@@ -61,7 +61,11 @@
 
 <script>
 export default {
-    props: {},
+    props: {
+        isShow: {
+            type: Boolean,
+        },
+    },
     data() {
         return {};
     },
