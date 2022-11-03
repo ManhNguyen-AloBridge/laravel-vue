@@ -100,6 +100,7 @@ export default {
     data() {
         return {
             isShow: false,
+            rooms: [],
         };
     },
     methods: {
@@ -109,6 +110,14 @@ export default {
         hideDetailInfo() {
             this.isShow = !this.isShow;
         },
+        async getListRoom() {
+            const response = await axios.get("/api/room/");
+            this.rooms = response.data.rooms;
+            console.log(this.rooms);
+        },
+    },
+    async created() {
+        await this.getListRoom();
     },
 };
 </script>

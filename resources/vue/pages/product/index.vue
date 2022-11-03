@@ -1,7 +1,4 @@
 <script>
-import { onMounted, ref } from "vue";
-import { useRouter } from "vue-router";
-
 export default {
     data() {
         return {
