@@ -64,6 +64,11 @@ export default {
     props: {
         isShow: {
             type: Boolean,
+            default: false,
+        },
+        idItem: {
+            type: String,
+            default: "",
         },
     },
     data() {

@@ -1,12 +1,14 @@
 <template>
     <div class="dashboard-page">
         <h1>Hello World</h1>
+
         <div class="container-fluid row m-0">
-            <div class="col-3">
+            <div class="col-3" v-for="room in rooms" :key="room.id">
                 <div
                     class="bg-danger room"
-                    @mouseup="showDetailInfo"
-                    @mouseleave="hideDetailInfo"
+                    @mouseover="handleMouseOver(room)"
+                    @mouseleave="handleMouseLeave(room)"
+                    @click="handleShowDetail(room.id)"
                 >
                     <div class="room__image text-center">
                         <img
@@ -22,7 +24,7 @@
 
                     <item-room-detail
                         class="room__detail-info"
-                        :is-show="isShow"
+                        :is-show="room.isShow"
                     >
                     </item-room-detail>
 
@@ -104,11 +106,18 @@ export default {
         };
     },
     methods: {
-        showDetailInfo() {
-            this.isShow = !this.isShow;
+        handleShowDetail(id) {
+            this.$router.push(`/room/${id}`);
         },
-        hideDetailInfo() {
-            this.isShow = !this.isShow;
+        handleMouseOver(item) {
+            console.log(1);
+            item.isShow = true;
+            console.log(item);
+        },
+        handleMouseLeave(item) {
+            console.log(2);
+            item.isShow = false;
+            console.log(this.rooms);
         },
         async getListRoom() {
             const response = await axios.get("/api/room/");
