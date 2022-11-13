@@ -6,21 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Room extends Model
+class CCCDCard extends Model
 {
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
-        'so_phong',
-        'so_dien',
-        'so_nuoc',
-        'tinh_trang_cap_nhat',
+        'so_cccd',
+        'url_cccd',
     ];
 
     protected $hidden = [
-    ];
-
-    protected $casts = [
-        'tinh_trang_cap_nhat' => 'boolean'
     ];
 }

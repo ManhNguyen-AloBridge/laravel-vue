@@ -6,21 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Room extends Model
+class Account extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable =[
-        'so_phong',
-        'so_dien',
-        'so_nuoc',
-        'tinh_trang_cap_nhat',
+        'email',
+        'password',
+        'url_avatar',
     ];
 
     protected $hidden = [
-    ];
-
-    protected $casts = [
-        'tinh_trang_cap_nhat' => 'boolean'
+        'password',
+        'remember_token'
     ];
 }

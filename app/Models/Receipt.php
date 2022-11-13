@@ -6,21 +6,23 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Room extends Model
+class Receipt extends Model
 {
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
-        'so_phong',
-        'so_dien',
-        'so_nuoc',
-        'tinh_trang_cap_nhat',
+        'user_id',
+        'gia_sinh_hoat_id',
+        'gia_phong_id',
+        'hoa_don_thang',
+        'tien_phong',
+        'tien_dien',
+        'tien_nuoc',
+        'tien_mang',
+        'tien_ve_sinh',
+        'khac',
     ];
 
     protected $hidden = [
-    ];
-
-    protected $casts = [
-        'tinh_trang_cap_nhat' => 'boolean'
     ];
 }
