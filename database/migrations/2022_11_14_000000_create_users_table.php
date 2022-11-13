@@ -15,16 +15,16 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('account_id');
-            $table->integer('phong_id');
-            $table->integer('truong_id');
-            $table->bigInteger('phuong_tien_id');
-            $table->bigInteger('cccd_id');
+            $table->foreignId('account_id')->constrained('accounts')->nullable();
+            $table->foreignId('phong_id')->constrained('rooms');
+            $table->foreignId('truong_id')->constrained('schools')->nullable();
+            $table->foreignId('phuong_tien_id')->constrained('vehicles')->nullable();
+            $table->foreignId('cccd_id')->constrained('cccd_cards');
             $table->string('ho_ten');
-            $table->dateTime('ngay_sinh');
-            $table->string('dia_chi');
+            $table->dateTime('ngay_sinh')->nullable();
+            $table->string('dia_chi')->nullable();
             $table->string('ngay_den');
-            $table->string('ngay_di');
+            $table->string('ngay_di')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

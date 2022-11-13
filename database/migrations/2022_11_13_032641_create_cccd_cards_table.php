@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCccdTable extends Migration
+class CreateCccdCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -29,6 +29,6 @@ class CreateCccdTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cccd');
+        Schema::dropIfExists('cccd_cards');
     }
 }
