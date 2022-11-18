@@ -12,15 +12,11 @@ class Room extends Model
 
     protected $fillable =[
         'so_phong',
-        'so_dien',
-        'so_nuoc',
-        'tinh_trang_cap_nhat',
     ];
 
     protected $hidden = [
     ];
 
     protected $casts = [
-        'tinh_trang_cap_nhat' => 'boolean'
     ];
 }

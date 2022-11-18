@@ -6,16 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class School extends Model
+class Statistic extends Model
 {
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
-        'ten_truong',
-        'ten_viet_tat',
-        'dia_chi',
+        'room_id',
+        'so_dien',
+        'so_nuoc',
+        'thang',
+        'tinh_trang_cap_nhat'
     ];
 
-    protected $hidden = [
+    protected $casts = [
+        'tinh_trang_cap_nhat' => 'boolean'
     ];
 }
