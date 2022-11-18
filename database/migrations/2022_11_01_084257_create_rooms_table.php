@@ -16,9 +16,6 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->integer('so_phong');
-            $table->integer('so_dien');
-            $table->integer('so_nuoc');
-            $table->boolean('tinh_trang_cap_nhat')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -14,7 +14,7 @@ class RoomFactory extends Factory
     public function definition()
     {
         return [
-            'room_number' => rand(1, 5)
+            'so_phong' => rand(1, 5)
         ];
     }
 }

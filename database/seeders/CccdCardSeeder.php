@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\CCCDCard;
 use Illuminate\Database\Seeder;
 
-class CCCDCardSeeder extends Seeder
+class CccdCardSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,6 @@ class CCCDCardSeeder extends Seeder
      */
     public function run()
     {
-        //
+        CccdCard::factory()->count(20)->create();
     }
 }

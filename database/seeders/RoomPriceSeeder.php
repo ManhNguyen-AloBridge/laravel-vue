@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\RoomPrice;
 use Illuminate\Database\Seeder;
 
 class RoomPriceSeeder extends Seeder
@@ -13,6 +14,6 @@ class RoomPriceSeeder extends Seeder
      */
     public function run()
     {
-        //
+        RoomPrice::factory()->count(5)->create();
     }
 }

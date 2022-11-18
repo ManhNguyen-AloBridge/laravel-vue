@@ -14,7 +14,8 @@ class RoomPriceFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'tang_so'=> $this->faker->rand(1,5),
+            'gia_tien'=> $this->faker->randomElement([1000,2000,3000,4000,5000]),
         ];
     }
 }

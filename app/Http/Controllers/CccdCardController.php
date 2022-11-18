@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CCCDCardController extends Controller
+class CccdCardController extends Controller
 {
     /**
      * Display a listing of the resource.

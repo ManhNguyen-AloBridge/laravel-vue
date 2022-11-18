@@ -14,7 +14,9 @@ class AccountFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'email' => $this->faker->email,
+            'password' => $this->faker->password(6,10),
+            'url_avatar' => null
         ];
     }
 }
