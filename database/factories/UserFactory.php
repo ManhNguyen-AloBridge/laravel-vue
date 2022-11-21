@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Account;
-use App\Models\CCCDCard;
+use App\Models\IdCard;
 use App\Models\Room;
 use App\Models\School;
 use App\Models\Vehicle;
@@ -19,12 +19,14 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+
+        // dd(Account::all()->random()->id);
         return [
-            'account_id' => Account::all()->rand()->uniqid()->id,
-            'phong_id' => Room::all()->rand()->id,
-            'truong_id' => School::all()->rand()->id,
-            'phuong_tien_id' => Vehicle::all()->rand()->id,
-            'cccd_id' => CCCDCard::all()->rand()->id,
+            'account_id' => Account::all()->unique()->random()->id,
+            'phong_id' => Room::all()->random()->id,
+            'truong_id' => School::all()->random()->id,
+            'phuong_tien_id' => Vehicle::all()->random()->id,
+            'cccd_id' => IdCard::all()->random()->id,
             'ho_ten' => $this->faker->name(),
             'ngay_sinh' => $this->faker->date,
             'dia_chi' => $this->faker->address(),

@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CccdCard extends Model
+class IdCard extends Model
 {
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
-        'so_cccd',
-        'url_cccd',
+        'id',
+        'so_id',
+        'url_id',
     ];
 }

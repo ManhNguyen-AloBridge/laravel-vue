@@ -11,6 +11,7 @@ class Room extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'so_phong',
     ];
 

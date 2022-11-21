@@ -16,11 +16,12 @@ class ReceiptFactory extends Factory
      */
     public function definition()
     {
-        $roomPrice = RoomPrice::all()->rand();
-        $costLiving = CostLiving::all()->rand();
+        $roomPrice = RoomPrice::all()->random();
+        $costLiving = CostLiving::all()->random();
+        $room = Room::all()->random();
 
         return [
-            'phong_id' => Room::all()->rand()->id,
+            'phong_id' => $room->id,
             'gia_sinh_hoat_id' => $costLiving->id,
             'gia_phong_id' => $roomPrice->id,
             'hoa_don_thang' => rand(1,12),

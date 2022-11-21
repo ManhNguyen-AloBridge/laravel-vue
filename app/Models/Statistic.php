@@ -11,6 +11,7 @@ class Statistic extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'room_id',
         'so_dien',
         'so_nuoc',

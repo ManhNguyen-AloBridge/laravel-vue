@@ -16,7 +16,7 @@ class CreateReceiptsTable extends Migration
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('phong_id')->constrained('rooms');
-            $table->foreignId('gia_sinh_hoat_id')->constrained('cost_living');
+            $table->foreignId('gia_sinh_hoat_id')->constrained('cost_livings');
             $table->foreignId('gia_phong_id')->constrained('room_prices');
             $table->integer('hoa_don_thang');
             $table->integer('tien_phong');

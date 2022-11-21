@@ -11,6 +11,7 @@ class RoomPrice extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'tang_so',
         'gia_tien',
     ];

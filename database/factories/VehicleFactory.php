@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class VehicleFactory extends Factory
 {
@@ -15,7 +16,7 @@ class VehicleFactory extends Factory
     {
         return [
             'ten_phuong_tien' => $this->faker->name(),
-            'bien_so' => String::rand(6,6),
+            'bien_so' => Str::random(6,6),
             'mau_sac' => $this->faker->randomElement(['black','red','blue']),
             'url_anh' => null
         ];

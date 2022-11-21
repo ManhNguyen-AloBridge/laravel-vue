@@ -11,6 +11,7 @@ class Receipt extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'user_id',
         'gia_sinh_hoat_id',
         'gia_phong_id',

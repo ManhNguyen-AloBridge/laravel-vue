@@ -11,6 +11,7 @@ class CostLiving extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'gia_dien',
         'gia_nuoc',
         'gia_mang',

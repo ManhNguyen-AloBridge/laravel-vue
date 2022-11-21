@@ -14,15 +14,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(
-           [ RoomSeeder::class,
-            AccountSeeder::class,
-            CCCDCardSeeder::class,
-            CostLivingSeeder::class,
-            ReceiptSeeder::class,
-            RoomPriceSeeder::class,
-            SchoolSeeder::class,
-            UserSeeder::class,
-            VehicleSeeder::class,]
+            [
+                RoomSeeder::class,
+                AccountSeeder::class,
+                IdCardSeeder::class,
+                CostLivingSeeder::class,
+                RoomPriceSeeder::class,
+                SchoolSeeder::class,
+                VehicleSeeder::class,
+                UserSeeder::class,
+                ReceiptSeeder::class,
+            ]
         );
     }
 }

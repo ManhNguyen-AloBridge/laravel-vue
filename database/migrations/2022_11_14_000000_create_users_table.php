@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('phong_id')->constrained('rooms');
             $table->foreignId('truong_id')->constrained('schools')->nullable();
             $table->foreignId('phuong_tien_id')->constrained('vehicles')->nullable();
-            $table->foreignId('cccd_id')->constrained('cccd_cards');
+            $table->foreignId('cccd_id')->constrained('id_cards');
             $table->string('ho_ten');
             $table->dateTime('ngay_sinh')->nullable();
             $table->string('dia_chi')->nullable();

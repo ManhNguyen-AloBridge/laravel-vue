@@ -11,6 +11,7 @@ class Vehicle extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'ten_phuong_tien',
         'bien_so',
         'mau_sac',

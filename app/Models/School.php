@@ -11,6 +11,7 @@ class School extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable =[
+        'id',
         'ten_truong',
         'ten_viet_tat',
         'dia_chi',
