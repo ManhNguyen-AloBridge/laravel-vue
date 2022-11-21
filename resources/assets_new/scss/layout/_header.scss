@@ -1,0 +1,270 @@
+.header-wrapper {
+	margin-bottom: 7.7rem;
+	background-image: url('/assets_new/img/header_bg.png');
+	#header {
+		height: 8rem;
+		@include flexCenterVerticalItem;
+	}
+	.logo {
+		display: flex;
+		align-items: baseline;
+		color: #fff;
+		h1 {
+			margin-right: 1.5rem;
+			font-size: 2rem;
+			color: inherit;
+		}
+		span {
+			font-size: 1.1rem;
+			color: inherit;
+		}
+	}
+}
+
+.header {
+	padding: 0 4rem;
+	background-color: $color-white;
+	position: relative;
+	z-index: 998;
+
+	.breadcrumb-item {
+		display: flex;
+
+		&::before {
+			float: left;
+			padding: 0 14px;
+			color: #aaa;
+			font-family: 'Font Awesome 5 Free';
+			content: '\f105';
+			display: inline-block;
+			vertical-align: middle;
+			padding-top: 2px;
+			font-weight: 900;
+		}
+
+		&:nth-child(1)::before {
+			content: unset;
+		}
+	}
+
+	.navbar {
+		display: flex;
+		justify-content: flex-end;
+		height: 5rem;
+		position: relative;
+
+		.dropdown-toggle::after {
+			content: unset;
+		}
+
+		.dropdown-menu {
+			width: 30rem;
+			height: 18rem;
+			left: inherit;
+			right: 0px;
+			top: 3.4rem;
+			font-size: 1.4rem;
+
+			&__company {
+				width: 20rem;
+				height: auto;
+			}
+		}
+
+		.dropdown-menu button:active {
+			background-color: transparent !important;
+		}
+
+		.dropdown-menu button.active {
+			color: $color-white !important;
+		}
+
+		.dropdown-menu button {
+			color: $color-black !important;
+		}
+
+		.dropdown-item {
+			width: fit-content;
+		}
+
+		.dropdown-item.active {
+			background-color: $color-primary;
+		}
+
+		&__dropdown {
+			display: flex;
+		}
+
+		&__dropdown-content {
+			padding: 0 2.3rem;
+		}
+
+		&__link {
+			list-style: none;
+		}
+
+		&__avatar {
+			width: 8rem;
+			height: 8rem;
+			cursor: pointer;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		&__user-info {
+			align-items: center;
+			display: flex;
+			font-size: 14px;
+			cursor: pointer;
+		}
+
+		&__name {
+			padding-right: 15px;
+		}
+
+		.fa-user {
+			color: $color-primary;
+		}
+
+		&__list-company {
+			display: table-row;
+		}
+	}
+
+	.fa-caret-down {
+		color: $color-badge-normal;
+	}
+
+	.vr {
+		height: 2rem;
+	}
+
+	.dropdown-toggle-company {
+		padding-right: 2rem;
+		display: -webkit-inline-box;
+		cursor: pointer;
+	}
+
+	.company-name {
+		&__title {
+			color: $color-badge-normal;
+			max-width: 16rem !important;
+			text-align: right;
+		}
+
+		&__item {
+			width: 20rem !important;
+			line-height: 3.5rem;
+		}
+	}
+
+	.text-info-header{
+		display: block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.dropdown {
+		margin-left: 0 !important;
+	}
+
+	@media screen and (min-width: 992px) and (max-width: 1206px) {
+		.navbar__select-company {
+			flex-flow: row;
+
+			.dropdown-menu {
+				top: 2.5rem;
+			}
+
+			.dropdown-menu__company {
+				height: auto;
+			}
+		}
+
+		.dropdown-toggle-company {
+			padding-right: 1rem;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+		box-shadow: 0 0.3rem 0.6rem 0 $color-shadow-header;
+		position: fixed;
+		width: 100%;
+		left: 0;
+
+		.breadcrumb {
+			display: none !important;
+		}
+	}
+
+	@media screen and (max-width: 414px) {
+		.navbar {
+			.dropdown-menu {
+				width: 27.6rem;
+				height: 16rem;
+				left: inherit;
+				font-size: 1.4rem;
+				&__company {
+					width: 20rem;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+		.navbar {
+			.dropdown-menu {
+				width: 25.6rem;
+				height: 14rem;
+				right: 0;
+				&__company {
+					width: 20rem;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 320px) {
+		.navbar {
+			.dropdown-menu {
+				width: 24.6rem;
+				height: 13rem;
+				&__company {
+					width: 20rem;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		.navbar__select-company {
+			flex-flow: column;
+
+			.dropdown-menu {
+				top: 2.5rem;
+			}
+
+			.dropdown-menu__company {
+				top: 4.5rem;
+				height: auto;
+			}
+		}
+
+		.vr {
+			display: none;
+		}
+
+		.dropdown-toggle-company {
+			padding-right: 0;
+		}
+
+		ul.navbar__select-company {
+			align-items: flex-end;
+		}
+	}
+}

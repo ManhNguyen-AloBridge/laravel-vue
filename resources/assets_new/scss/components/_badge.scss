@@ -1,0 +1,13 @@
+.badge {
+	display: inline-block;
+	padding: 0 0.8rem;
+	line-height: 1.4rem;
+	font-size: 0.9rem;
+	color: #fff;
+	background-color: $color-badge-normal;
+	vertical-align: text-bottom;
+	border-radius: 0.4rem;
+	&.--alert {
+		background-color: $color-danger;
+	}
+}

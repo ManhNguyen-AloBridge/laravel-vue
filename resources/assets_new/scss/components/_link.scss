@@ -1,0 +1,17 @@
+.link {
+    text-decoration: none;
+    display: inline-block;
+    color: $color-link-text;
+    &:hover {
+        color: $color-primary;
+    }
+    &.--dark {
+        color: $color-black;
+        &:hover {
+            color: $color-link-text;
+        }
+    }
+}
+
+
+

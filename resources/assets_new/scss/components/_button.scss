@@ -1,0 +1,144 @@
+.btn {
+	display: inline-block;
+	padding: 1.45rem 1.45rem;
+	border: 1px solid transparent;
+	letter-spacing: 0.16rem;
+	border-radius: 4px;
+	margin: auto;
+	background-color: $color-primary;
+	color: $color-white;
+	cursor: pointer;
+	font-size: 1.6rem;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.25s;
+	font-weight: 400;
+
+	&:hover {
+		background-color: $color-btn-hover;
+		color: $color-white;
+	}
+
+	&.--block {
+		display: block;
+	}
+
+	&.--secondary {
+		color: $color-white;
+		background-color: $color-link-text;
+		border-color: $color-link-text;
+
+		&.--outline {
+			color: $color-input;
+		}
+
+		&.--disabled{
+			background: $color-text-desc !important;
+			border-color: $color-text-desc;
+			pointer-events: none;
+		}
+
+		&.--disabled:hover{
+			cursor: default;
+		}
+	}
+
+	&.--light {
+		color: $color-white;
+		background-color: $color-link-text;
+	}
+
+	&.--outline {
+		background-color: unset;
+	}
+	&.--outline-primary-text {
+		color: $color-primary;
+		border-color: $color-primary;
+		background-color: unset;
+	}
+	&.--thin {
+		padding-top: 0.8rem;
+		padding-bottom: 0.8rem;
+	}
+	&.--wide-l {
+		padding-left: 2.1rem;
+		padding-right: 2.1rem;
+	}
+	&.--wide-5xl {
+		padding-left: 4.5rem;
+		padding-right: 4.5rem;
+	}
+	&.--primary,
+	&.--hover-primary:hover {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+	&.--disabled {
+		pointer-events: none;
+		background-color: $color-disable-button;
+	}
+	&.--danger {
+		background-color: $color-danger;
+		border-color: $color-danger;
+		color: $color-white;
+	}
+	&.--hover-primary:hover {
+		color: $color-white;
+	}
+
+	&.--link {
+		margin-top: 0.41rem;
+		text-align: center;
+		text-decoration: none;
+		color: $color-link-text;
+		background-color: unset;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	&.--md {
+		padding: 0.6rem 1rem;
+		min-width: 12rem;
+		height: 4rem;
+		margin-top: 0;
+
+		i {
+			padding-right: 1rem;
+		}
+	}
+
+	&.--sm {
+		padding: 0.7rem;
+		font-size: 1.2rem;
+		letter-spacing: 0.12rem;
+		min-width: 12rem;
+
+		i {
+			margin-right: 0.4rem;
+		}
+	}
+	&.--danger {
+		background-color: $color-danger;
+		&:hover {
+			background-color: $color-hover-button-danger;
+		}
+
+		&.--disabled{
+			background: $color-danger-disabled !important;
+			border-color: $color-danger-disabled;
+			pointer-events: none;
+		}
+
+		&.--disabled:hover{
+			cursor: default;
+		}
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.btn {
+		padding: 1.33rem 1.45rem;
+	}
+}

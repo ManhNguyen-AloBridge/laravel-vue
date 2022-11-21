@@ -1,0 +1,82 @@
+.form-table {
+	&__col {
+		position: relative;
+		padding: 3px !important;
+
+		&.--sm {
+			width: 140px;
+		}
+	}
+
+	&__col-th {
+		&.--sm {
+			width: 140px;
+		}
+	}
+
+	&__btn-delete {
+		display: none;
+	}
+
+	&__btn-edit {
+		display: block;
+	}
+
+	&__row {
+		&.--edit {
+			background-color: $color-input-card-table;
+		}
+	}
+
+	&__row.--edit {
+		.form-table__btn-delete {
+			display: block;
+		}
+
+		.form-table__btn-edit {
+			display: none;
+		}
+		.form-table__select {
+			background: url("data:image/svg+xml;charset=utf-8,%3Csvg height='12' width='12' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E")
+			no-repeat;
+			background-position: 100% center !important;
+		}
+	}
+	&__row__button-group {
+		position: absolute;
+		top: 50%;
+		right: 3.2rem;
+		transform: translateY(-50%);
+	}
+	&__button-group {
+		display: flex;
+		justify-content: flex-end;
+		.btn {
+			margin: unset;
+		}
+		.btn.mr-2 {
+			margin-right: 1rem;
+		}
+	}
+	&__input {
+		width: 100%;
+		padding: 0.35rem;
+		border: none;
+		line-height: 2.6rem;
+		background-color: transparent;
+		&:focus {
+			outline: none;
+		}
+	}
+	&__select {
+		width: 100%;
+		padding: 0.35rem;
+		border: none;
+		line-height: 2.6rem;
+		background-color: transparent;
+		appearance: none;
+		&:focus {
+			outline: none;
+		}
+	}
+}

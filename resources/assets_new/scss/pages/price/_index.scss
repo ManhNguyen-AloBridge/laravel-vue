@@ -1,0 +1,77 @@
+.price-list {
+	.column {
+		text-align: left;
+		&.--price {
+			min-width: 30rem;
+		}
+		&.--id {
+			min-width: 25rem;
+		}
+	}
+
+	.first-price {
+		width: 30rem;
+	}
+
+	.status {
+		color: $color-danger-hover;
+	}
+
+	.card-title {
+		margin-bottom: 1.5rem;
+	}
+
+	.content-header {
+		padding-bottom: 1rem;
+	}
+
+	.price {
+		display: flex;
+
+		&__detail {
+			text-align: left;
+			margin-right: 3rem;
+		}
+
+		&__status {
+			display: flex;
+			align-items: center;
+		}
+
+		&__description {
+			color: $color-text-note;
+		}
+	}
+
+	.status-price {
+		border-radius: 4px;
+		padding: 0.1rem 0.4rem;
+
+		&.--default {
+			color: $color-border-img;
+			background: $color-primary-button;
+		}
+
+		&.--disabled {
+			color: $color-badge-normal;
+			background: $color-border;
+		}
+	}
+
+	.input-price,
+	.input-description {
+		margin-right: 1.5rem;
+	}
+
+	#field-input-price {
+		width: 20rem;
+	}
+
+	#field-input-description {
+		width: 30rem;
+	}
+
+	.default-price {
+		color: $color-success;
+	}
+}

@@ -1,0 +1,437 @@
+.page-edit-cv {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	.table {
+		th {
+			padding: 1.3rem;
+			&.--w-14 {
+				width: 14rem;
+			}
+
+			&.--w-12 {
+				width: 12rem;
+			}
+		}
+
+		td {
+
+			&.-delete {
+				width: 4rem;
+			}
+
+			&.--p-3 {
+				padding: 0.3rem;
+			}
+		}
+	}
+
+	.fixed {
+		table-layout: fixed;
+	}
+
+	.fixed td:nth-child(1),
+	.fixed td:nth-child(2) {
+		width: 50%;
+	}
+
+	.card-form-table {
+		.title-center {
+			margin: 4rem auto 2.1rem !important;
+		}
+
+		.table th {
+			background-color: white !important;
+		}
+
+		.form-table__input-wrapper {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			padding: 0.5rem 1.3rem;
+			border-radius: 0%;
+			align-items: center;
+			background-color: $color-tag-item;
+		}
+
+		.form-table__input-wrapper .btn-delete {
+			background-color: transparent;
+		}
+
+		.form-table__input-wrapper.--error {
+			background-color: $color-bg-input-error;
+		}
+
+		.select-box-label {
+			display: none;
+		}
+
+		.select-box {
+			background-color: transparent;
+			padding-bottom: 0;
+			padding-top: 0;
+			padding-left: 0;
+		}
+
+		.select-box.--input-table {
+			padding-right: 2.5rem;
+		}
+
+		.select-center {
+			text-align: center;
+			text-align-last: center;
+			-moz-text-align-last: center;
+		}
+
+		.label-date-picker {
+			display: none;
+		}
+	}
+
+	.card-form-table.--confirm {
+		.table th {
+			background-color: $color-bg-table-header !important;
+		}
+
+		.form-table__input-wrapper {
+			background-color: $color-white;
+		}
+
+		.select-box {
+			display: none;
+		}
+
+		.select-box-label {
+			display: block;
+			text-align: center;
+			text-align-last: center;
+			-moz-text-align-last: center;
+		}
+
+		.btn-delete {
+			display: none;
+		}
+
+		.table.--hover tbody tr:hover {
+			background-color: $color-white;
+		}
+
+		.form-table__button-group {
+			display: none;
+		}
+
+		.col-delete {
+			display: none;
+		}
+
+		.checkbox-round {
+			background-color: $color-white;
+		}
+
+		.clear-area-input {
+			display: none;
+		}
+
+		.label-date-picker {
+			display: block;
+		}
+
+		.date-picker {
+			display: none !important;
+		}
+	}
+
+	.no-border {
+		border: none;
+		border-collapse: collapse;
+		border-style: hidden !important;
+
+		th.--no-border-th,
+		td.--no-border-th {
+			border: none;
+		}
+	}
+
+	.form-table__input {
+		padding: 0;
+	}
+
+	.form-table__input:-internal-autofill-selected {
+		background-color: transparent;
+	}
+
+	.card__title {
+		margin-bottom: 0.7rem;
+		margin-top: 3.5rem;
+	}
+
+	.form-table-input .text-container {
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.area-input {
+		margin-right: 1.2rem;
+		width: 100%;
+		border: none;
+		background-color: transparent;
+		resize: none;
+		word-break: break-word;
+	}
+
+	.area-input:focus-visible {
+		outline: none;
+	}
+
+	.clear-area-input {
+		color: $color-link-text;
+		align-self: start;
+		cursor: pointer;
+	}
+
+	.show {
+		right: 5px;
+	}
+
+	.tag {
+		color: $color-link-text;
+		font-weight: 500;
+		&.--white {
+			background-color: $color-white;
+		}
+	}
+
+	.border-left-table {
+		border-left: 0.3rem solid $color-primary;
+	}
+
+	.tag-process {
+		margin: auto;
+		width: 3.7rem;
+	}
+
+	.col-delete {
+		width: 4.5rem;
+	}
+
+	.btn-delete {
+		padding: 0.8rem 1rem;
+		border-radius: 0;
+		font-size: 1.4rem;
+		color: $color-link-text;
+		background-color: $color-tag-item;
+
+		&.--check {
+			padding-left: 1.2rem;
+			font-size: 1rem;
+			color: $color-text-title;
+		}
+		&.--non-check {
+			padding-left: 1.4rem;
+			padding-right: 1.4rem;
+		}
+	}
+
+	.no-choose {
+		padding: 1rem 1.6rem !important;
+	}
+
+	.btn-save {
+		width: 12rem;
+		padding: 0.9rem;
+		margin-top: 4.1rem;
+		margin-bottom: 1rem;
+	}
+
+	.validation-error {
+		@extend.text-xs;
+		margin-left: 1.1rem;
+	}
+
+	.nowrap {
+		white-space: nowrap;
+	}
+
+	.child {
+		display: inline-block;
+	}
+
+	.content-education {
+		color: $color-input;
+		margin-left: 1.8rem;
+	}
+	.project-sort {
+		position: relative;
+	}
+	.sort-element {
+		position: absolute;
+		top: 0rem;
+		right: -3rem;
+	}
+
+	.sort-index {
+		position: absolute;
+		left: -1.5rem;
+		top: 0.5rem;
+		font-weight: bold;
+
+		&__item {
+			font-weight: bold;
+			width: 1.5rem;
+			display: block;
+			border: none;
+			outline: none;
+			background: transparent;
+			text-align: center;
+		}
+	}
+
+	.lost-width {
+		width: calc(100% - 2.5rem) !important;
+	}
+
+	.options {
+		width: 2.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&__btn {
+			border: unset;
+			background: transparent;
+		}
+
+		&__btn:focus-visible {
+			outline: none;
+			height: 100%;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+		.table th {
+			padding: 0.6rem;
+		}
+
+		.table .row-project th.--w-12 {
+			width: 6rem;
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		.sort-element {
+			display: none;
+			flex-flow: column;
+			right: 0;
+			top: 0.5rem;
+		}
+
+		.table .row-project th.--w-14 {
+			width: 12rem;
+		}
+
+		.card-form-table .form-table__input-wrapper,
+		.table .row-project th.--w-12 {
+			font-size: 1.2rem;
+		}
+
+		.table .row-project th.--w-12 {
+			width: 5.5rem;
+		}
+
+		.card-form-table .row-project .form-table__input-wrapper input,
+		.card-form-table .form-table__input-wrapper .select-box.--input-table {
+			padding-left: 0.4rem;
+		}
+
+		.card-form-table .form-table__input-wrapper {
+			padding: 0.5rem 0.5rem;
+		}
+
+		.form-table-skill .form-table__input-wrapper {
+			min-height: 3.9rem;
+		}
+
+		.area-input {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 414px) {
+		.table th {
+			padding: 0.5rem;
+		}
+
+		.btn-add-qualification,
+		.btn-add-education,
+		.btn-add-project,
+		.btn-add-skill {
+			min-width: 11.5rem !important;
+		}
+
+		.th-subhead {
+			width: 12rem;
+		}
+	}
+
+	@media screen and (max-width: 413px) {
+		.nowrap {
+			white-space: unset;
+		}
+
+		.table th {
+			padding: 0.5rem;
+		}
+
+		.th-subhead {
+			width: 12rem;
+		}
+
+		.table .row-project th.--w-14 {
+			width: 9rem;
+		}
+
+		.btn-add-qualification,
+		.btn-add-education,
+		.btn-add-project,
+		.btn-add-skill {
+			min-width: 11.5rem !important;
+		}
+
+		.table .row-project th.--w-12 {
+			width: 3.6rem;
+		}
+
+		.project-section tr table .form-table__input-wrapper {
+			height: 5rem;
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+		.card-form-table .form-table__input-wrapper {
+			padding: 0;
+		}
+
+		.table th.--w-14 {
+			width: 12rem;
+		}
+
+		.form-table-skill .form-table__input-wrapper,
+		.form-table-qualification .form-table__input-wrapper,
+		.form-table-education .form-table__input-wrapper {
+			height: 3.9rem;
+		}
+	}
+
+	@media screen and (max-width: 320px) {
+		.table .row-project th.--w-12 {
+			font-size: 1.2rem;
+			width: 2.8rem;
+		}
+
+		.table th.--w-14 {
+			width: 10rem;
+		}
+	}
+}

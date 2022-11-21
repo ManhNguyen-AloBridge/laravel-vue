@@ -1,0 +1,1 @@
+$("textarea").on("keydown",(function(t){var n,e,o,a,l;n=this,e=t.keyCode,o=$(n).val(),$(n).cols,a=o.split("\n"),l=a.length+(13===e),8===e&&0===a[a.length-1].length&&l>1&&--l,$(n).attr("rows",l)})),$(".table-cv td").on("click",(function(){$(this).find("textarea").focus()}));

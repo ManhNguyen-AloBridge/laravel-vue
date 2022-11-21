@@ -1,0 +1,1 @@
+(()=>{function c(c){c.attr("checked")?c.removeAttr("checked").prop("checked",!1):c.attr("checked","checked").prop("checked",!0)}$("#form-download-cv").on("submit",(function(){$("#download-cv-modal").modal("hide")})),$("#is-hidden").on("change",(function(){c($(this))})),$("#is_hidden_name_download").on("change",(function(){c($(this))}))})();

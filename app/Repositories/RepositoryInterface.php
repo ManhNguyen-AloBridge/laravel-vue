@@ -2,45 +2,44 @@
 
 namespace App\Repositories;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection as SupportCollection;
 
 interface RepositoryInterface
 {
-	public function all(): Collection;
+    public function create(array $attributes = []): Model;
 
-	public function store(array $data);
+    public function insert(array $values): bool;
 
-	public function insert(array $data);
+    public function update(Model|Builder $model, array $data): int|bool;
 
-	public function upsert(array $data, array $keys, array $fields);
+    public function delete(Model|Builder $model): mixed;
 
-	public function update(Model $object, array $data): bool;
+    public function destroy(SupportCollection|array|int|string $ids): mixed;
 
-	public function updateById(int|string $id, array $data): bool;
+    public function find(mixed $id, array $columns = ['*']): Model|Collection|static|array|null;
 
-	public function delete(Model $model): bool|null;
+    public function findByField(mixed $field, mixed $value): Builder;
 
-	public function exist(mixed $id): bool;
+    public function findByFields(array $conditions): Builder;
 
-	public function with(array $withModel = ['']);
+    public function buildWhere(array $conditions, Builder|Model $query = null): Builder|Model;
 
-	public function findByField(mixed $field, mixed $value);
+    public function buildWhereLike(array $conditions, Builder|Model $query = null): Builder|Model;
 
-	public function findByFields(array $conditions);
+    public function buildWhereIn(array $conditions, Builder|Model $query = null): Builder|Model;
 
-	public function find(mixed $id);
+    public function buildWhereNotIn(array $conditions, Builder|Model $query = null): Builder|Model;
 
-	public function findOrFail(mixed $id);
+    public function buildWhereBetween(array $conditions, Builder|Model $query = null): Builder|Model;
 
-	public function firstOrCreate(array $data);
+    public function buildWhereNotBetween(array $conditions, Builder|Model $query = null): Builder|Model;
 
-	public function updateOrCreate(array $condition, array $data);
+    public function buildPagination(int $page, int $perPage, Builder|Model $query = null): Builder|Model;
 
-	public function getByCompanyId(int $companyId): Collection;
+    public function getFirst(Builder $query = null, bool $toArray = false): Model|Collection|array|null;
 
-	public function destroy(SupportCollection|array|int|string $ids): int;
-
-	public function count(): int;
+    public function getList(Builder $query = null, bool $toArray = false): Model|Collection|array|null;
 }

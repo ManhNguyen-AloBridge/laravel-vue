@@ -1,0 +1,103 @@
+.cv-template {
+
+	// display: flex;
+	padding: 10px;
+	max-height: 694px;
+
+	&__list {
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.25rem;
+		align-items: center;
+
+		@media only screen and (max-width: 1200px) {
+			flex-direction: row;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		object-fit: cover;
+		box-shadow: 0px 4px 10px 0px rgba($color-black, .2);
+		border-radius: 5px;
+		overflow: hidden;
+		max-width: 900px;
+		width: 100%;
+
+		@media only screen and (min-width: 992px) and (max-width: 1200px) {
+			max-width: calc(33.3333% - 0.75rem);
+		}
+	}
+
+	&__hero {
+		position: relative;
+
+	}
+
+	&__image {
+		width: 100%;
+		height: 250px;
+		position: relative;
+	}
+
+	&__actions {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		background-color: rgba($color-black, $alpha: 0.7);
+		opacity: 0;
+		transition: opacity 0.2s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		row-gap: .5rem;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		@media only screen and (max-width: 1200px) {
+			padding: 1rem;
+		}
+	}
+
+	&__button {
+		max-width: 300px;
+		display: inline-block;
+		font-weight: 700;
+		text-align: center;
+		padding: 0.625rem 1.25rem;
+		border-radius: 30px;
+		width: 100%;
+		color: $color-white;
+		border: 1px solid transparent;
+		outline: none;
+
+		i {
+			color: $color-white;
+			margin-right: 5px;
+		}
+
+		&.--outline {
+			background: transparent;
+			border-color: $color-white;
+		}
+	}
+
+	&__name {
+		padding: 1rem;
+		line-height: 1.5;
+		font-size: 0.875rem;
+	}
+
+	&__selected-icon {
+		color: $color-primary;
+	}
+}

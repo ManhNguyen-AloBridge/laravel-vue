@@ -1,0 +1,61 @@
+.staff-index{
+	.input-search {
+		position: relative;
+		border: solid 1px $color-border-default;
+		border-radius: 5px;
+
+		&__label {
+			position: absolute;
+			top: -12px;
+			left: 13px;
+			background: white;
+			padding: 0 4px;
+		}
+
+		&__input {
+			border: unset;
+			line-height: 31px;
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+		&__select {
+			height: calc(2rem + 2px);
+		}
+
+		.select2-selection {
+			border: unset;
+		}
+
+		.select2-container--default.select2-container--focus
+			.select2-selection--multiple {
+			border: unset;
+		}
+
+		.select2-container--default .select2-selection--multiple {
+			min-height: calc(2rem + 2px);
+		}
+	}
+	.select2-results__option[aria-selected='true'] {
+		display: none;
+	}
+
+	.select-normal option {
+		color: black;
+	}
+	.empty {
+		color: gray;
+	}
+
+	.th-check-all{
+		padding: .75rem !important;
+
+		&:before,
+		&:after {
+			content: none !important;
+		}
+	}
+}
+
+

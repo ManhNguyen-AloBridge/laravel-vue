@@ -1,0 +1,40 @@
+.search-box {
+	display: inline-block;
+	border: solid 1px $color-input;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+
+	&__input {
+		width: 100%;
+		padding: 0.9rem 6rem 0.9rem 2rem;
+		outline: none;
+		border: none;
+		font-size: 1.4rem;
+		line-height: 2.1rem;
+		letter-spacing: 0.14rem;
+		&::placeholder {
+			color: $color-input;
+		}
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			-webkit-box-shadow: 0 0 0 3rem $color-tag-item inset !important;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		border: none;
+		font-size: 1.4rem;
+
+		border: none;
+		color: $color-input;
+		background-color: unset;
+		padding: 0.5rem 3rem 0.5rem 0.5rem;
+	}
+}

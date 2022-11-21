@@ -1,0 +1,55 @@
+.tag-box {
+	border: 0.1rem solid $color-input;
+	border-radius: 0.4rem;
+	padding: 0.3rem 0.5rem;
+	background-color: unset;
+	opacity: 1;
+	min-height: 4rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+
+	&__input {
+		border: unset;
+		resize: none;
+		overflow: hidden;
+		flex-grow: 1;
+		padding: .5rem 0;
+		line-height: 100%;
+
+		&:focus-visible {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: $color-input;
+			@extend .text-xs;
+		}
+	}
+
+	> * {
+		display: block;
+	}
+
+	@media screen and (max-width: 768px) {
+
+	}
+
+	@media screen and (max-width: 414px) {
+		.tag{
+			// max-width: 25rem;
+		}
+
+		.tag__content{
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+	}
+
+	@media screen and (max-width: 320px) {
+	}
+}

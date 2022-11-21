@@ -1,0 +1,19 @@
+.send-mail-page {
+	.card {
+		width: 68.3rem;
+	}
+	.input-edit-mail {
+		overflow: auto;
+		padding: 0.8rem 0.5rem;
+
+		&::placeholder {
+			font-size: 1.1rem;
+		}
+	}
+
+	.input-edit-body {
+		&::placeholder {
+			font-size: 1.1rem;
+		}
+	}
+}

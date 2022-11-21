@@ -1,0 +1,33 @@
+.login-page {
+	text-align: center;
+	.title {
+		color: $color-black;
+		line-height: 2.3rem;
+	}
+	.desc {
+		margin-top: 0.78rem;
+		color: $color-black;
+		line-height: 2.45rem;
+	}
+	.btn {
+		margin-top: 2.8rem;
+		margin-bottom: 1.16rem;
+	}
+
+	.link {
+		margin-top: 0.62rem;
+	}
+
+	.loading {
+		padding-left: 0;
+	}
+
+	@media screen and (max-width:414px){
+
+		.card{
+			border: unset;
+			box-shadow: unset;
+		}
+	}
+
+}

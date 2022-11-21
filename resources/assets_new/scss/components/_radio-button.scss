@@ -1,0 +1,20 @@
+.checkbox-button {
+	&__btn {
+		margin-top: 0;
+		@include inputBase;
+		cursor: pointer;
+		height: 4rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	input[type="radio"] {
+		display: none;
+	}
+	input[type="radio"]:checked + &__btn {
+		border-color: $color-primary;
+		background-color: $color-primary;
+		color: $color-white;
+	}
+}

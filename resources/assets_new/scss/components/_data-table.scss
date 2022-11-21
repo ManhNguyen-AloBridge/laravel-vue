@@ -1,0 +1,97 @@
+.dataTables_wrapper {
+	word-break: break-all;
+	position: relative;
+	.u-over-flow-auto-scroll {
+		width: 100%;
+		overflow: overlay;
+	}
+	.dataTables_info {
+		position: absolute;
+		display: inline-block;
+		right: 0;
+		text-align: right;
+		color: $color-input;
+		margin-top: 1.5rem;
+		line-height: 3.1rem;
+		@media screen and (max-width: 425px) {
+			margin-top: 0.5rem;
+		}
+	}
+	.dataTables_paginate {
+		margin-top: 1.5rem;
+		position: relative;
+		display: inline-block;
+		transform: translateX(-50%);
+		left: 50%;
+		text-align: center;
+		@media screen and (max-width: 425px) {
+			margin-top: 4.5rem;
+		}
+	}
+	.paginate_button {
+		&.current {
+			color: $color-white;
+			background-color: $color-primary;
+		}
+		&.disabled {
+			display: none;
+		}
+		text-decoration: none;
+		border: solid 1px #143268;
+		margin-left: 0.9rem;
+		color: $color-primary;
+		background-color: $color-white;
+		border-radius: 4px;
+		display: inline-block;
+		width: 3rem;
+		line-height: 3.1rem;
+		font-size: 1.2rem;
+		letter-spacing: 0.12rem;
+		cursor: pointer;
+		transition: 0.1s;
+		&:hover {
+			color: $color-white;
+			background-color: $color-primary;
+		}
+	}
+	.ellipsis {
+		margin-left: 0.9rem;
+	}
+	.table {
+		a {
+			color: $color-primary;
+			word-break: break-word;
+		}
+		a:hover {
+			color: $color-btn-hover;
+		}
+		th {
+			font-weight: 500;
+			white-space: nowrap;
+		}
+
+		td {
+			word-break: break-word;
+		}
+	}
+
+	.column {
+		min-width: 5rem;
+	}
+
+	@media screen and (max-width: 620px) {
+		.dataTables_paginate {
+			margin-top: 4.5rem;
+		}
+
+		.dataTables_info {
+			margin-top: 0.5rem;
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		.table {
+			font-size: 1.3rem;
+		}
+	}
+}

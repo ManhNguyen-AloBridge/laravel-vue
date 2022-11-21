@@ -1,0 +1,119 @@
+.main-sidebar {
+	background-color: $color-text-title;
+	width: $width-sidebar;
+	position: fixed;
+	min-height: 100vh;
+	height: 100%;
+	z-index: 999;
+	overflow: auto;
+
+	@extend .font-normal;
+
+	i {
+		font-size: 1.8rem;
+	}
+
+	&__header {
+		padding-top: 3rem;
+		padding-bottom: 7rem;
+		a {
+			display: block;
+		}
+		span {
+			text-align: center;
+			display: block;
+			color: $color-white;
+		}
+	}
+
+	&.--close {
+		width: 0;
+		transition: 0.3s;
+	}
+
+	&.--close div {
+		display: none;
+	}
+
+	&.--extend {
+		width: $width-sidebar;
+		transition: 0.3s;
+	}
+
+	.setting {
+		& > .nav-link {
+			background-color: $color-text-title !important;
+		}
+	}
+	.main-item {
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			background-color: $color-background-sidebar-hover;
+		}
+	}
+
+	.nav-item {
+		width: 100%;
+		height: auto;
+	}
+
+	.nav-link {
+		padding-left: 2.8rem;
+		background-color: transparent;
+		text-align: left;
+		white-space: nowrap;
+
+		&:hover,
+		&.active {
+			background-color: $color-background-sidebar-hover;
+		}
+	}
+
+	.sub-menu {
+		padding: 0;
+	}
+
+	.sub-item {
+		background-color: $color-background-sidebar;
+
+		.nav-link {
+			padding: 1rem 0 1rem 2.8rem;
+		}
+	}
+
+	.nav-icon {
+		color: $color-white;
+		background-color: transparent !important;
+	}
+	.nav-text {
+		margin: 0rem;
+		color: $color-white;
+		display: inline-block;
+		background-color: transparent !important;
+		padding-left: 1.5rem;
+	}
+
+	.nav-toggle[aria-expanded='true'] .open-menu-icon {
+		transform: rotate(-90deg);
+	}
+	.nav-toggle .open-menu-icon {
+		margin-left: 11.5rem;
+		transition: all 0.2s ease;
+	}
+
+	#btn-close-sidebar {
+		padding: 5px 15px;
+		border: unset;
+		background: transparent;
+		color: $color-white;
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+	}
+
+	@media screen and (max-width: 992px) {
+		&__header {
+			padding-bottom: 3rem;
+		}
+	}
+}

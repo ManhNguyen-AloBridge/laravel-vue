@@ -1,0 +1,51 @@
+.card {
+	&-actions {
+		position: absolute;
+		right: 0;
+		transform: translateY(-100%);
+		border: 3px solid transparent;
+		border-top-left-radius: 0.25rem;
+		border-top-right-radius: 0.25rem;
+		padding: .25rem 1rem;
+		display: flex;
+		column-gap: .5rem;
+		transition: opacity .3s;
+		z-index: -1;
+		opacity: 0;
+	}
+
+	&:hover > &-actions {
+		// display: block;
+		opacity: 1;
+		z-index: 1;
+	}
+
+	&-actions.--success {
+		border-color: $color-success;
+	}
+
+	&-actions__btn {
+		display: inline-block;
+		border: none;
+		outline: none;
+		background-color: $color-white;
+		color: $color-black;
+		border-radius: 5px;
+		margin: 0;
+		padding: 0;
+	}
+
+	&-divider {
+		height: 2px;
+		width: 100%;
+	}
+
+	&-cv {
+		margin-bottom: 1rem;
+		margin-top: 2rem;
+	}
+
+	&-cv:first-of-type {
+		margin-top: 1rem;
+	}
+}

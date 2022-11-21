@@ -1,0 +1,1 @@
+(()=>{var n=$(".input-zipcode");function i(n){var i,v,l=null===(v=n=null===(i=n)||void 0===i?void 0:i.replace(/\D/g,"").substring(0,7))||void 0===v?void 0:v.length;return 0==l||(l<4?n="〒"+n:l<8&&(n="〒"+n.substring(0,3)+"-"+n.substring(3,7))),n}n.on("keyup",(function(){var v=$(this);n.val(i(v.val()))})),n.val(i(n.val()))})();

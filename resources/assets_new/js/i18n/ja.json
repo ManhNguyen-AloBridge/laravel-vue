@@ -1,0 +1,174 @@
+{
+	"layout": {
+		"header": {
+			"profile": {
+				"setting_profile": "プロフィール設定",
+				"basic_info": "基本情報",
+				"edit_basic_info": "基本情報の編集",
+				"confirm_edit_basic_info": "編集内容の確認",
+				"list_staff": "要員一覧",
+				"detail_personal_info": "要員情報の詳細",
+				"update_personal_info": "要員情報の更新",
+				"confirm_update_personal_info": "更新内容の確認"
+			},
+			"setting_company": {
+				"info": "会社情報設定",
+				"edit": "会社情報の編集",
+				"confirm_edit": "編集の内容確認",
+				"register" : "サブスクリプション",
+				"next_bill" : "次回のインボイス",
+				"payment_history": "支払履歴"
+			}
+		}
+	},
+	"pages": {
+		"profile": {
+			"setting_profile": "プロフィール設定",
+			"edit_basic_info": "基本情報の編集",
+			"confirm_edit_basic_info": "編集内容の確認",
+			"note_title": "編集内容をご確認の上、間違いがなければ画面下の「登録」ボタンを押してください。"
+		},
+		"staff": {
+			"note_title": "更新内容をご確認の上、間違いがなければ画面下の「保存」ボタンを押してください。",
+			"edit_cv": {
+				"no_register_category": "項目未登録",
+				"select_qualification": "資格を選択してください",
+				"select_skill_category": "項目を選択してください",
+				"select_skill_name": "保有技術を選択してください",
+				"select_skill_level": "スキルレベルを選択してください"
+			}
+		},
+		"payment": {
+			"content_cancel_staff_pre": "選択された",
+			"content_cancel_staff_suf": "件のアカウントが解約されます。",
+			"btn_remove_staff": "要員の解約",
+			"btn_remove_staff_selected": "選択要員の詳細"
+		},
+		"dashboard": {
+			"select_parts" :"選択する",
+			"select_all" : "全て表示する",
+			"skill_users" : "スキル保有者",
+			"qualification_users" : "資格保有者",
+			"show" : "もっと見る",
+			"hidden" : "閉じる"
+		},
+		"maintenance": {
+			"confirm_delete_content" : ":start_date〜:end_dateのメンテナンスを削除しますか。"
+		},
+		"notification": {
+			"delete_success" : "お知らせの削除は完了しました。",
+			"delete_error" : "お知らせの削除は失敗しました。"
+		},
+		"edit_cv": {
+			"placeholder": {
+				"projects": {
+						"name": "例）○×開発プロジェクト",
+						"start_date": "例）2017年03月",
+						"end_date": "例）2017年09月",
+						"description": "例）経歴書をクラウド管理するWEBシステムの開発",
+						"env_languages": "例）Java, Apache",
+						"role": "例）PG",
+						"number_of_people": "例）5人"
+				},
+				"qualifications": {
+					"option_at": "例）2017年03月"
+				},
+				"educations": {
+					"end_date": "例）2017年03月",
+					"name": "例）○×大学 情報学科 卒業"
+				}
+			}
+		},
+		"setting": {
+			"payment": {
+				"create_staff": {
+					"email_invalidate": "メールアドレスには、有効な正規表現を指定してください。",
+					"email_existed": "指定のメールアドレスは既に使用されています。"
+				}
+			}
+		},
+		"invitation-code": {
+			"confirm_delete_code" : ":code招待コードを削除しますか。"
+		}
+	},
+	"datatable": {
+		"emptyTable": "テーブルにデータがありません",
+		"info": " _START_ 〜 _END_ 件を表示/ _TOTAL_ 件中",
+		"infoEmpty": " 0 件中 0 から 0 まで表示",
+		"infoFiltered": "（全 _MAX_ 件より抽出）",
+		"infoThousands": ",",
+		"lengthMenu": "_MENU_ 件表示",
+		"loadingRecords": "読み込み中...",
+		"processing": "処理中...",
+		"search": "検索:",
+		"zeroRecords": "一致するレコードがありません",
+		"paginate": {
+			"first": "先頭",
+			"last": "最終",
+			"next": "次",
+			"previous": "前"
+		},
+		"aria": {
+			"sortAscending": ": 列を昇順に並べ替えるにはアクティブにする",
+			"sortDescending": ": 列を降順に並べ替えるにはアクティブにする"
+		},
+		"thousands": ","
+	},
+	"notification_list":{
+		"emptyTable":"お知らせはありません"
+	},
+	"daysOfWeek": ["日", "月", "火", "水", "木", "金", "土"],
+	"monthNames": [
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"9",
+		"10",
+		"11",
+		"12"
+	],
+	"staff": {
+		"update_cv_success": "経歴書更新が完了しました。",
+		"update_cv_fail": "経歴書更新が失敗しました。"
+	},
+	"common": {
+		"delete_setting": ":name を削除しますか？",
+		"space": "　",
+		"btn-register": "登録",
+		"btn-confirm": "確認",
+		"btn-save": "保存"
+	},
+	"dateRangePicker": {
+		"cancel": "キャンセル",
+		"accept": "完了"
+	},
+	"gender": {
+		"0": "男性",
+		"1": "女性",
+		"9": "回答したくない"
+	},
+	"isSpouse": {
+		"0": "無",
+		"1": "有"
+	},
+	"skillCategory": {
+		"label": "項目",
+		"LANGUAGE": "言語",
+		"FRAMEWORK": "フレームワーク",
+		"DATABASE": "データベース",
+		"OS": "OS",
+		"OTHERS": "その他"
+	},
+	"notiToCompany": {
+		"multiple": 0,
+		"all":1
+	},
+	"select_option": {
+		"default": "選択してください"
+	}
+}

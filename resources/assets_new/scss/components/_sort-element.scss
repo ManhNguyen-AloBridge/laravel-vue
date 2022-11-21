@@ -1,0 +1,52 @@
+.sort-element {
+	text-align: center;
+	display: inline-block;
+	&__arrow {
+		padding: 0.5rem;
+		font-size: 1.6rem;
+		cursor: pointer;
+		&:hover {
+			color: $color-link-text;
+		}
+	}
+
+	&__close {
+		color: $color-danger;
+		background-color: $color-drop-down-hover !important;
+	}
+
+	&__number {
+		font-weight: bold;
+		width: 3rem;
+		display: block;
+		border: none;
+		outline: none;
+		text-align: center;
+		background: transparent;
+	}
+
+	.--mobile-mode {
+		position: absolute;
+		display: flex;
+		flex-flow: column;
+		right: -3rem;
+		top: 0;
+	}
+
+	.disabled i {
+		color: $color-border;
+		pointer-events: none;
+	}
+
+	@media screen and (max-width: 576px) {
+		&__item {
+			border: solid 1px #dee2e6;
+			height: 3.36rem;
+			width: 4.64rem;
+			background-color: $color-white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

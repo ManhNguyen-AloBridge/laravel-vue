@@ -1,0 +1,33 @@
+.checkbox {
+	display: flex;
+	align-items: center;
+
+	&__title {
+		@extend .text-md;
+		margin-left: 1.3rem;
+		line-height: 1.75;
+
+		&.--primary {
+			color: $color-primary-text !important;
+		}
+	}
+
+	&__input {
+		width: 2rem;
+		height: 2rem;
+		margin-left: 1.24rem;
+		border-radius: 0.3rem;
+		vertical-align: middle;
+
+		&.--primary {
+			accent-color: $color-primary;
+		}
+		&.--tag-item {
+			width: 3.8rem;
+			height: 3.8rem;
+			border: none;
+			border-radius: 0;
+			accent-color: $color-tag-item;
+		}
+	}
+}

@@ -1,0 +1,104 @@
+.confirm-create-staff-page {
+	.card {
+		width: 71.6rem;
+
+		&__title {
+			margin-bottom: 0.9rem;
+		}
+
+		&__header {
+			margin-bottom: 4.37rem;
+		}
+
+		.row > .col-6:nth-child(2n) {
+			padding-left: 3.75rem;
+		}
+
+		.row > .col-6:nth-child(2n-1) {
+			padding-right: 3.75rem;
+		}
+	}
+
+	.badge {
+		height: 14px;
+		display: inline;
+		vertical-align: middle;
+	}
+
+	.form__label {
+		line-height: 2rem;
+		color: $color-link-text;
+	}
+
+	.form__group {
+		margin-bottom: 1.35rem;
+		p {
+			height: 22px;
+		}
+	}
+
+	button {
+		margin-top: 0;
+	}
+
+	.btn-submit {
+		width: 12rem;
+		height: 4rem;
+		padding: 0.55rem 2.55rem 0.85rem;
+	}
+
+	.separator {
+		&__label {
+			margin: 4.5rem 0 2.85rem 0;
+		}
+	}
+
+	.separator:nth-child(2n) {
+		.separator__label {
+			margin-top: 6.5rem;
+		}
+	}
+
+	.buttons-action {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 2.95rem;
+
+		&__back {
+			margin-top: 1rem;
+			color: $color-fa-time;
+			border: unset;
+			background: transparent;
+		}
+
+		&__back:hover {
+			color: $color-black;
+		}
+	}
+
+	@media screen and (max-width: 425px) {
+		.row {
+			padding: 0rem 1rem;
+		}
+		.u-mb-38 {
+			margin-bottom: 1.2rem;
+		}
+		.form__group {
+			margin-bottom: 1rem;
+		}
+		.buttons-action {
+			margin-top: 3rem;
+		}
+		.card__body {
+			.col-6 {
+				width: 100%;
+				padding-right: unset !important;
+				padding-left: unset !important;
+			}
+		}
+		.separator:nth-child(2n) .separator__label {
+			margin-top: 3.5rem;
+		}
+	}
+}

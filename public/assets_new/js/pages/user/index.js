@@ -1,0 +1,1 @@
+(()=>{var e=$("form[modal-id=confirm-delete-user]");$(".btn-confirm-delete").on("click",(function(){var t=$(this).attr("id-item"),i=$(this).parent().parent(),n=$(i.find("p[key-value=code]")[0]).text(),a=i18next.t("pages.invitation-code.confirm_delete_code").replace(":code",n);e.find("#msg-confirm-delete").text(a),e.attr("action",e.attr("action").replace("id",t))}))})();

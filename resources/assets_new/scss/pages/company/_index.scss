@@ -1,0 +1,68 @@
+.page-company-index {
+	.form__control {
+		width: 33rem;
+	}
+
+	.card-table {
+		word-break: break-all;
+	}
+
+	.search-group {
+		display: flex;
+	}
+
+	.btn-search {
+		margin-left: 1rem;
+	}
+
+	.nowrap {
+		white-space: nowrap;
+	}
+
+	.address,
+	.email {
+		min-width: 22rem;
+	}
+
+	.phone-number {
+		width: 15rem;
+	}
+
+	.url{
+		min-width: 20rem;
+	}
+
+	@media screen and (max-width: 768px) {
+	}
+
+	@media screen and (max-width: 576px) {
+		.form__control {
+			width: 100%;
+		}
+
+		.col-12.col-sm-8 {
+			margin-bottom: 2.3rem;
+		}
+
+		.col-12.col-sm-4.text-right {
+			display: flex;
+		}
+
+		.col-12.col-sm-4.text-right > div {
+			flex-flow: column;
+		}
+
+		.col-12.col-sm-4.text-right a {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 414px) {
+	}
+
+	@media screen and (max-width: 375px) {
+	}
+
+	@media screen and (max-width: 320px) {
+	}
+}

@@ -1,0 +1,44 @@
+.department-position-page {
+	.table{
+		table-layout: fixed;
+
+		tr td:nth-child(2n){
+			display: flex;
+		}
+	}
+
+	.table td {
+		line-height: 0rem;
+		padding: 1rem 1rem;
+		.col-name,
+		.col-action {
+			line-height: 1.5;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.col-name{
+			margin-right: 1rem;
+			width: -webkit-fill-available;
+			overflow: auto;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.u-with-500 {
+			width: auto;
+		}
+
+		.card {
+			margin-top: 1.9rem;
+		}
+
+		.card.--md {
+			padding: 3rem 1.6rem 4rem;
+		}
+
+		.card-table .input-field {
+			line-height: 95%;
+			width: calc(100% - 3rem);
+		}
+	}
+}

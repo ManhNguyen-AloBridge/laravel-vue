@@ -1,0 +1,81 @@
+.vr {
+	border: solid 1px $color-border-default;
+	border-radius: 4px;
+    padding: 7px 5px;
+	min-height: 54px;
+    height: auto;
+
+	.item-email{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		border: 1px solid $color-border-default;
+		border-radius: 4px;
+		padding: 4px 10px;
+		cursor: default;
+		background-color: $color-primary;
+		border-color: $color-primary-border;
+		color: $color-white;
+		display: inline-block;
+		margin: 2px 2px;
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__icon-remove {
+		color: $color-white-disable;
+
+		&:hover {
+			color: $color-white;
+		}
+	}
+
+	&__input-email{
+		border: unset;
+		resize: none;
+		overflow: hidden;
+		flex-grow: 1;
+		padding-top: 7px;
+
+		&:focus-visible{
+			outline: none;
+		}
+	}
+
+	&__email{
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+}
+
+.mail-body{
+	height: 110px !important;
+    resize: unset;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: $color-bg-table-cv-header;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: $color-scrollbar-default;
+		border-radius: 5px;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: $color-scrollbar-hover;
+	}
+}

@@ -1,0 +1,131 @@
+.notification-list-page {
+	.card-table {
+		margin-top: 2.2rem;
+		word-break: break-all;
+	}
+
+	.thead-title{
+		min-width: 15rem;
+	}
+
+	.thead-date,.thead-noti-to{
+		min-width: 11rem;
+	}
+
+	.content-header {
+		margin-bottom: 1rem;
+	}
+
+	.column {
+		text-align: left;
+	}
+
+	.dataTables_wrapper {
+		word-break: break-word;
+	}
+
+	.action {
+		width: 11rem;
+		min-width: 11rem;
+	}
+
+	.btn-add-company {
+		margin: unset;
+	}
+
+	button:focus-visible {
+		outline: none;
+	}
+
+	.btn-confirm-delete,
+	.btn-confirm-update,
+	.btn-update {
+		width: 4rem;
+		border: unset;
+		color: $color-link-text;
+		font-size: 1.8rem;
+		background: transparent;
+
+		&:hover {
+			color: $color-black;
+		}
+	}
+
+	.btn-confirm-finish {
+		color: $color-danger-disabled;
+
+		&:hover {
+			color: $color-danger;
+		}
+	}
+
+	.level {
+		color: $color-white;
+		border: solid 1px;
+		width: 3rem;
+		text-align: center;
+		border-radius: 0.4rem;
+		font-size: 1rem;
+		display: inline-block;
+
+		&.--general {
+			background-color: $color-text-note;
+		}
+
+		&.--important {
+			background-color: $color-danger;
+		}
+	}
+
+	.modal-footer {
+		padding-top: 0;
+	}
+	.tag-box-name-company {
+		padding: 1.13rem 1.5rem;
+		overflow: unset;
+		.icon-search {
+			position: absolute;
+			color: $color-fa-time;
+			left: 11.5rem;
+			top: 1.5rem;
+		}
+	}
+
+	.search-box__input {
+		width: 14.2rem;
+		padding: 0 2rem 0 0;
+	}
+
+	.suggest-search {
+		list-style: none;
+		background-color: #fff;
+		top: 3.7rem;
+		z-index: 99;
+		max-height: 14rem;
+		cursor: default;
+		overflow: auto;
+		border-bottom: 1px solid #dee2e6;
+		border-left: 1px solid #dee2e6;
+		border-right: 1px solid #dee2e6;
+		border-radius: 0.4rem;
+		width: 40rem;
+		&__item:hover {
+			background: #006fe6;
+			color: #fff;
+		}
+	}
+	.tag-box {
+		max-height: 13.6rem;
+		overflow-y: scroll;
+		.tag {
+			background-color: #143268;
+			color: #fff;
+		}
+	}
+
+	.u-over-flow-auto-scroll {
+		&::-webkit-scrollbar-track {
+			background: $color-white;
+		}
+	}
+}

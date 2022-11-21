@@ -1,0 +1,15 @@
+.input-multi-email {
+	resize: none;
+	overflow: auto;
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #dddddd;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #b8b8b8;
+	}
+}

@@ -1,0 +1,70 @@
+.page-auth {
+	background-color: $color-white;
+	width: 100%;
+	height: 100vh;
+	min-height: 52rem;
+	position: relative;
+	overflow: hidden;
+
+	@include flexCenterItem;
+	.background,
+	.black-background {
+		width: calc(50% - 23.5rem);
+		height: 100%;
+		position: absolute;
+		right: 0%;
+		top: 0rem;
+	}
+	.background img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.black-background {
+		background-color: rgba(0, 0, 0, 0.64);
+	}
+	.login-box {
+		margin-top: 3.4rem;
+		width: 55.1rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		.login-box, .card {
+			min-width: 39rem;
+			width: 39rem;
+		}
+	}
+
+	@media screen and (max-width: 414px) {
+		.login-box, .card  {
+			min-width: 41.4rem;
+			width: 41.4rem;
+		}
+
+		.card {
+			border: unset;
+			box-shadow: unset;
+			padding: 4rem 2.3rem 0 2.3rem;
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+		.login-box,.card {
+			width: 37.5rem;
+			min-width: 37.5rem;
+		}
+
+	}
+
+	@media screen and (max-width: 320px) {
+		.login-box,.card {
+			margin-top: 0;
+			width: 30rem;
+			min-width: 30rem;
+		}
+
+		.card {
+			padding: 4rem 0.8rem 0;
+		}
+	}
+}

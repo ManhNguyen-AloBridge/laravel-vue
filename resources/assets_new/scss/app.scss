@@ -1,0 +1,95 @@
+@charset 'UTF-8';
+@import 'vendors/bootstrap.scss';
+@import 'vendors/ionic-2.0.1/scss/ionicons.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~toastr/toastr.scss';
+@import '~select2/dist/css/select2.min.css';
+@import '~daterangepicker/daterangepicker.css';
+
+//  *************** ABSTRACTS ***************
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+//  *************** BASE ***************
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/animations';
+@import 'base/utilities';
+@import 'base/reset';
+
+//  *************** COMPONENTS ***************
+@import 'components/form';
+@import 'components/button';
+@import 'components/validation-error';
+@import 'components/card';
+@import 'components/link';
+@import 'components/modal';
+@import 'components/auth/background';
+@import 'components/process';
+@import 'components/label';
+@import 'components/radio-button';
+@import 'components/badge';
+@import 'components/select-box';
+@import 'components/table';
+@import 'components/separator-label';
+@import 'components/tab';
+@import 'components/card-table';
+@import 'components/check-box';
+@import 'components/data-table';
+@import 'components/shared/tag-box';
+@import 'components/shared/tag';
+@import 'components/search-form';
+@import 'components/search-box';
+@import 'components/divider';
+@import 'components/select2';
+@import 'components/select-and-or';
+@import 'components/checkbox-round';
+@import 'components/form-table';
+@import 'components/date-range-picker';
+@import 'components/select-checkbox';
+@import 'components/staff/cv';
+@import 'components/dashboard/user-list';
+@import 'components/plugin/date-picker';
+@import 'components/sort-element';
+@import 'components/placeholder-select';
+
+//  *************** LAYOUTS ***************
+@import 'layout/header';
+@import 'layout/sidebar';
+@import 'layout/content';
+@import 'layout/footer';
+@import 'layout/loading';
+
+// *************** PAGES ***************
+@import 'pages/auth/login';
+@import 'pages/auth/forgot-password';
+@import 'pages/register';
+@import 'pages/auth/reset-password';
+@import 'pages/auth/changed-password'; // @import 'themes/';
+@import 'pages/profile/index';
+@import 'pages/setting/edit-resume';
+@import 'pages/setting/mail';
+@import 'pages/mail/index';
+@import 'pages/auth/change-password';
+@import 'pages/staff/index';
+@import 'pages/staff/show';
+@import 'pages/company/index';
+@import 'pages/setting/payment-page';
+@import 'pages/setting/index';
+@import 'pages/company/create';
+@import 'pages/company/show';
+@import 'pages/staff/create';
+@import 'pages/staff/confirm-create';
+@import 'pages/staff/cv';
+@import 'pages/dashboard/index';
+@import 'pages/staff/edit-cv';
+@import 'pages/price/index';
+@import 'pages/maintenance/index';
+@import 'pages/notification/index';
+@import 'pages/notification/edit';
+@import 'pages/invitation-code/index';
+@import 'pages/department-position/index';
+@import 'pages/company-users/index';
+// @import 'themes/';

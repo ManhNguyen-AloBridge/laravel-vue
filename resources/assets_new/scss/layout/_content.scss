@@ -1,0 +1,120 @@
+.main-content {
+	background-color: $color-background-body;
+	min-height: 100vh;
+
+	&.--extend {
+		margin-left: 0;
+		transition: 0.3s;
+	}
+
+	&.--limit {
+		margin-left: $width-sidebar;
+		transition: 0.3s;
+	}
+
+	#btn-open-sidebar {
+		border: unset;
+		padding: 1rem 1rem 1rem 0;
+		background: transparent;
+		font-size: 2.4rem;
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	.container {
+		padding: 6.3rem 4rem;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&-heading {
+		margin-bottom: 3.9rem;
+
+		i {
+			margin-right: 1.5rem;
+		}
+
+		&-main {
+			@extend .text-2xl;
+			margin-bottom: 10px;
+			display: flex;
+			margin-right: 2.05rem;
+
+			.fa-pen {
+				margin-left: 0.6rem;
+			}
+			p {
+				display: block;
+				line-height: 1.75;
+				color: $color-input;
+				margin: 0 !important;
+				@extend .text-md;
+			}
+
+			&__content {
+				margin-right: 2.05rem;
+				font-size: 2rem;
+			}
+
+			&__note {
+				font-size: 1.4rem;
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		&__sub {
+			color: $color-input;
+			@extend .text-md;
+		}
+	}
+
+	&-heading.--have-desc {
+		display: flex;
+		align-items: center;
+		.main-content-heading__sub {
+			margin-left: 6.3rem;
+		}
+	}
+
+	.title-content-vertical {
+		@extend .text-md;
+		margin-top: 1rem !important;
+		display: block;
+		line-height: 1.75;
+		color: $color-input;
+	}
+
+	@media screen and (max-width: 768px) {
+		&-heading {
+			margin: 4rem 0;
+			padding: 0 1.5rem;
+		}
+
+		&-heading-main {
+			flex-flow: column;
+		}
+
+		&-heading-main{
+			margin-bottom: 0;
+		}
+
+		.title-content-vertical{
+			margin-top:0;
+		}
+
+		&.--limit {
+			margin-left: 0;
+			transition: 0.3s;
+		}
+		.header {
+			padding: 0 1.6rem;
+		}
+
+		.container {
+			padding: 5rem 0.8rem 6.3rem;
+		}
+	}
+}

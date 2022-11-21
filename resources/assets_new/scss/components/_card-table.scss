@@ -1,0 +1,68 @@
+.card-table {
+	margin: 0rem auto;
+	.card-header {
+		margin-bottom: 3rem;
+	}
+	.table-id {
+		width: 5rem;
+	}
+	.col-action {
+		z-index: 100;
+	}
+	.float-right {
+		float: right;
+	}
+	.fa-grey {
+		color: $color-fa-time;
+	}
+	.fa-right {
+		&:hover {
+			color: $color-black;
+		}
+		margin-right: 0.5rem;
+	}
+	.btn-add,
+	.btn-submit {
+		margin-top: 1rem;
+		float: right;
+	}
+	.background-color-input {
+		background-color: $color-input-card-table;
+	}
+	.input-field {
+		line-height: 95%;
+		width: 95%;
+	}
+	.input-text {
+		background-color: $color-input-card-table;
+		border: 0px;
+		&:focus {
+			outline: none;
+		}
+	}
+	.nowrap {
+		white-space: nowrap;
+	}
+}
+
+.card-table-modal {
+	.btn-cancel-delete {
+		background-color: $color-white;
+		border: $color-white;
+		padding: 0rem;
+		color: $color-link-text;
+		&:hover {
+			color: $color-black;
+		}
+	}
+	.btn-submit-delete {
+		background-color: $color-danger;
+		&:hover {
+			background-color: $color-danger-hover;
+		}
+	}
+	.modal-footer {
+		padding-top: 1rem;
+		padding-bottom: 4rem;
+	}
+}

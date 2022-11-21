@@ -1,0 +1,33 @@
+<?php
+
+return [
+	'page_title' => 'スキル・保有資格設定',
+	'title_content_vertical' => 'スキル情報・保有資格情報の登録・編集をすることができます。',
+	'skill_list' => 'スキル一覧',
+	'level_list' => 'スキルレベル一覧',
+	'level' => 'レベル名',
+	'qualification_list' => '保有資格一覧',
+	'id' => '#',
+	'button_add' => '追加',
+	'button_save' => '保存',
+	'button_cancel' => 'キャンセル',
+	'title_modal_skill_delete' => 'スキルの削除',
+	'title_modal_level_delete' => 'スキルレベルの削除',
+	'title_modal_qualification_delete' => '保有資格の削除',
+	'skill' => 'スキル',
+	'skill_content' => 'スキルシートに記入するスキル名を登録できます。',
+	'add_skill_btn' => 'スキルを追加',
+	'qualification' => '保有資格',
+	'qualification_content' => 'スキルシートに記入する資格名を登録できます。',
+	'add_qualification' => '資格欄を追加',
+	'add_qualification_btn' => '資格を追加',
+	'placeholder_qualification' => '資格名を入力',
+	'skill_level' => 'スキルレベル',
+	'skill_level_content' => 'スキルの習得レベルの基準を設定できます。',
+	'add_skill_level' => '技術欄を追加',
+	'select_category' => '選択してください',
+	'placeholder_skill_name' => '例）C言語',
+	'add_skill_level_btn' => 'レベル欄を追加',
+	'placeholder_number' => '例）1',
+	'placeholder_name' => '例）レベル3'
+];

@@ -1,0 +1,26 @@
+.checkbox-round {
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: auto;
+	background-color: #f8f7f7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	span {
+		display: none;
+	}
+
+	input[type='checkbox'] {
+		display: none;
+	}
+
+	input[type='checkbox']:checked ~ span {
+		display: block;
+	}
+
+	&.--error {
+		background-color: $color-bg-input-error;
+	}
+}

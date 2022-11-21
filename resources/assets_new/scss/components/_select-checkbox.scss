@@ -1,0 +1,82 @@
+.select-checkbox {
+	width: 100%;
+	position: relative;
+	z-index: 999;
+	animation: all 0.1s;
+
+	&:hover {
+		background-color: $color-input-card-table;
+	}
+
+	&__selection {
+		padding: 1rem 5rem 1rem 2.2rem;
+		box-sizing: border-box;
+		border-radius: 4px;
+		border: solid 1px $color-btn-gray;
+		outline: none;
+		font-size: 1.4rem;
+		height: 4rem;
+		line-height: 1.8rem;
+		letter-spacing: 0.14rem;
+		background: url("data:image/svg+xml;charset=utf-8,%3Csvg height='12' width='12' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E")
+			no-repeat;
+		background-position: calc(100% - 0.5rem) center !important;
+		-webkit-appearance: none !important;
+		-moz-appearance: none !important;
+		appearance: none !important;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	&__list {
+		position: absolute;
+		left: 0;
+		top: 3.8rem;
+		width: 100%;
+		list-style-type: none;
+		display: none;
+		border: 1px solid $color-btn-gray;
+		background: $color-white;
+		max-height: 15rem;
+		overflow-y: scroll;
+	}
+
+	&__item {
+		width: 100%;
+		height: 4rem;
+		display: flex;
+		align-items: center;
+		animation: all 0.1s;
+		cursor: pointer;
+		padding-left: 1.35rem;
+
+		&:hover,
+		&.--selected {
+			background-color: $color-drop-down-hover;
+		}
+	}
+
+	&__checkbox {
+		display: flex;
+		align-items: center;
+
+		input[type='checkbox'] {
+			margin-left: 0;
+			flex-shrink: 0;
+		}
+	}
+
+	&__label-checkbox {
+		display: block;
+		cursor: pointer;
+		padding: 1.3rem 0.8rem 1.3rem 0;
+		width: 100%;
+	}
+
+
+	@media screen and (max-width: 375px) {
+		&__selection {
+			padding: 1rem 3.7rem 1rem 1rem;
+		}
+}
+}

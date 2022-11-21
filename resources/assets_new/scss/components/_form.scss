@@ -1,0 +1,106 @@
+.form {
+	@include oneRow(2.1rem);
+	@include oneRow(3.25rem, 'large');
+
+	&__group {
+		margin-bottom: 2.55rem;
+	}
+	&__group.--horizontal {
+		display: flex;
+		align-items: center;
+
+		.form__label {
+			word-break: keep-all;
+			min-width: 7.6rem;
+			margin-right: 1rem;
+		}
+	}
+
+	&__label {
+		display: block;
+		font-size: 1.4rem;
+		margin-bottom: 0.5rem;
+		letter-spacing: 0.14rem;
+		line-height: 2.45rem;
+		color: $color-primary-text;
+		font-weight: 400;
+	}
+	&__input,
+	&__textarea {
+		width: 100%;
+		padding: 0.9rem 1.51rem;
+		border: solid 1px $color-btn-gray;
+		outline: none;
+		font-size: 1.4rem;
+		line-height: 2rem;
+		letter-spacing: 0.14rem;
+		border-radius: 4px;
+
+		&::placeholder {
+			color: $color-input;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			background-color: $color-input-card-table;
+		}
+
+		&.--input {
+			border: solid 1px $color-input !important;
+		}
+	}
+	&__input {
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			-webkit-box-shadow: 0 0 0 3rem $color-tag-item inset !important;
+		}
+		&.--error {
+			border-color: $color-danger;
+			background-color: $color-background-input-error;
+			&:-webkit-autofill,
+			&:-webkit-autofill:focus,
+			&:-webkit-autofill:active {
+				-webkit-box-shadow: 0 0 0 3rem $color-background-input-error
+					inset !important;
+			}
+		}
+
+		&.--sm {
+			padding: 0.51rem 1.51rem;
+		}
+	}
+
+	&__textarea {
+		resize: none;
+	}
+
+	&__control {
+		width: 100%;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+
+		&:not(:last-of-type) {
+			margin-right: 7.6rem;
+		}
+	}
+
+	&-read-only {
+		label.form__label,
+		p.border-bottom {
+			padding-left: 0.7rem !important;
+			display: block !important;
+		}
+		.form__input {
+			display: none !important;
+		}
+	}
+}

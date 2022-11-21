@@ -1,0 +1,39 @@
+.tabs-block {
+	background-color: $color-white;
+
+	.nav-tabs {
+		padding: 0 4.5rem;
+		margin-bottom: 1.9rem;
+
+		.nav-item > .active {
+			border-bottom-color: $color-border-tab-active !important;
+			color: $color-primary-text;
+		}
+
+		.nav-link {
+			margin: 0 2rem;
+			padding: 1rem 0;
+			height: 5rem;
+			font-size: 1.4rem;
+			color: $color-link-text;
+			display: flex;
+			align-items: center;
+			background-color: transparent;
+			border: none;
+			border-bottom: 2.4px solid transparent;
+
+			&:hover {
+				border-bottom: solid 2.4px $color-border-tab-active !important;
+				color: $color-primary-text;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.nav-tabs {
+			padding: 0 1.5rem;
+			margin-bottom: 1.95rem;
+		}
+
+	}
+}

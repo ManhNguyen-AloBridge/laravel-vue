@@ -1,0 +1,61 @@
+.table-cv {
+	background-color: $color-white;
+
+	th {
+		background-color: $color-bg-table-cv-header;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 14px;
+		min-width: 40px;
+		width: 104px;
+		padding: 0 2px;
+	}
+
+	td {
+		padding: 0;
+		transition: all 0.2s;
+		&.align-middle-table {
+			width: 16%;
+			tbody tr td {
+				&.subhead {
+					width: 44px;
+					height: 50px;
+					overflow-wrap: anywhere;
+					padding: 2px 4px;
+				}
+				&.chose {
+					height: 40px;
+					vertical-align: center;
+				}
+			}
+		}
+	}
+
+	td:not(.table-cv__divider):hover {
+		cursor: text;
+		background-color: $color-bg-table-cv-header;
+	}
+
+	td.table-cv__no-border-top {
+		border-top: none;
+	}
+
+	td.table-cv__no-border-bottom {
+		border-bottom: none;
+	}
+
+	&__textarea,
+	&__input {
+		background-color: transparent;
+		font-size: 0.875rem;
+		border: none;
+		outline: none;
+	}
+
+	&__textarea {
+		resize: none;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+}
