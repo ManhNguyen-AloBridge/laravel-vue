@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "paths": {
-      "@utils/*": ["src/utils/*"],
-      "@pages/*": ["src/pages/*"],
-      "@apis/*": ["src/apis/*"],
-      "@images/*": ["src/assets/images/*"],
-      "@/*": ["src/*"],
+      "@utils/*": ["resources/vue/utils/*"],
+      "@pages/*": ["resources/vue/pages/*"],
+      "@apis/*": ["resources/vue/apis/*"],
+      "@images/*": ["resources/vue/assets/images/*"],
+      "@/*": ["resources/vue/*"],
     },
     "noImplicitAny": true,
     "baseUrl": ".",
-    "rootDirs": ["src"]
+    "rootDirs": ["resources/vue"]
   }
 }

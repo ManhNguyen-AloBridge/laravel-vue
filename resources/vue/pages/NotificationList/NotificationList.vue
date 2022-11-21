@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from '@/plugins/vueI18n';
+import { useI18n } from '../../plugins/vueI18n';
 import { BaseSimpleTable } from '@/components/BaseDataTable';
 import notificationApi from '@apis/notification.api';
 import { ApiResponse } from '@/types/api';

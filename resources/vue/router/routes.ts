@@ -1,8 +1,10 @@
 import { RouteRecordRaw } from 'vue-router';
 import notification from './notification';
+// import product from './product';
 
 const routes: RouteRecordRaw[] = [
   ...notification,
+//   ...product,
   {
     path: '/:pathMatch(.*)*',
     name: 'not_found',

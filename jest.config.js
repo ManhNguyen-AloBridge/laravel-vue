@@ -8,10 +8,10 @@ module.exports = {
       experimentalCSSCompile: false,
     },
   },
-  setupFiles: ['<rootDir>/src/test/setup.ts'],
+  setupFiles: ['<rootDir>/resource/vue/src/test/setup.ts'],
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*', '!src/**/*.stories.ts', '!src/**/*.d.ts'],
+  collectCoverageFrom: ['resource/vue/**/*', '!resource/vue/**/*.stories.ts', '!resource/vue/**/*.d.ts'],
   transform: {
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',
     '.(ts|tsx)$': 'ts-jest',
