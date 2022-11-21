@@ -1,0 +1,49 @@
+@import './variables';
+
+.tab {
+  display: flex;
+  height: $tab-height;
+  position: relative;
+
+  &__active-slider {
+    height: $tab-active-slider-height;
+    transition: $tab-active-slider-transition;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    min-width: $tab-item-min-width;
+    background-color: $primary;
+    left: 0;
+    width: $tab-item-min-width;
+
+    &.--init {
+      transition: none;
+    }
+  }
+
+  &__item {
+    flex: 1 1 auto;
+    width: 100%;
+    white-space: normal;
+    font-size: $tab-item-font-size;
+    letter-spacing: $tab-item-letter-spacing;
+    font-weight: $tab-item-font-weight;
+    min-width: $tab-item-min-width;
+    max-width: $tab-item-max-width;
+    color: $tab-item-color;
+    outline: none;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover,
+    &.--active {
+      color: $tab-item-active-color;
+    }
+  }
+}

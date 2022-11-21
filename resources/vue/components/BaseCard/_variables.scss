@@ -1,0 +1,12 @@
+@import './../../assets/scss/variables';
+
+$card-box-shadow: 0 3px 6px 0 rgba($black, 0.03);
+$card-border-color: rgba(112, 112, 112, 0.14);
+$card-border-width: 1px !default;
+$card-border-radius: 0 !default;
+$card-bg: $white !default;
+$card-color: null !default;
+$card-padding: 4rem;
+$card-header-padding: 0 0 4rem !default;
+$card-body-padding: 0 !default;
+$card-footer-padding: null !default;

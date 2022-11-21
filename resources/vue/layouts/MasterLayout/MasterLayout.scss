@@ -1,0 +1,22 @@
+@import '../LayoutSidebar/variables';
+@import './../../assets/scss/mixins';
+
+.main-content {
+  margin-left: $sidebar-width;
+  position: relative;
+  min-height: 100vh;
+  background-color: #f7f8fa;
+  transition: 0.3s;
+
+  > .container {
+    padding: 6.3rem 4rem;
+  }
+
+  @include md() {
+    margin-left: 0;
+
+    > .container {
+      padding: 6.3rem 1rem;
+    }
+  }
+}

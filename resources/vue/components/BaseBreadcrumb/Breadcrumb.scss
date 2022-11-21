@@ -1,0 +1,26 @@
+@import './variables';
+
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  font-size: $breadcrumb-font-size;
+  color: $breadcrumb-color;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:not(:first-of-type):before {
+    display: inline-block;
+    content: $breadcrumb-divider;
+    margin: $breadcrumb-divider-margin;
+    height: $breadcrumb-divider-height;
+    width: $breadcrumb-divider-width;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,19 @@
+@import './../../assets/scss/variables';
+
+$datatable-background-color: $white !default;
+$datatable-border-color: #d9d9d9 !default;
+$datatable-color: #222 !default;
+$datatable-font-size: $font-size-base !default;
+$datatable-letter-spacing: $letter-spacing-base !default;
+$datatable-th-font-size: $font-size-base !default;
+$datatable-th-letter-spacing: $letter-spacing-base !default;
+$datatable-th-font-weight: $font-weight-base !default;
+$datatable-th-bg-color: rgba(20, 50, 104, 0.12) !default;
+$datatable-th-line-height: 1.7rem !default;
+$datatable-th-padding: 1rem 0.5rem !default;
+$datatable-th-font-weight: 500 !default;
+$datatable-footer-margin-top: 1.5rem !default;
+$datatable-info-color: #b2b2b2;
+$datatable-sort-icon-height: 1.6rem;
+$datatable-sort-icon-width: 1.6rem;
+$datatable-sort-icon-font-size: 1.6rem;

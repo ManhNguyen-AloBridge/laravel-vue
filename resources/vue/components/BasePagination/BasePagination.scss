@@ -1,0 +1,38 @@
+@import './variables';
+
+.pagination {
+  list-style-type: none;
+  display: inline-flex;
+  gap: $pagination-gap;
+
+  &__item {
+    border-width: $pagination-item-border-width;
+    border-style: solid;
+    display: inline-block;
+    font-size: $pagination-item-font-size;
+    transition: $pagination-item-transition;
+    border-radius: $pagination-item-border-radius;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    padding: $pagination-link-padding;
+    height: $pagination-link-height;
+    min-width: $pagination-link-height;
+    line-height: $pagination-link-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $pagination-link-font-size;
+    color: $primary;
+    transition: $pagination-link-transition;
+    font-family: $pagination-font-size;
+  }
+
+  &__item.--active &__link,
+  &__item &__link:not(.--disabled):hover {
+    background-color: $primary;
+    color: $white;
+  }
+}

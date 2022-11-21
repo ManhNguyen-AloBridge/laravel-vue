@@ -1,0 +1,20 @@
+@import './../../assets/scss/variables';
+
+$checkbox-width: 2rem !default;
+$checkbox-radius: 0.3rem !default;
+$checkbox-radius: 0.3rem !default;
+$checkbox-margin-bottom: 0.5rem !default;
+$checkbox-label-margin-left: 1rem !default;
+$checkbox-label-line-height: 1.5 !default;
+$checkbox-label-cursor: null !default;
+$checkbox-transition: background-color 0.25s ease, border-color 0.25s ease, background-position 0.15s ease-in-out,
+  opacity 0.15s ease-out, box-shadow 0.15s ease-in-out !default;
+$checkbox-transition-time: 0.25s !default;
+$checkbox-after-transition: opacity $checkbox-transition-time ease-in-out !default;
+$check-input-after-color: $white;
+
+$checkbox-switch-width: 4rem;
+$checkbox-switch-height: 2rem;
+$checkbox-switch-radius: 1rem;
+$checkbox-switch-padding: 0.1rem;
+$checkbox-switch-border-width: 0.1rem;

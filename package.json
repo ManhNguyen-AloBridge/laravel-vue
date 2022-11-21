@@ -1,27 +1,46 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
-    },
-    "devDependencies": {
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.55.0",
-        "vue-loader": "^17.0.0"
-    },
-    "dependencies": {
-        "sweetalert2": "^11.5.2",
-        "vue": "^3.2.36",
-        "vue-axios": "^3.4.1",
-        "vue-router": "^4.0.13"
-    }
+  "name": "fe",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src",
+    "format": "prettier . --write",
+    "deploy-stg": "aws --region ap-southeast-1 --profile [giangtuan-vue-deployer] s3 sync ./dist s3://[vue3-ts-example] --delete"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.4",
+    "@vueuse/core": "^9.4.0",
+    "axios": "^0.27.2",
+    "bootstrap": "5.1.3",
+    "dayjs": "^1.11.6",
+    "http-status-codes": "^2.2.0",
+    "jest": "^28.1.3",
+    "moment": "^2.29.4",
+    "qs": "^6.11.0",
+    "vue": "^3.2.25",
+    "vue-flatpickr-component": "^9.0.8",
+    "vue-i18n": "^9.2.0",
+    "vue-router": "^4.0.15",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuetify": "^2.6.9",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.2.0",
+    "prettier": "2.7.1",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.7",
+    "vite-plugin-eslint": "^1.7.0",
+    "vue-tsc": "^0.34.7"
+  }
 }

@@ -1,0 +1,22 @@
+@import './variables';
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+
+  &__input {
+    width: $radio-width;
+    height: $radio-width;
+  }
+
+  &__label {
+    font-size: $radio-label-font-size;
+    margin-left: $radio-label-margin-left;
+  }
+
+  @each $color, $value in $theme-colors {
+    &.--#{$color} &__input:checked {
+      accent-color: $value;
+    }
+  }
+}

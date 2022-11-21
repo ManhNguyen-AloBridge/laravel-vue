@@ -1,0 +1,85 @@
+@import './../../assets/scss/variables';
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  height: 4rem;
+  position: relative;
+  margin-left: auto;
+
+  .dropdown-toggle::after {
+    content: unset;
+  }
+
+  .dropdown-menu {
+    width: 30rem;
+    height: 18rem;
+    left: inherit;
+    right: 0px;
+    top: 4rem;
+    font-size: 1.4rem;
+  }
+
+  .dropdown-item {
+    width: fit-content;
+  }
+
+  &__dropdown {
+    display: flex;
+  }
+
+  &__dropdown-content {
+    padding: 0 2.3rem;
+  }
+
+  &__link {
+    list-style: none;
+  }
+
+  &__avatar {
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+  }
+
+  &__user {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 0;
+
+    i {
+      margin-left: 15px;
+      color: $primary;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .navbar .dropdown-menu {
+    width: 27.6rem;
+    height: 16rem;
+    left: inherit;
+    right: -1.5rem;
+    top: 3rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .navbar .dropdown-menu {
+    width: 25.6rem;
+    height: 14rem;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar .dropdown-menu {
+    width: 24.6rem;
+    height: 13rem;
+  }
+}

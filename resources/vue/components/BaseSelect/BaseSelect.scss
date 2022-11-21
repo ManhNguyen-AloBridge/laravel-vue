@@ -1,0 +1,21 @@
+@import './../../assets/scss/mixins';
+@import './variables';
+
+.select {
+  @include formInput;
+  width: 100%;
+  background-image: $select-indicator;
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 2rem);
+  background-position-y: 50%;
+  appearance: none !important;
+  padding: $select-padding;
+
+  &.--lg {
+    padding: $select-padding-lg;
+  }
+
+  &.--sm {
+    padding: $select-padding-sm;
+  }
+}

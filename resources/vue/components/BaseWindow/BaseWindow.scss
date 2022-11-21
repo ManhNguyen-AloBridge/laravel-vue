@@ -1,0 +1,18 @@
+@import './variables';
+
+.window {
+  &__item {
+    transition: $window-transition;
+    opacity: 0;
+    display: none;
+
+    &.--active {
+      opacity: 1;
+      // display: block;
+    }
+
+    &.--show {
+      display: block;
+    }
+  }
+}

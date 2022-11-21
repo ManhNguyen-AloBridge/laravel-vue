@@ -1,0 +1,120 @@
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexCenterItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin positionCenterX($position) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin formInput() {
+  display: block;
+  width: 100%;
+  padding: $input-padding-y $input-padding-x;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+  transition: $input-transition;
+  height: $input-height;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+    outline: 0;
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+
+  &.--sm {
+    height: $input-height-sm;
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    font-size: $input-font-size-sm;
+  }
+
+  &.--lg {
+    height: $input-height-lg;
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    font-size: $input-font-size-lg;
+  }
+}
+
+@mixin hover() {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin hover-focus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus() {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active() {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint) {
+  @media only screen and (max-width:#{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media only screen and (max-width:#{map-get($breakpoints, "sm")}) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media only screen and (max-width:#{map-get($breakpoints, "md")}) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media only screen and (max-width:#{map-get($breakpoints, "lg")}) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media only screen and (max-width:#{map-get($breakpoints, "xl")}) {
+    @content;
+  }
+}
+
+@mixin xxl() {
+  @media #{map-get($breakpoints, "xxl")} {
+    @content;
+  }
+}

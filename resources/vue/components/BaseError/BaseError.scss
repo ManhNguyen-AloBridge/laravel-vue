@@ -1,0 +1,8 @@
+@import './variables';
+
+.validate-error {
+  color: $error-color;
+  font-size: $error-font-size;
+  margin: $error-margin;
+  text-align: left;
+}

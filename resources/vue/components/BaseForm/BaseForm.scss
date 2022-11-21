@@ -1,0 +1,38 @@
+@import '../../assets/scss/mixins';
+@import './variables';
+
+.form {
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__control,
+  &__input,
+  &__textarea {
+    @include formInput;
+  }
+
+  &__textarea {
+    height: unset;
+    resize: none;
+  }
+
+  &__label {
+    display: block;
+    font-size: $form-label-font-size;
+    font-weight: $form-label-font-weight;
+    margin-bottom: $form-label-margin-bottom;
+    color: $form-label-color;
+    margin-left: $form-label-margin-left;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    .form__label {
+      margin-bottom: 0;
+    }
+  }
+}

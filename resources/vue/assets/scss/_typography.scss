@@ -1,0 +1,76 @@
+.text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  &-3xs {
+    font-size: 0.8rem;
+  }
+  &-2xs {
+    font-size: 0.9rem;
+  }
+  &-xs {
+    font-size: 1.1rem;
+  }
+  &-2sm {
+    font-size: 1rem;
+  }
+  &-sm {
+    font-size: 1.3rem;
+  }
+  &-md {
+    font-size: 1.4rem;
+  }
+  &-lg {
+    font-size: 1.6rem;
+  }
+  &-xl {
+    font-size: 1.8rem;
+  }
+  &-2xl {
+    font-size: 2rem;
+  }
+  &-3xl {
+    font-size: 2.2rem;
+  }
+  &-4xl {
+    font-size: 2.4rem;
+  }
+  &-5xl {
+    font-size: 3rem;
+  }
+}
+
+.font {
+  &-thin {
+    font-weight: 100;
+  }
+  &-extralight {
+    font-weight: 200;
+  }
+  &-light {
+    font-weight: 300;
+  }
+  &-normal {
+    font-weight: 400;
+  }
+  &-medium {
+    font-weight: 500;
+  }
+  &-semibold {
+    font-weight: 600;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+  &-extrabold {
+    font-weight: 800;
+  }
+  &-black {
+    font-weight: 900;
+  }
+}
+
+.text-area {
+  white-space: pre-line;
+}

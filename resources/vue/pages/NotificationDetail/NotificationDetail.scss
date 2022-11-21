@@ -1,0 +1,9 @@
+.notification-detail-page {
+  .form__input.--readonly {
+    cursor: default !important;
+  }
+
+  &__status {
+    margin-top: 1rem;
+  }
+}

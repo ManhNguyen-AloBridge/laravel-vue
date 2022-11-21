@@ -1,0 +1,26 @@
+@import '../../assets/scss/variables';
+
+.notification-list-page {
+  &__title {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  &__btn-search {
+    margin-right: 1rem;
+  }
+
+  &__status {
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    color: $white;
+
+    &.--disabled {
+      background: $warning;
+    }
+
+    &.--enabled {
+      background: $success;
+    }
+  }
+}

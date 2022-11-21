@@ -1,0 +1,3 @@
+- vue-meta
+- vue-persistent
+- vue-virtual-scroller

@@ -1,0 +1,28 @@
+@import './variables';
+
+.card {
+  box-shadow: $card-box-shadow;
+  background-color: $card-bg;
+  display: flex;
+  flex-direction: column;
+  border: $card-border-width solid $card-border-color;
+  border-radius: $card-border-radius;
+  position: relative;
+  color: $card-color;
+  padding: $card-padding;
+
+  &__header {
+    padding: $card-header-padding;
+  }
+
+  &__body {
+    padding: $card-body-padding;
+  }
+
+  &__footer {
+    padding: $card-footer-padding;
+  }
+
+  &__title {
+  }
+}

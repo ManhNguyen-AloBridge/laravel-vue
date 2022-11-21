@@ -1,0 +1,23 @@
+@import './../../assets/scss/variables';
+@import './../../assets/scss/mixins';
+@import './variables';
+
+.header {
+  padding: $header-padding;
+  background-color: $header-bg-color;
+  border-bottom: 1px solid $header-border-color;
+  display: flex;
+  align-items: center;
+
+  &__hamburger-menu {
+    font-size: 2rem;
+    margin-right: 2rem;
+    display: none;
+  }
+
+  @include md() {
+    &__hamburger-menu {
+      display: block;
+    }
+  }
+}

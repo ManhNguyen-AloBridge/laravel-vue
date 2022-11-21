@@ -1,0 +1,12 @@
+@import './../../assets/scss/variables';
+
+$tab-height: 4.8rem;
+$tab-item-min-width: 9rem;
+$tab-item-max-width: 36rem;
+$tab-item-font-size: $font-size-base;
+$tab-item-font-weight: 500;
+$tab-item-letter-spacing: 0.1em;
+$tab-item-color: #aaa;
+$tab-item-active-color: #222;
+$tab-active-slider-height: 0.2rem;
+$tab-active-slider-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);

@@ -1,0 +1,19 @@
+@import './../../assets/scss/variables';
+
+$select-padding: $input-padding-y 5.7rem $input-padding-y $input-padding-x;
+$select-padding-sm: $input-padding-y-sm $input-padding-y-sm $input-padding-x-sm;
+$select-padding-lg: $input-padding-y-lg 5.7rem $input-padding-y-lg $input-padding-x-lg;
+$select-indicator-color: '%23000000' !default; // #000 -> %23000
+$select-indicator-width: 12;
+$select-indicator-height: 12;
+$select-indicator-position-right: 2rem;
+$select-indicator: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='#{$select-indicator-height}' width='#{$select-indicator-width}' viewBox='0 0 16 16'><path fill='none' stroke='#{$select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+$select-option-box-bg-color: $white;
+$select-search-margin-x: 0.5rem;
+$select-search-margin-y: 0.5rem;
+$select-list-max-height: 40rem;
+$select-item-select-bg-color: #5897fb;
+$select-item-select-color: $white;
+$select-item-hover-bg-color: rgba(17, 24, 39, 0.05);
+$select-item-padding: 1.5rem 2rem;
+$select-item-transition: 50ms;

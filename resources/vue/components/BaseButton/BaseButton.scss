@@ -1,0 +1,116 @@
+@use 'sass:map';
+@import '../../assets/scss/mixins';
+@import './variables';
+
+.btn {
+  letter-spacing: $btn-letter-spacing;
+  text-transform: none;
+  box-shadow: $btn-box-shadow;
+  transition: $btn-transition;
+  padding: $btn-padding-x $btn-padding-y;
+  font-family: $btn-font-family;
+  white-space: $btn-white-space;
+
+  &:not([class*='btn-outline-']) {
+    border: 0;
+  }
+
+  @include hover {
+    box-shadow: $btn-hover-box-shadow;
+    transform: $btn-hover-transform;
+  }
+
+  &.--plain-text {
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &.--rounded {
+    border-radius: $btn-border-rounded;
+  }
+
+  &:not(.--only-icon) i {
+    margin-right: $btn-icon-margin-right;
+  }
+
+  @each $size, $data in $btn-sizes {
+    $padding-y: map.get($data, 'padding-y');
+    $padding-x: map.get($data, 'padding-x');
+    $font-size: map.get($data, 'font-size');
+    $letter-spacing: map.get($data, 'letter-spacing');
+    $radius: map.get($data, 'radius');
+    &.--#{$size} {
+      padding: $padding-y $padding-x;
+      font-size: $font-size;
+      border-radius: $radius;
+      letter-spacing: $letter-spacing;
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    &.--#{$color}:not(.--plain-text) {
+      @include hover {
+        background-color: $value;
+        border-color: $value;
+      }
+
+      &:not(:disabled):not(.disabled),
+      &:not(:disabled):not(.disabled):active,
+      .show > &.dropdown-toggle {
+        color: color-yiq($value);
+        background-color: $value;
+      }
+
+      @if $value != $white and $value != $light {
+        &.focus,
+        &:focus {
+          color: $white;
+        }
+      }
+    }
+
+    &.--outline-#{$color} {
+      box-shadow: none;
+      background-color: transparent;
+      box-shadow: none;
+      color: $value;
+      border: $border-width solid $value;
+
+      &:not(.active) {
+        @include hover {
+          opacity: 0.75;
+        }
+      }
+    }
+
+    &.--plain-text-#{$color} {
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      background-color: transparent !important;
+      color: $value;
+      box-shadow: none;
+    }
+  }
+
+  @each $color, $value in $btn-font-colors {
+    &.--#{$color} {
+      color: $value;
+      @include hover {
+        color: $value;
+      }
+    }
+  }
+
+  @each $color, $value in $btn-plain-text-hover-colors {
+    &.--plain-text-#{$color} {
+      @include hover {
+        color: $value;
+      }
+    }
+  }
+}

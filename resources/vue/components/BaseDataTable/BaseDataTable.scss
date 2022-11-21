@@ -1,0 +1,111 @@
+@import './../../assets/scss/mixins';
+@import './variables';
+
+.datatable {
+  &__slider {
+    overflow-x: auto;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-top: $datatable-footer-margin-top;
+    gap: 1rem;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap-reverse;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  &__info:not(.--dummy) {
+    color: $datatable-info-color;
+    flex-shrink: 0;
+  }
+
+  &__info.--dummy {
+    height: 1px;
+    overflow: hidden;
+    flex-shrink: 1000000;
+  }
+
+  &__pagination {
+    margin: 0 auto;
+  }
+
+  &__table {
+    background-color: $datatable-background-color;
+    border: 1px solid $datatable-border-color;
+    color: $datatable-color;
+    font-size: $datatable-font-size;
+    letter-spacing: $datatable-letter-spacing;
+    overflow: auto;
+    table-layout: auto;
+    width: 100%;
+  }
+
+  &__sort-icon {
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s;
+    user-select: none;
+    opacity: 0;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 1;
+    position: absolute;
+    text-indent: 0;
+    vertical-align: bottom;
+    color: rgba(0, 0, 0, 0.38);
+
+    svg {
+      fill: currentColor;
+      font-size: 1.6rem;
+      height: $datatable-sort-icon-font-size;
+      width: $datatable-sort-icon-width;
+    }
+
+    &.--active {
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    &.--asc,
+    &.--desc {
+      opacity: 1;
+    }
+
+    &.--desc {
+      transform: rotate(-180deg);
+    }
+  }
+
+  th {
+    background-color: $datatable-th-bg-color;
+    line-height: $datatable-th-line-height;
+    white-space: nowrap;
+    font-weight: $datatable-th-font-weight;
+    user-select: none;
+  }
+
+  th.--sortable {
+    cursor: pointer;
+  }
+
+  th.--sortable:hover > &__sort-icon {
+    opacity: 1;
+  }
+
+  th,
+  td {
+    padding: $datatable-th-padding;
+  }
+
+  tr {
+    border-bottom: 1px solid $datatable-border-color;
+  }
+}

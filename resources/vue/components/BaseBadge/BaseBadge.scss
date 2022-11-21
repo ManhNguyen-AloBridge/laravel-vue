@@ -1,0 +1,32 @@
+@use 'sass:map';
+@import './variables';
+
+.badge {
+  display: inline-block;
+  font-size: $badge-font-size;
+  letter-spacing: $badge-letter-spacing;
+  font-weight: $badge-font-weight;
+  color: $badge-color;
+  padding: $badge-padding-y $badge-padding-x;
+  border-radius: $badge-border-radius;
+
+  @each $color, $value in $theme-colors {
+    &.--#{$color} {
+      background: $value;
+    }
+  }
+
+  @each $size, $data in $badge-sizes {
+    $padding-y: map.get($data, 'padding-y');
+    $padding-x: map.get($data, 'padding-x');
+    $font-size: map.get($data, 'font-size');
+    $letter-spacing: map.get($data, 'letter-spacing');
+    $radius: map.get($data, 'radius');
+    &.--#{$size} {
+      padding: $padding-y $padding-x;
+      font-size: $font-size;
+      border-radius: $radius;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}

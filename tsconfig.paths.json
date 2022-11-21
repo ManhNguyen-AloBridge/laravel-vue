@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@pages/*": ["src/pages/*"],
+      "@apis/*": ["src/apis/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@/*": ["src/*"],
+    },
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "rootDirs": ["src"]
+  }
+}

@@ -1,0 +1,88 @@
+@import './../../assets/scss/mixins';
+@import './variables';
+
+.select2 {
+  &__input {
+    display: none;
+  }
+
+  @include formInput;
+  background-image: $select-indicator;
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 2rem);
+  background-position-y: 50%;
+  position: relative;
+  appearance: none !important;
+  padding: 0;
+
+  &.--lg {
+    padding: $select-padding-lg;
+  }
+
+  &.--sm {
+    padding: $select-padding-sm;
+  }
+
+  &__rendered {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: $select-padding;
+    cursor: text;
+  }
+
+  &.--open {
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  &__option-box {
+    display: none;
+    width: calc(100% + calc($input-border-width * 2));
+    position: absolute;
+    top: 100%;
+    left: calc($input-border-width * -1);
+    background-color: $select-option-box-bg-color;
+    border: $input-border-width solid $input-border-color;
+    border-bottom-left-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+    z-index: 2;
+    overflow-y: hidden;
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  &.--open &__option-box {
+    display: block;
+  }
+
+  &__search {
+    @include formInput;
+    width: calc(100% - calc($select-search-margin-x * 2));
+    height: 4rem;
+    margin: $select-search-margin-x $select-search-margin-y;
+  }
+
+  &__options {
+    list-style-type: none;
+    overflow: auto;
+    max-height: $select-list-max-height;
+    width: 100%;
+  }
+
+  &__option {
+    padding: $select-item-padding;
+    cursor: pointer;
+    transition: $select-item-transition;
+
+    &:hover {
+      background-color: $select-item-hover-bg-color;
+    }
+
+    &.--selected {
+      background-color: $select-item-select-bg-color;
+      color: $select-item-select-color;
+    }
+  }
+}
