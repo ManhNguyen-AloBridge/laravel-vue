@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StatisticController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+});
+
+Route::controller(StatisticController::class)->prefix('/statistic')->name('statistic')->group(function(){
+    Route::post('/','store')->name('.store');
 });
