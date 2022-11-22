@@ -15,6 +15,7 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('gia_phong_id')->constrained('room_prices');
             $table->integer('so_phong');
             $table->timestamps();
             $table->softDeletes();

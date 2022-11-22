@@ -1,1 +1,17 @@
-$(".datatable").on("click",".btn-delete",(function(){var t=JSON.parse($(this).attr("item-data")),a=$(this).attr("data-from"),e=$(this).attr("route-handle");$(".content-modal").remove(),$("#".concat(a)).attr("action",e),contentModal=i18next.t("common.delete_setting").replace(":name",t.name),$,$("#content-modal-".concat(a)).append('<p class="content-modal">'.concat(contentModal,"</p>"))}));
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**************************************************************!*\
+  !*** ./resources/assets/js/components/pass-data-to-modal.js ***!
+  \**************************************************************/
+$('.datatable').on('click', '.btn-delete', function () {
+  var objData = JSON.parse($(this).attr('item-data'));
+  var formAttr = $(this).attr('data-from');
+  var routeDestroy = $(this).attr('route-handle');
+  $(".content-modal").remove();
+  $("#".concat(formAttr)).attr('action', routeDestroy);
+  contentModal = i18next.t('common.delete_setting').replace(':name', objData['name']);
+  $;
+  $("#content-modal-".concat(formAttr)).append("<p class=\"content-modal\">".concat(contentModal, "</p>"));
+});
+/******/ })()
+;

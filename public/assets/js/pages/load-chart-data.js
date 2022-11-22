@@ -1,1 +1,68 @@
-(()=>{function r(r){return function(r){if(Array.isArray(r))return t(r)}(r)||function(r){if("undefined"!=typeof Symbol&&null!=r[Symbol.iterator]||null!=r["@@iterator"])return Array.from(r)}(r)||function(r,e){if(!r)return;if("string"==typeof r)return t(r,e);var a=Object.prototype.toString.call(r).slice(8,-1);"Object"===a&&r.constructor&&(a=r.constructor.name);if("Map"===a||"Set"===a)return Array.from(r);if("Arguments"===a||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a))return t(r,e)}(r)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function t(r,t){(null==t||t>r.length)&&(t=r.length);for(var e=0,a=new Array(t);e<t;e++)a[e]=r[e];return a}window.onload=function(){var t=document.getElementById("barChart");Chart.register(ChartDataLabels),Chart.defaults.set("plugins.datalabels",{color:"#000"}),$.ajax({url:"/load-chart-data",method:"GET"}).done((function(e){new Chart(t,{plugins:[ChartDataLabels],data:{labels:e.skillName,datasets:[{type:"bar",label:"Users/Skill",data:e.userPerSkill,backgroundColor:["rgba(81, 153, 196, 0.8)"],borderColor:["rgb(81, 153, 196)"],borderWidth:1,datalabels:{align:"end",anchor:"end",font:{weight:"400"},color:"#444"}}]},options:{responsive:!1,scales:{y:{beginAtZero:!0,suggestedMax:Math.max.apply(Math,r(e.userPerSkill))+1}},plugins:{datalabels:{formatter:function(r,t){return(r/e.userTotal*100).toFixed(2)+"%"},color:"#fff"}}}})})).fail((function(){console.log("Could not load chart data")}))}})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!******************************************************!*\
+  !*** ./resources/assets/js/pages/load-chart-data.js ***!
+  \******************************************************/
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+window.onload = function () {
+  var ctx = document.getElementById('barChart');
+  Chart.register(ChartDataLabels);
+  Chart.defaults.set('plugins.datalabels', {
+    color: '#000'
+  });
+  $.ajax({
+    'url': '/load-chart-data',
+    'method': 'GET'
+  }).done(function (data) {
+    var myChart = new Chart(ctx, {
+      plugins: [ChartDataLabels],
+      data: {
+        labels: data.skillName,
+        datasets: [{
+          type: 'bar',
+          label: 'Users/Skill',
+          data: data.userPerSkill,
+          backgroundColor: ['rgba(81, 153, 196, 0.8)'],
+          borderColor: ['rgb(81, 153, 196)'],
+          borderWidth: 1,
+          datalabels: {
+            align: 'end',
+            anchor: 'end',
+            font: {
+              weight: '400'
+            },
+            color: '#444'
+          }
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            suggestedMax: Math.max.apply(Math, _toConsumableArray(data.userPerSkill)) + 1
+          }
+        },
+        plugins: {
+          datalabels: {
+            formatter: function formatter(value, ctx) {
+              var total = data.userTotal;
+              var percentage = value / total * 100;
+              return percentage.toFixed(2) + "%";
+            },
+            color: '#fff'
+          }
+        }
+      }
+    });
+  }).fail(function () {
+    console.log("Could not load chart data");
+  });
+};
+/******/ })()
+;

@@ -1,1 +1,23 @@
-$("textarea").on("keydown",(function(t){var n,e,o,a,l;n=this,e=t.keyCode,o=$(n).val(),$(n).cols,a=o.split("\n"),l=a.length+(13===e),8===e&&0===a[a.length-1].length&&l>1&&--l,$(n).attr("rows",l)})),$(".table-cv td").on("click",(function(){$(this).find("textarea").focus()}));
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!****************************************************!*\
+  !*** ./resources/assets/js/components/table-cv.js ***!
+  \****************************************************/
+var resizeIt = function resizeIt(input, keyCode) {
+  var str = $(input).val();
+  var cols = $(input).cols;
+  var lines = str.split('\n');
+  var lineCount = lines.length + (keyCode === 13);
+  if (keyCode === 8 && lines[lines.length - 1].length === 0 && lineCount > 1) {
+    --lineCount;
+  }
+  $(input).attr('rows', lineCount);
+};
+$('textarea').on('keydown', function (event) {
+  resizeIt(this, event.keyCode);
+});
+$('.table-cv td').on('click', function () {
+  $(this).find('textarea').focus();
+});
+/******/ })()
+;

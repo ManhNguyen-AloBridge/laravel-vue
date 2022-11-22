@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\RoomPrice;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RoomFactory extends Factory
@@ -13,8 +14,10 @@ class RoomFactory extends Factory
      */
     public function definition()
     {
+        $roomPrice = RoomPrice::all()->random();
         return [
-            'so_phong' => rand(1, 5)
+            'so_phong' => rand(1, 5),
+            'gia_phong_id' => $roomPrice->id,
         ];
     }
 }

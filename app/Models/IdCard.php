@@ -15,4 +15,8 @@ class IdCard extends Model
         'so_id',
         'url_id',
     ];
+
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

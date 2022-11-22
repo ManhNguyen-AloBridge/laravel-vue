@@ -2,18 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\EnumDataTable;
+use App\Services\UserService;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
+    public function __construct(protected UserService $userService)
+    {
+        $this->userService = $userService;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $users = $this->userService->list(
+            [],
+            EnumDataTable::PAGE_DEFAULT,
+            EnumDataTable::PER_PAGE_DEFAULT
+        );
+
+
+
+        return view('pages.user.index',[
+            'users' => $users
+        ]);
     }
 
     /**

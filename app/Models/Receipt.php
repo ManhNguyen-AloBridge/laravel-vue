@@ -12,9 +12,9 @@ class Receipt extends Model
 
     protected $fillable =[
         'id',
+        'phong_id',
         'user_id',
         'gia_sinh_hoat_id',
-        'gia_phong_id',
         'hoa_don_thang',
         'tien_phong',
         'tien_dien',

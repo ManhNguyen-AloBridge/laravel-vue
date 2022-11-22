@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(
             [
-                RoomSeeder::class,
                 AccountSeeder::class,
                 IdCardSeeder::class,
-                CostLivingSeeder::class,
                 RoomPriceSeeder::class,
+                RoomSeeder::class,
+                CostLivingSeeder::class,
                 SchoolSeeder::class,
                 VehicleSeeder::class,
                 UserSeeder::class,

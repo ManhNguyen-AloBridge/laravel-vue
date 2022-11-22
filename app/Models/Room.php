@@ -12,6 +12,7 @@ class Room extends Model
 
     protected $fillable =[
         'id',
+        'gia_phong_id',
         'so_phong',
     ];
 

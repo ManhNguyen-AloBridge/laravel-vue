@@ -1,1 +1,17 @@
-(()=>{var e=$("form[modal-id=confirm-delete-user]");$(".btn-confirm-delete").on("click",(function(){var t=$(this).attr("id-item"),i=$(this).parent().parent(),n=$(i.find("p[key-value=code]")[0]).text(),a=i18next.t("pages.invitation-code.confirm_delete_code").replace(":code",n);e.find("#msg-confirm-delete").text(a),e.attr("action",e.attr("action").replace("id",t))}))})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*****************************************************!*\
+  !*** ./resources/assets_new/js/pages/user/index.js ***!
+  \*****************************************************/
+var formDelete = $('form[modal-id=confirm-delete-user]');
+var btnConfirmDelete = $('.btn-confirm-delete');
+btnConfirmDelete.on('click', function () {
+  var idItem = $(this).attr('id-item');
+  var itemParent = $(this).parent().parent();
+  var code = $(itemParent.find('p[key-value=code]')[0]).text();
+  var messageText = i18next.t('pages.invitation-code.confirm_delete_code').replace(':code', code);
+  formDelete.find('#msg-confirm-delete').text(messageText);
+  formDelete.attr('action', formDelete.attr('action').replace('id', idItem));
+});
+/******/ })()
+;

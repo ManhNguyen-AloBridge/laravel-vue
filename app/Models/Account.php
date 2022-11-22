@@ -21,4 +21,8 @@ class Account extends Model
         'password',
         'remember_token'
     ];
+
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

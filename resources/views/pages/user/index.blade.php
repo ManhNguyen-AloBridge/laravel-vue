@@ -12,7 +12,7 @@
 @endsection
 
 @section('title-content-vertical')
-    @trans_page('user/index.title_content_vertical')
+    @trans_page('staff/index.page_title')
 @endsection
 
 @section('content-class', 'page-company-index')
@@ -23,7 +23,8 @@ $headers = [
     'email' => ['title' => attrs('user.email'), 'class' => 'email'],
     'action' => ['title' => '', 'class' => 'action']
 ];
-$user_id = auth()->user()->id;
+// $user_id = auth()->user()->id;
+$user_id = 3;
 @endphp
 
 
@@ -52,7 +53,7 @@ $user_id = auth()->user()->id;
         <x-shared-new.data-table :titles="$headers">
             @foreach ($users as $user)
                 <tr>
-                    <td><a class="u-display-inline-block u-lh-3" href="{{ route('user.show', ['user' => $user->id]) }}">{{ $user->name }}</a></td>
+                    <td><a class="u-display-inline-block u-lh-3" href="{{ route('user.show', ['user' => $user->id]) }}">{{ $user->ho_ten }}</a></td>
                     <td>{{ $user->email }}</td>
                     <td>
                         @if ($user_id != $user->id)
@@ -67,14 +68,14 @@ $user_id = auth()->user()->id;
         </x-shared-new.data-table>
     </x-shared-new.card>
 
-    <x-setting.confirm-modal :header-title="trans_page('user/index.confirm_delete_title')" modal-id="confirm-delete-user" :action="route('user.delete', ['user' => 'id'])" method="DELETE">
-        <x-slot:body>
+    <x-setting.confirm-modal :header-title="trans_page('stafff/index.title')" modal-id="confirm-delete-user" :action="route('user.delete', ['user' => 'id'])" method="DELETE">
+        <x-slot name="body">
             <p id="msg-confirm-delete"></p>
-        </x-slot:body>
-        <x-slot:footer>
+        </x-slot>
+        <x-slot name="footer">
             <a class="link text-md btn-close" data-bs-dismiss="modal">{{ __('messages.shared.back') }}</a>
             <button type="submit" class="btn btn-primary">{{ __('messages.shared.delete') }}</button>
-        </x-slot:footer>
+        </x-slot>
     </x-setting.confirm-modal>
 @endsection
 @section('after-scripts')

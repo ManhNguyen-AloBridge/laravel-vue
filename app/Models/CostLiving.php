@@ -20,4 +20,8 @@ class CostLiving extends Model
 
     protected $hidden = [
     ];
+
+    public function receipts(){
+        return $this->hasMany(Receipt::class);
+    }
 }
