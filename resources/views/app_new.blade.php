@@ -26,10 +26,10 @@
 <body class="{{ $page ?? '' }}">
     <x-shared.toastr></x-shared.toastr>
     @if ($usingLayout ?? true)
-        @include('layout_new.sidebar')
+        {{-- @include('layout_new.sidebar') --}}
 
         <section class="main-content">
-            @include('layout_new.header', ['breadscrumbs' => $breadscrumbs ?? []])
+            {{-- @include('layout_new.header', ['breadscrumbs' => $breadscrumbs ?? []]) --}}
 
             <div class="container">
                 <section class="@yield('content-class')">
