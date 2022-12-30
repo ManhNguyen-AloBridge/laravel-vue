@@ -23,15 +23,15 @@ class UserFactory extends Factory
         // dd(Account::all()->random()->id);
         return [
             'account_id' => Account::all()->unique()->random()->id,
-            'phong_id' => Room::all()->random()->id,
-            'truong_id' => School::all()->random()->id,
-            'phuong_tien_id' => Vehicle::all()->random()->id,
-            'cccd_id' => IdCard::all()->random()->id,
-            'ho_ten' => $this->faker->name(),
-            'ngay_sinh' => $this->faker->date,
-            'dia_chi' => $this->faker->address(),
-            'ngay_den' => $this->faker->date(),
-            'ngay_di' => $this->faker->date(),
+            'room_id' => Room::all()->random()->id,
+            'school_id' => School::all()->random()->id,
+            'vehicle_id' => Vehicle::all()->random()->id,
+            'card_id' => IdCard::all()->random()->id,
+            'name' => $this->faker->name(),
+            'birthdate' => $this->faker->date,
+            'address' => $this->faker->address(),
+            'joined_date' => $this->faker->date(),
+            'leaved_date' => $this->faker->date(),
         ];
     }
 }

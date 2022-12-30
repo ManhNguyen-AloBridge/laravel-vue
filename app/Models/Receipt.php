@@ -12,16 +12,16 @@ class Receipt extends Model
 
     protected $fillable =[
         'id',
-        'phong_id',
+        'room_id',
         'user_id',
-        'gia_sinh_hoat_id',
-        'hoa_don_thang',
-        'tien_phong',
-        'tien_dien',
-        'tien_nuoc',
-        'tien_mang',
-        'tien_ve_sinh',
-        'khac',
+        'cost_living_id',
+        'monthly_bill',
+        'room_price',
+        'electric_price',
+        'water_price',
+        'internet_price',
+        'general_hygiene_price',
+        'other',
     ];
 
     protected $hidden = [

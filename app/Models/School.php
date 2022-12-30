@@ -12,9 +12,9 @@ class School extends Model
 
     protected $fillable =[
         'id',
-        'ten_truong',
-        'ten_viet_tat',
-        'dia_chi',
+        'name',
+        'short_name',
+        'address',
     ];
 
     protected $hidden = [

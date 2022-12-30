@@ -15,15 +15,15 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('phong_id')->constrained('rooms');
-            $table->foreignId('gia_sinh_hoat_id')->constrained('cost_livings');
-            $table->integer('hoa_don_thang');
-            $table->integer('tien_phong');
-            $table->integer('tien_dien');
-            $table->integer('tien_nuoc');
-            $table->integer('tien_mang');
-            $table->integer('tien_ve_sinh');
-            $table->string('khac')->nullable();
+            $table->foreignId('room_id')->constrained('rooms');
+            $table->foreignId('cost_living_id')->constrained('cost_livings');
+            $table->integer('monthly_bill');
+            $table->integer('room_price');
+            $table->integer('electric_price');
+            $table->integer('water_price');
+            $table->integer('internet_price');
+            $table->integer('general_hygiene_price');
+            $table->string('other')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

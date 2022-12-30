@@ -13,13 +13,13 @@ class Statistic extends Model
     protected $fillable =[
         'id',
         'room_id',
-        'so_dien',
-        'so_nuoc',
-        'thang',
-        'tinh_trang_cap_nhat'
+        'electric_number',
+        'water_number',
+        'month',
+        'status_update'
     ];
 
     protected $casts = [
-        'tinh_trang_cap_nhat' => 'boolean'
+        'status_update' => 'boolean'
     ];
 }

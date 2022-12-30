@@ -12,10 +12,10 @@ class Vehicle extends Model
 
     protected $fillable =[
         'id',
-        'ten_phuong_tien',
-        'bien_so',
-        'mau_sac',
-        'url_anh',
+        'name',
+        'license_plate',
+        'color',
+        'url_image',
     ];
 
     protected $hidden = [

@@ -15,10 +15,10 @@ class CreateCostLivingsTable extends Migration
     {
         Schema::create('cost_livings', function (Blueprint $table) {
             $table->id();
-            $table->integer('gia_dien');
-            $table->integer('gia_nuoc');
-            $table->integer('gia_mang');
-            $table->integer('gia_ve_sinh');
+            $table->integer('electric_price');
+            $table->integer('water_price');
+            $table->integer('internet_price');
+            $table->integer('general_hygiene_price');
             $table->timestamps();
             $table->softDeletes();
         });

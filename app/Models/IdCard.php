@@ -12,7 +12,7 @@ class IdCard extends Model
 
     protected $fillable =[
         'id',
-        'so_id',
+        'card_number',
         'url_id',
     ];
 

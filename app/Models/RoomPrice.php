@@ -12,8 +12,8 @@ class RoomPrice extends Model
 
     protected $fillable =[
         'id',
-        'tang_so',
-        'gia_tien',
+        'floor',
+        'price',
     ];
 
     protected $hidden = [

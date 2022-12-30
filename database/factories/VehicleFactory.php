@@ -15,10 +15,10 @@ class VehicleFactory extends Factory
     public function definition()
     {
         return [
-            'ten_phuong_tien' => $this->faker->name(),
-            'bien_so' => Str::random(6,6),
-            'mau_sac' => $this->faker->randomElement(['black','red','blue']),
-            'url_anh' => null
+            'name' => $this->faker->name(),
+            'license_plate' => Str::random(6,6),
+            'color' => $this->faker->randomElement(['black','red','blue']),
+            'url_image' => null
         ];
     }
 }

@@ -16,8 +16,8 @@ class RoomFactory extends Factory
     {
         $roomPrice = RoomPrice::all()->random();
         return [
-            'so_phong' => rand(1, 5),
-            'gia_phong_id' => $roomPrice->id,
+            'room_number' => rand(1, 5),
+            'room_price_id' => $roomPrice->id,
         ];
     }
 }

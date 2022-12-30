@@ -12,10 +12,10 @@ class CostLiving extends Model
 
     protected $fillable =[
         'id',
-        'gia_dien',
-        'gia_nuoc',
-        'gia_mang',
-        'gia_ve_sinh',
+        'electric_price',
+        'water_price',
+        'internet_price',
+        'general_hygiene_price',
     ];
 
     protected $hidden = [

@@ -15,9 +15,9 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
-            $table->string('ten_truong');
-            $table->string('ten_viet_tat')->nullable();
-            $table->string('dia_chi')->nullable();
+            $table->string('name');
+            $table->string('short_name')->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

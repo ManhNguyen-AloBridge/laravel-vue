@@ -14,10 +14,10 @@ class CostLivingFactory extends Factory
     public function definition()
     {
         return [
-            'gia_dien' => 1000,
-            'gia_nuoc' => 2000,
-            'gia_mang' => 3000,
-            'gia_ve_sinh' => 4000,
+            'electric_price' => 1000,
+            'water_price' => 2000,
+            'internet_price' => 3000,
+            'general_hygiene_price' => 4000,
         ];
     }
 }

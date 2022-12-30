@@ -14,7 +14,7 @@ class IdCardFactory extends Factory
     public function definition()
     {
         return [
-            'so_id' => rand(100000000000,999999999999),
+            'card_number' => rand(100000000000,999999999999),
             'url_id' => $this->faker->url(),
         ];
     }

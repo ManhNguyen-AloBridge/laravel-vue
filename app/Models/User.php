@@ -21,15 +21,15 @@ class User extends Authenticatable
     protected $fillable = [
         'id',
         'account_id',
-        'phong_id',
-        'truong_id',
-        'phuong_tien_id',
-        'cccd_id',
-        'ho_ten',
-        'ngay_sinh',
-        'dia_chi',
-        'ngay_den',
-        'ngay_di',
+        'room_id',
+        'school_id',
+        'vehicle_id',
+        'card_id',
+        'name',
+        'birthdate',
+        'address',
+        'joined_date',
+        'leaved_date',
     ];
 
     /**

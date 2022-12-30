@@ -15,10 +15,10 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('ten_phuong_tien');
-            $table->string('bien_so')->nullable();
-            $table->string('mau_sac')->nullable();
-            $table->string('url_anh')->nullable();
+            $table->string('name');
+            $table->string('license_plate')->nullable();
+            $table->string('color')->nullable();
+            $table->string('url_image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

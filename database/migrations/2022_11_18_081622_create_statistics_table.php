@@ -16,10 +16,10 @@ class CreateStatisticsTable extends Migration
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
             $table->foreignId('room_id')->constrained('rooms');
-            $table->integer('so_dien');
-            $table->integer('so_nuoc');
-            $table->integer('thang');
-            $table->boolean('tinh_trang_cap_nhat')->default(0);
+            $table->integer('electric_number');
+            $table->integer('water_number');
+            $table->integer('month');
+            $table->boolean('status_update')->default(0);
             $table->timestamps();
         });
     }

@@ -20,15 +20,15 @@ class ReceiptFactory extends Factory
         $room = Room::all()->random();
 
         return [
-            'phong_id' => $room->id,
-            'gia_sinh_hoat_id' => $costLiving->id,
-            'hoa_don_thang' => rand(1,12),
-            'tien_phong' => 3000,
-            'tien_dien' => $costLiving->gia_dien*3,
-            'tien_nuoc' => $costLiving->gia_nuoc*3,
-            'tien_mang' => $costLiving->gia_mang*3,
-            'tien_ve_sinh' => $costLiving->gia_ve_sinh*3,
-            'khac' => null,
+            'room_id' => $room->id,
+            'cost_living_id' => $costLiving->id,
+            'monthly_bill' => rand(1,12),
+            'room_price' => 3000,
+            'electric_price' => $costLiving->gia_dien*3,
+            'water_price' => $costLiving->gia_nuoc*3,
+            'internet_price' => $costLiving->gia_mang*3,
+            'general_hygiene_price' => $costLiving->gia_ve_sinh*3,
+            'other' => null,
         ];
     }
 }

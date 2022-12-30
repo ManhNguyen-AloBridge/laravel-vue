@@ -15,8 +15,8 @@ class CreateRoomPricesTable extends Migration
     {
         Schema::create('room_prices', function (Blueprint $table) {
             $table->id();
-            $table->integer('tang_so');
-            $table->integer('gia_tien');
+            $table->integer('floor');
+            $table->integer('price');
             $table->timestamps();
             $table->softDeletes();
         });

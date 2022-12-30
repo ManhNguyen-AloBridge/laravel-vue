@@ -12,8 +12,8 @@ class Room extends Model
 
     protected $fillable =[
         // 'id',
-        'gia_phong_id',
-        'so_phong',
+        'room_price_id',
+        'room_number',
     ];
 
     protected $hidden = [
