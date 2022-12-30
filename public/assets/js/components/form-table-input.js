@@ -1,1 +1,352 @@
-(()=>{"use strict";var t={2424:(t,e,i)=>{function n(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function o(t,e,i){return e in t?Object.defineProperty(t,e,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[e]=i,t}i.d(e,{Z:()=>a});const a=function(){function t(e){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),o(this,"self",void 0),o(this,"btnContinue",void 0),o(this,"fillTextElements",void 0),this.self=e,this.btnContinue=this.self.find(".modal-footer .btn.continue"),this.fillTextElements=this.self.find(".modal-body span.fill-text-position")}var e,i,a;return e=t,(i=[{key:"fillTextInDeleteMessage",value:function(t){this.fillTextElements.text(t)}}])&&n(e.prototype,i),a&&n(e,a),Object.defineProperty(e,"prototype",{writable:!1}),t}()}},e={};function i(n){var o=e[n];if(void 0!==o)return o.exports;var a=e[n]={exports:{}};return t[n](a,a.exports,i),a.exports}i.d=(t,e)=>{for(var n in e)i.o(e,n)&&!i.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:e[n]})},i.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),(()=>{var t=i(2424);function e(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function n(t,e,i){return e in t?Object.defineProperty(t,e,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[e]=i,t}var o=function(){function t(e,i){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),n(this,"self",void 0),n(this,"model",void 0),n(this,"modal",void 0),n(this,"form",void 0),n(this,"btnShowCreate",void 0),n(this,"btnCreate",void 0),n(this,"btnUpdate",void 0),n(this,"btnCancel",void 0),n(this,"addRow",void 0),n(this,"btnCancelOfAddRow",void 0),n(this,"editRows",void 0),n(this,"prefixDeleteMessage",""),n(this,"fieldDeleteMessage","name"),this.self=e,this.modal=i,this.model=this.self.attr("data-model"),this.form=this.self.find("#form-"+this.model),this.btnShowCreate=e.find('.form-table__button-group button[data-button-type="show-add-button"]'),this.btnCreate=this.self.find('.form-table__button-group button[data-button-type="add"]'),this.btnUpdate=this.self.find('.form-table__button-group button[data-button-type="update"]'),this.btnCancel=this.self.find('.form-table__button-group button[data-button-type="cancel"]'),this.addRow=this.self.find('.form-table__row[data-form="add-new"]'),this.btnCancelOfAddRow=this.addRow.find("button"),this.editRows=this.self.find('.form-table__row:not([data-form="add-new"])'),this.getDefaultDisplay(),this.addButtonsEvent(),this.addEditRowsEvent(),this.modal.btnContinue.click(function(){this.submitFormDelete()}.bind(this))}var i,o,a;return i=t,(o=[{key:"cancel",value:function(){return function(){var t=this.getOldFocus();this.addRow.find("input").val(""),null!==t&&(this.backRowToOldValue(t.inputs),this.removeFocusInput(t.inputs)),this.removeValidateError(),this.cancelAction()}.bind(this)}},{key:"removeValidateError",value:function(){var t;null===(t=this.self.find(".validation-error"))||void 0===t||t.each((function(){$(this).remove()}))}},{key:"addButtonsEvent",value:function(){this.btnShowCreate.click(this.showAdd()),this.btnCancel.click(this.cancel()),this.btnCancelOfAddRow.click(this.cancel()),this.btnCreate.click(function(){var t=this.btnCreate.attr("data-route-handle");this.form.attr("action",t),this.submitFormCreate()}.bind(this)),this.btnUpdate.click(this.submitFormUpdate.bind(this))}},{key:"addEditRowsEvent",value:function(){var t=this;this.editRows.each((function(){var e=$(this).find('button[data-control-name="edit"]'),i=$(this).find('button[data-control-name="delete"]'),n=$(this).find("input"),o=$(this).attr("data-item-id");e.click((function(){var i=e.attr("data-route-handle");t.showUpdate(),t.focusInput(n),t.btnCancel.attr("data-edit-row-id",o),t.form.attr("data-item-id",o),t.form.attr("action",i)})),i.click((function(){var e=i.attr("data-route-handle"),o=n.filter("[name="+t.fieldDeleteMessage+"]").val();t.form.attr("action",e),t.modal.fillTextInDeleteMessage(o)}))}))}},{key:"showAdd",value:function(){return function(){this.btnShowCreate.hide(),this.btnCreate.show(),this.btnCancel.show(),this.addRow.show();var t=this.addRow.find("input").eq(1),e=t.val().length;t.first().focus(),t.first()[0].setSelectionRange(e,e)}.bind(this)}},{key:"showUpdate",value:function(){this.btnShowCreate.hide(),this.btnCreate.hide(),this.btnUpdate.show(),this.btnCancel.show(),this.addRow.hide()}},{key:"cancelAction",value:function(){this.btnCancel.hide(),this.btnCreate.hide(),this.btnUpdate.hide(),this.btnShowCreate.show(),this.addRow.hide()}},{key:"focusInput",value:function(t){var e=null!==this.getOldFocus()?this.getOldFocus():null;null!==e&&(this.removeFocusInput(e.inputs),this.backRowToOldValue(e.inputs)),t.closest(".form-table__row").addClass("--edit"),t.prop("disabled",!1);var i=t.eq(1).val().length;t.eq(1).focus(),t.eq(1)[0].setSelectionRange(i,i)}},{key:"removeFocusInput",value:function(t){this.addRow.hide(),t.prop("readonly",!0),t.closest(".form-table__row").removeClass("--edit")}},{key:"submitFormCreate",value:function(){this.updateFormMethod("POST");var t=this.addRow.find("input").clone();t.attr("type","hidden"),this.form.append(t),this.form.submit()}},{key:"submitFormUpdate",value:function(){this.updateFormMethod("PUT");var t=this.form.attr("data-item-id"),e=this.getEditRow(t).find("input").clone();e.attr("type","hidden"),this.form.append(e),this.form.submit()}},{key:"submitFormDelete",value:function(){this.updateFormMethod("Delete"),this.form.submit()}},{key:"getEditRow",value:function(t){return this.editRows.filter((function(){return $(this).attr("data-item-id")==t}))}},{key:"getDefaultDisplay",value:function(){var t=this.editRows.filter((function(t,e){return $(e).hasClass("--edit")}));if(this.btnShowCreate.show(),this.btnCreate.hide(),this.btnUpdate.hide(),this.btnCancel.hide(),this.addRow.hide(),this.form.parent().find("p").hasClass("validation-error")&&this.showAdd()(),t.length)return this.showUpdate(),void this.btnCancel.attr("data-edit-row-id",$(t[0]).data("item-id"))}},{key:"getOldFocus",value:function(){var t,e=null!==(t=this.btnCancel.attr("data-edit-row-id"))&&void 0!==t?t:null;if(null==e)return null;var i=this.getEditRow(e),n=i.find("input"),o=i.find('.form-table__row__button-group button[data-control-name="edit"]');return{row:i,inputs:n,btnEdit:o}}},{key:"backRowToOldValue",value:function(t){t.each((function(){var t=$(this).attr("data-origin-value");$(this).val(t)}))}},{key:"updateFormMethod",value:function(t){this.form.find('input[name="_method"]').val(t)}}])&&e(i.prototype,o),a&&e(i,a),Object.defineProperty(i,"prototype",{writable:!1}),t}();$(".card-form-table-input").each((function(){var e=$(this).find(".form-table"),i=$(this).find(".modal"),n=new t.Z(i);new o(e,n)}))})()})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./resources/assets/js/components/modal-delete.js":
+/*!********************************************************!*\
+  !*** ./resources/assets/js/components/modal-delete.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var modalDelete = /*#__PURE__*/function () {
+  function modalDelete(self) {
+    _classCallCheck(this, modalDelete);
+    _defineProperty(this, "self", void 0);
+    _defineProperty(this, "btnContinue", void 0);
+    _defineProperty(this, "fillTextElements", void 0);
+    this.self = self;
+    this.btnContinue = this.self.find('.modal-footer .btn.continue');
+    this.fillTextElements = this.self.find('.modal-body span.fill-text-position');
+  }
+  _createClass(modalDelete, [{
+    key: "fillTextInDeleteMessage",
+    value: function fillTextInDeleteMessage(text) {
+      this.fillTextElements.text(text);
+    }
+  }]);
+  return modalDelete;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalDelete);
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!************************************************************!*\
+  !*** ./resources/assets/js/components/form-table-input.js ***!
+  \************************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modal_delete_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal-delete.js */ "./resources/assets/js/components/modal-delete.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var FormTableInput = /*#__PURE__*/function () {
+  function FormTableInput(self, modal) {
+    _classCallCheck(this, FormTableInput);
+    _defineProperty(this, "self", void 0);
+    _defineProperty(this, "model", void 0);
+    _defineProperty(this, "modal", void 0);
+    _defineProperty(this, "form", void 0);
+    _defineProperty(this, "btnShowCreate", void 0);
+    _defineProperty(this, "btnCreate", void 0);
+    _defineProperty(this, "btnUpdate", void 0);
+    _defineProperty(this, "btnCancel", void 0);
+    _defineProperty(this, "addRow", void 0);
+    _defineProperty(this, "btnCancelOfAddRow", void 0);
+    _defineProperty(this, "editRows", void 0);
+    _defineProperty(this, "prefixDeleteMessage", '');
+    _defineProperty(this, "fieldDeleteMessage", 'name');
+    this.self = self;
+    this.modal = modal;
+    this.model = this.self.attr('data-model');
+    this.form = this.self.find('#form-' + this.model);
+    this.btnShowCreate = self.find('.form-table__button-group button[data-button-type="show-add-button"]');
+    this.btnCreate = this.self.find('.form-table__button-group button[data-button-type="add"]');
+    this.btnUpdate = this.self.find('.form-table__button-group button[data-button-type="update"]');
+    this.btnCancel = this.self.find('.form-table__button-group button[data-button-type="cancel"]');
+    this.addRow = this.self.find('.form-table__row[data-form="add-new"]');
+    this.btnCancelOfAddRow = this.addRow.find('button');
+    this.editRows = this.self.find('.form-table__row:not([data-form="add-new"])');
+    this.getDefaultDisplay();
+    this.addButtonsEvent();
+    this.addEditRowsEvent();
+    this.modal.btnContinue.click(function () {
+      this.submitFormDelete();
+    }.bind(this));
+  }
+  _createClass(FormTableInput, [{
+    key: "cancel",
+    value: function cancel() {
+      return function () {
+        var oldFocus = this.getOldFocus();
+        this.addRow.find('input').val('');
+        if (oldFocus !== null) {
+          this.backRowToOldValue(oldFocus.inputs);
+          this.removeFocusInput(oldFocus.inputs);
+        }
+        this.removeValidateError();
+        this.cancelAction();
+      }.bind(this);
+    }
+  }, {
+    key: "removeValidateError",
+    value: function removeValidateError() {
+      var _this$self$find;
+      (_this$self$find = this.self.find('.validation-error')) === null || _this$self$find === void 0 ? void 0 : _this$self$find.each(function () {
+        $(this).remove();
+      });
+    }
+  }, {
+    key: "addButtonsEvent",
+    value: function addButtonsEvent() {
+      this.btnShowCreate.click(this.showAdd());
+      this.btnCancel.click(this.cancel());
+      this.btnCancelOfAddRow.click(this.cancel());
+      this.btnCreate.click(function () {
+        var createUrl = this.btnCreate.attr('data-route-handle');
+        this.form.attr('action', createUrl);
+        this.submitFormCreate();
+      }.bind(this));
+      this.btnUpdate.click(this.submitFormUpdate.bind(this));
+    }
+  }, {
+    key: "addEditRowsEvent",
+    value: function addEditRowsEvent() {
+      var formTable = this;
+      this.editRows.each(function () {
+        var btnEdit = $(this).find('button[data-control-name="edit"]');
+        var btnDelete = $(this).find('button[data-control-name="delete"]');
+        var rowInputs = $(this).find('input');
+        var itemId = $(this).attr('data-item-id');
+        btnEdit.click(function () {
+          var updateUrl = btnEdit.attr('data-route-handle');
+          formTable.showUpdate();
+          formTable.focusInput(rowInputs);
+          formTable.btnCancel.attr('data-edit-row-id', itemId);
+          formTable.form.attr('data-item-id', itemId);
+          formTable.form.attr('action', updateUrl);
+        });
+        btnDelete.click(function () {
+          var deleteUrl = btnDelete.attr('data-route-handle');
+          var deleteText = rowInputs.filter('[name=' + formTable.fieldDeleteMessage + ']').val();
+          formTable.form.attr('action', deleteUrl);
+          formTable.modal.fillTextInDeleteMessage(deleteText);
+        });
+      });
+    }
+  }, {
+    key: "showAdd",
+    value: function showAdd() {
+      return function () {
+        this.btnShowCreate.hide();
+        this.btnCreate.show();
+        this.btnCancel.show();
+        this.addRow.show();
+        var input = this.addRow.find('input').eq(1);
+        var inputLength = input.val().length;
+        input.first().focus();
+        input.first()[0].setSelectionRange(inputLength, inputLength);
+      }.bind(this);
+    }
+  }, {
+    key: "showUpdate",
+    value: function showUpdate() {
+      this.btnShowCreate.hide();
+      this.btnCreate.hide();
+      this.btnUpdate.show();
+      this.btnCancel.show();
+      this.addRow.hide();
+    }
+  }, {
+    key: "cancelAction",
+    value: function cancelAction() {
+      this.btnCancel.hide();
+      this.btnCreate.hide();
+      this.btnUpdate.hide();
+      this.btnShowCreate.show();
+      this.addRow.hide();
+    }
+  }, {
+    key: "focusInput",
+    value: function focusInput(inputs) {
+      var oldFocus = this.getOldFocus() !== null ? this.getOldFocus() : null;
+      if (oldFocus !== null) {
+        this.removeFocusInput(oldFocus.inputs);
+        this.backRowToOldValue(oldFocus.inputs);
+      }
+      inputs.closest('.form-table__row').addClass('--edit');
+      inputs.prop('disabled', false);
+      var inputLength = inputs.eq(1).val().length;
+      inputs.eq(1).focus();
+      inputs.eq(1)[0].setSelectionRange(inputLength, inputLength);
+    }
+  }, {
+    key: "removeFocusInput",
+    value: function removeFocusInput(inputs) {
+      this.addRow.hide();
+      inputs.prop('readonly', true);
+      inputs.closest('.form-table__row').removeClass('--edit');
+    }
+  }, {
+    key: "submitFormCreate",
+    value: function submitFormCreate() {
+      this.updateFormMethod('POST');
+      var inputs = this.addRow.find('input').clone();
+      inputs.attr('type', 'hidden');
+      this.form.append(inputs);
+      this.form.submit();
+    }
+  }, {
+    key: "submitFormUpdate",
+    value: function submitFormUpdate() {
+      this.updateFormMethod('PUT');
+      var itemId = this.form.attr('data-item-id');
+      var inputsOfFocusRow = this.getEditRow(itemId).find('input');
+      var inputs = inputsOfFocusRow.clone();
+      inputs.attr('type', 'hidden');
+      this.form.append(inputs);
+      this.form.submit();
+    }
+  }, {
+    key: "submitFormDelete",
+    value: function submitFormDelete() {
+      this.updateFormMethod('Delete');
+      this.form.submit();
+    }
+  }, {
+    key: "getEditRow",
+    value: function getEditRow(id) {
+      return this.editRows.filter(function () {
+        return $(this).attr('data-item-id') == id;
+      });
+    }
+  }, {
+    key: "getDefaultDisplay",
+    value: function getDefaultDisplay() {
+      var editRow = this.editRows.filter(function (index, row) {
+        return $(row).hasClass('--edit');
+      });
+      this.btnShowCreate.show();
+      this.btnCreate.hide();
+      this.btnUpdate.hide();
+      this.btnCancel.hide();
+      this.addRow.hide();
+      if (this.form.parent().find('p').hasClass('validation-error')) {
+        this.showAdd()();
+      }
+      if (editRow.length) {
+        this.showUpdate();
+        this.btnCancel.attr('data-edit-row-id', $(editRow[0]).data('item-id'));
+        return;
+      }
+    }
+  }, {
+    key: "getOldFocus",
+    value: function getOldFocus() {
+      var _this$btnCancel$attr;
+      var id = (_this$btnCancel$attr = this.btnCancel.attr('data-edit-row-id')) !== null && _this$btnCancel$attr !== void 0 ? _this$btnCancel$attr : null;
+      if (id == null) {
+        return null;
+      }
+      var oldFocusRow = this.getEditRow(id);
+      var inputOfRow = oldFocusRow.find('input');
+      var btnEditOfRow = oldFocusRow.find('.form-table__row__button-group button[data-control-name="edit"]');
+      return {
+        row: oldFocusRow,
+        inputs: inputOfRow,
+        btnEdit: btnEditOfRow
+      };
+    }
+  }, {
+    key: "backRowToOldValue",
+    value: function backRowToOldValue(inputs) {
+      inputs.each(function () {
+        var oldValue = $(this).attr('data-origin-value');
+        $(this).val(oldValue);
+      });
+    }
+  }, {
+    key: "updateFormMethod",
+    value: function updateFormMethod(method) {
+      this.form.find('input[name="_method"]').val(method);
+    }
+  }]);
+  return FormTableInput;
+}();
+$('.card-form-table-input').each(function () {
+  var formTables = $(this).find('.form-table');
+  var modalElement = $(this).find('.modal');
+  var modal = new _modal_delete_js__WEBPACK_IMPORTED_MODULE_0__["default"](modalElement);
+  new FormTableInput(formTables, modal);
+});
+})();
+
+/******/ })()
+;

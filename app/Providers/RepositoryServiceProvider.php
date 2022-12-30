@@ -9,7 +9,9 @@ class RepositoryServiceProvider extends ServiceProvider
     protected $repositories = [
         'User',
         'PasswordReset',
-		'Room'
+		'Room',
+		'Account',
+		'Account'
 	];
 
     protected $repositoryPath = "App\Repositories";

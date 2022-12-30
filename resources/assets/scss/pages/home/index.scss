@@ -1,0 +1,10 @@
+.room-item {
+	margin-bottom: 4rem;
+	padding: 1rem 3rem;
+
+	&__content {
+		text-align: center;
+		background: $color-white-disable;
+		box-shadow: 0 3px 6px 0 $color-border-box-shadow;
+	}
+}

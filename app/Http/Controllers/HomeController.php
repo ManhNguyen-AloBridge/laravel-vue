@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AccountService;
 use App\Services\RoomService;
 use App\Services\UserService;
 use Illuminate\Contracts\View\View;
@@ -10,7 +11,8 @@ class HomeController extends Controller
 {
     public function __construct(
         protected RoomService $roomService,
-        protected UserService $userService
+        protected UserService $userService,
+        protected AccountService $accountService
         )
     {
         // $this->roomService = $roomService;
@@ -18,13 +20,14 @@ class HomeController extends Controller
 
     public function index(): View
     {
-        $listRoom = $this->roomService->getAll();
-        $listUser = $this->userService->getAll();
+        $listInfoRoom = $this->roomService->getAllInfo();
+
+        // dd($listRoom);
 
         return view(
             'home',
             [
-                'listRoom' => $listRoom
+                'listInfo' => $listInfoRoom
             ]
         );
     }

@@ -16,4 +16,8 @@ class RoomService
     {
         return $this->roomRepository->getList();
     }
+
+    public function getAllInfo(){
+        return $this->roomRepository->getAllInfo();
+    }
 }
