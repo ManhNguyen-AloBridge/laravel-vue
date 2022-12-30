@@ -37,5 +37,5 @@
 
 
 @section('after-scripts')
-    <script defer src="{{ mix('assets_new/js/pages/auth/reset-password.js') }}"></script>
+    <script defer src="{{ mix('assets/js/pages/auth/reset-password.js') }}"></script>
 @endsection

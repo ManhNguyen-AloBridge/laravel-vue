@@ -1,11 +1,133 @@
-.text-sm {
-	font-size: 0.75rem;
+.text {
+	font-size: 1.4rem;
+	letter-spacing: 0.14rem;
+	color: $color-black;
+	font-weight: 500;
+
+	&-3xs {
+		font-size: 0.8rem;
+		letter-spacing: 0.08rem;
+	}
+	&-2xs {
+		font-size: 0.9rem;
+		letter-spacing: 0.09rem;
+	}
+	&-xs {
+		font-size: 1.1rem;
+		letter-spacing: 0.11rem;
+	}
+	&-2sm {
+		font-size: 1rem;
+		letter-spacing: 0.1rem;
+	}
+	&-sm {
+		font-size: 1.3rem;
+		letter-spacing: 0.13rem;
+	}
+	&-md {
+		font-size: 1.4rem;
+		letter-spacing: 0.14rem;
+	}
+	&-lg {
+		font-size: 1.6rem;
+		letter-spacing: 0.16rem;
+	}
+	&-xl {
+		font-size: 1.8rem;
+		letter-spacing: 0.18rem;
+	}
+	&-2xl {
+		font-size: 2rem;
+		letter-spacing: 0.2rem;
+	}
+	&-3xl {
+		font-size: 2.2rem;
+		letter-spacing: 0.22rem;
+	}
+	&-4xl {
+		font-size: 2.4rem;
+		letter-spacing: 0.24rem;
+	}
+	&-7xl {
+		font-size: 3rem;
+		letter-spacing: 0.3rem;
+	}
+}
+
+.font {
+	&-thin {
+		font-weight: 100;
+	}
+	&-extralight {
+		font-weight: 200;
+	}
+	&-light {
+		font-weight: 300;
+	}
+	&-normal {
+		font-weight: 400;
+	}
+	&-medium {
+		font-weight: 500;
+	}
+	&-semibold {
+		font-weight: 600;
+	}
+	&-bold {
+		font-weight: 700;
+	}
+	&-extrabold {
+		font-weight: 800;
+	}
+	&-black {
+		font-weight: 900;
+	}
+}
+
+.color {
+	&-bg-primary {
+		background-color: $color-primary;
+	}
+	&-bg-danger {
+		background-color: $color-danger !important;
+	}
+	&-danger {
+		color: $color-danger !important;
+	}
+
+	&-light {
+		color: $color-input !important;
+	}
+	&-bd-white {
+		border-color: $color-white !important;
+	}
+	&-input {
+		color: $color-input !important;
+	}
+	&-link {
+		color: $color-link-text !important;
+	}
+	&-hover-black:hover {
+		color: $color-black !important;
+	}
+	&-desc {
+		color: $color-link-text !important;
+	}
+}
+.link {
+	color: $color-input;
+	background-color: transparent !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none;
+	outline: none;
+	cursor: pointer;
 }
 
 .text-area {
 	white-space: pre-line;
 }
 
-.text-note {
-	font-size: 0.75rem;
+textarea, p{
+	word-break: break-word;
 }

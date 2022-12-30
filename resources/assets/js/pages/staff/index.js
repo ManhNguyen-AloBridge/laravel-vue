@@ -1,12 +1,26 @@
-const { list } = require('postcss');
+import datatable from '../../components/shared/data-table';
+import loading from '../../components/shared/loading';
+
+const data = {};
+
+datatable(data);
 
 $(document).ready(function () {
 	$('input[type=checkbox]').prop('checked', false).removeAttr('checked');
-});
+	setWidthItemOptionSelect2();
 
-const listPageSelectedAll = [];
-let listStaffSelected = [];
-const table = $('.datatable.dataTable').DataTable();
+	$('a.link-detail').on('click', function () {
+		loading.show();
+	});
+
+	$('#btn-search').on('click', function () {
+		loading.show();
+
+		setTimeout(() => {
+			loading.hide();
+		}, 1000);
+	});
+});
 
 $('.select-normal').on('change', function () {
 	if ($(this).val() == '') $(this).addClass('empty');
@@ -15,80 +29,25 @@ $('.select-normal').on('change', function () {
 
 $('.select-normal').trigger('change');
 
-$('.datatable.dataTable')
-	.on('page.dt', function () {
-		if (!listPageSelectedAll.includes(table.page.info().page)) {
-			$('.check-all').prop('checked', false).removeAttr('checked');
-		} else {
-			$('.check-all').prop('checked', true).attr('checked', 'checked');
-		}
-	})
-	.dataTable();
-
-$('.datatable.dataTable').on('click', '.check-all', function () {
-	const isSelectAll = $('.check-all').attr('checked');
-	const infoTable = table.page.info();
-
-	if (isSelectAll) {
-		toggleCheckedCheckbox(false, $('.check-all'));
-		toggleCheckedCheckbox(false, $('.datatable').find('.checkbox-item'));
-		removeItemFormListStaffSelected($('.datatable').find('.checkbox-item'));
-		checkItemChecked();
-	} else {
-		setListStaffEmailSelectedAll(
-			$('.datatable').find('.checkbox-item:not(:checked)')
-		);
-		toggleCheckedCheckbox(true, $('.check-all'));
-		toggleCheckedCheckbox(true, $('.datatable').find('.checkbox-item'));
-		checkItemChecked();
-	}
-
-	if (!listStaffSelected.length > 0) {
-		$('.btn-disable').addClass('disabled').attr('disabled', 'disabled');
-		removeListNameDownload();
-	} else {
-		$('.btn-disable').removeClass('disabled').removeAttr('disabled');
-	}
-});
-
-$('#send-cv-selected').on('submit', function () {
-	const isSendMail = true;
-	renderInputStaffEmail(isSendMail);
-});
-
-$('#download-cv-selected').on('click', function () {
-	const isChecked = $(this).attr('is-name-hidden');
-	const isSendMail = false;
-
-	renderInputStaffEmail(isSendMail);
-	if (isChecked) {
-		$('#is-hidden').attr('checked', 'checked').prop('checked', true);
-	}
-});
-
 $('#is-hidden').on('click', function () {
 	const isChecked = $(this).attr('checked');
 
-	if (isChecked) {
-		$(this).removeAttr('checked').prop('checked', false);
-	} else {
-		$(this).attr('checked', 'checked').prop('checked', true);
+	if (!isChecked) {
+		return;
 	}
+
+	toggleCheckedCheckbox(isChecked, !$(this));
 });
 
 $('#form-download').on('submit', function () {
+	loading.hide();
 	$('#download-cv-modal').modal('hide');
 });
 
-function removeItemFormListStaffSelected(listItemRemove) {
-	listItemRemove.map(function (index, input) {
-		listStaffSelected.find(function (item, index) {
-			if (item.email == input.id) {
-				return listStaffSelected.splice(index, 1);
-			}
-		});
-	});
-}
+$('.datatable.dataTable').on('click', '.detail-staff-submit', function () {
+	const form = $(this).closest('form')[0];
+	$(form).submit();
+});
 
 function renderInputStaffEmail(isSendMail) {
 	const areaRenderEmail = isSendMail
@@ -98,44 +57,48 @@ function renderInputStaffEmail(isSendMail) {
 
 	removeListNameDownload();
 
-	listStaffSelected.forEach(function (item) {
+	data.listStaffSelected.forEach(function (item) {
 		if (!isSendMail) {
 			listNameStaff = `${listNameStaff}, ${item.name}`;
 		}
 
 		areaRenderEmail.append(
-			`<input type="hidden" name="list_staff_email[]" value="${item.email}">`
+			`<input type="hidden" class="input-rendered" name="list_staff_email[]" value="${_.escape(
+				item.email
+			)}">`
 		);
 	});
 
 	if (!isSendMail && listNameStaff.length > 0) {
 		$('#list-name-staff-download').append(
-			`<p class="m-0" id="list-name-staff">${listNameStaff.slice(
-				2,
-				-1
+			`<p class="m-0" id="list-name-staff">${_.escape(
+				listNameStaff.slice(2)
 			)}</p>`
 		);
 	}
 }
 
-function checkItemChecked() {
-	const countItemInPage = $('.checkbox-item').length;
-	const countItemChecked = $('.checkbox-item:checked').length;
-	const currentPage = table.page.info().page;
+$('#send-cv-selected').on('submit', function () {
+	const isSendMail = true;
+	renderInputStaffEmail(isSendMail);
+});
 
-	if (countItemInPage != countItemChecked) {
-		if (listPageSelectedAll.includes(currentPage)) {
-			listPageSelectedAll.splice(
-				listPageSelectedAll.indexOf(currentPage),
-				1
-			);
-		}
-		toggleCheckedCheckbox(false, $('.datatable').find('.check-all'));
-		return;
-	}
-	listPageSelectedAll.push(currentPage);
+$('#download-cv-selected').on('click', function () {
+	removeListInputDataDownload();
+	const isChecked = $(this).attr('is-name-hidden');
+	const isSendMail = false;
 
-	toggleCheckedCheckbox(true, $('.datatable').find('.check-all'));
+	renderInputStaffEmail(isSendMail);
+
+	toggleCheckedCheckbox(isChecked, $('#is-hidden'));
+});
+
+function removeListNameDownload() {
+	$('#list-name-staff').remove();
+}
+
+function removeListInputDataDownload() {
+	$('.input-rendered').remove();
 }
 
 function toggleCheckedCheckbox(isChecked, element) {
@@ -147,42 +110,26 @@ function toggleCheckedCheckbox(isChecked, element) {
 	element.prop('checked', false).removeAttr('checked');
 }
 
-function removeListNameDownload() {
-	$('#list-name-staff').remove();
-}
-
-function setListStaffEmailSelectedAll(listInput) {
-	listInput.map(function (index, item) {
-		listStaffSelected.push({ name: item.value, email: item.id });
-	});
-}
-
-function unsetStaffEmailInList(email) {
-	listStaffSelected.find(function (item, index) {
-		if (item.email == email) {
-			return listStaffSelected.splice(index, 1);
-		}
-	});
-}
-
-$('.datatable.dataTable').on('click', '.checkbox-item', function () {
-	const isSelected = $(this).attr('checked');
-	if (isSelected) {
-		$(this).removeAttr('checked').prop('checked', false);
-		unsetStaffEmailInList($(this).attr('id'));
-	} else {
-		$(this).attr('checked', 'checked').prop('checked', true);
-		listStaffSelected.push({
-			name: $(this).val(),
-			email: $(this).attr('id'),
-		});
-	}
-
-	checkItemChecked();
-
-	if (listStaffSelected.length > 0) {
-		$('.btn-disable').removeClass('disabled').removeAttr('disabled');
-	} else {
-		$('.btn-disable').addClass('disabled').attr('disabled', 'disabled');
-	}
+$('.select2').on('select2:select', function (e) {
+	setWidthItemOptionSelect2();
 });
+
+function setWidthItemOptionSelect2() {
+	const widthSelectAndOrOption = $(
+		'.select-box.--input.select-and-or__option'
+	)[0].offsetWidth;
+
+	const widthForLiTag =
+		$('.select-box.--input.form__control')[0].offsetWidth -
+		widthSelectAndOrOption -
+		10;
+
+	$.each(
+		$('.select2.select2-container').find('ul'),
+		function (key, ulElement) {
+			$(ulElement)
+				.find('li')
+				.attr('style', `max-width:${widthForLiTag}px !important`);
+		}
+	);
+}

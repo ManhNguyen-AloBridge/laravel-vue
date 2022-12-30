@@ -8,7 +8,7 @@ inputPhone.val(phoneFormat(inputPhone.val()));
 
 function phoneFormat(input) {
 	input = input?.replace(/\D/g, '')?.substring(0, 15);
-	var size = input?.length;
+	const size = input?.length ?? 0;
 
 	if (size == 0) {
 		input = input;

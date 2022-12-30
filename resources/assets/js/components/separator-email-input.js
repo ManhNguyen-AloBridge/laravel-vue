@@ -73,9 +73,9 @@ function itemEmail(email, item) {
 	<span class="vr__item">
 		<div class="vr__content">
 		<span class="vr__email">
-			${email}
+			${_.escape(email)}
 		</span>
-		<input type="hidden" name="${item}[]" value="${email}"/>
+		<input type="hidden" name="${_.escape(item)}[]" value="${_.escape(email)}"/>
 		<span class="vr__icon-remove pl-2">×</span>
 		</div>
 	</span>`;

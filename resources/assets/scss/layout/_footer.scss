@@ -1,0 +1,25 @@
+.footer {
+	color: $color-input;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 50%;
+	padding-bottom: 0.9rem;
+	width: max-content;
+
+	@media screen and (max-width: 992px) {
+		right: unset;
+		left: unset;
+		width: 100%;
+		text-align: center;
+	}
+
+	@media screen and (max-width: 414px) {
+	}
+
+	@media screen and (max-width: 375px) {
+	}
+
+	@media screen and (max-width: 320px) {
+	}
+}

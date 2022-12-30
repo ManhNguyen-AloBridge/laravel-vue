@@ -1,5 +1,7 @@
+require('daterangepicker/daterangepicker');
 import { DATE_FORMAT } from '../constants/datetime';
 export default (applyCallback) => {
+	$('.date-picker').attr('autocomplete', 'off');
 	$('input.date-picker:not([readonly])')
 		.daterangepicker({
 			singleDatePicker: true,
@@ -9,6 +11,9 @@ export default (applyCallback) => {
 				format: DATE_FORMAT,
 				daysOfWeek: i18next.t('daysOfWeek', { returnObjects: true }),
 				monthNames: i18next.t('monthNames', { returnObjects: true }),
+
+				cancelLabel: i18next.t('dateRangePicker.cancel'),
+				applyLabel: i18next.t('dateRangePicker.accept'),
 			},
 		})
 		.on('apply.daterangepicker', function (e, picker) {
@@ -19,7 +24,7 @@ export default (applyCallback) => {
 			);
 
 			if (applyCallback) {
-				applyCallback(this);
+				applyCallback(this, picker);
 			}
 		});
 };

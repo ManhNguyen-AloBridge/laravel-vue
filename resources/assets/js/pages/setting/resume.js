@@ -1,9 +1,25 @@
-$('.btn-use-template').on('click', function () {
-	$("input[name='template_name']").val($(this).data('name'));
-	$("input[name='template_id']").val($(this).data('id'));
-	$('#modal-select-template').modal('hide');
-});
+$(document).ready(function () {
+	const templateId = $('.input-template').attr('value');
 
-$('#btn-select-template').on('click', function () {
-	$('#modal-select-template').modal('show');
+	$(`#checked-${templateId}`).attr('hidden', false);
+
+	$('.img-template').on('click', function () {
+		$('#modal-success').modal('show');
+		$('.img-template-modal').attr('src', $(this).attr('src'));
+		$('.carousel-item.active').attr('value', $(this).attr('value'));
+	});
+
+	$('.btn-save').on('click', function () {
+		const id = $('.carousel-item.active').attr('value');
+		$('.input-template').attr('value', id);
+		$(`.img-template`).removeClass('--selected');
+		$(`#img-template-${id}`).addClass('--selected');
+
+		$(`.icon-check`).attr('hidden', true);
+		$(`#checked-${id}`).attr('hidden', false);
+	});
+
+	$('.carousel').carousel({
+		interval: false,
+	});
 });

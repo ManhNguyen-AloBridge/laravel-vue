@@ -7,11 +7,9 @@ inputZipcode.on('keyup', function () {
 inputZipcode.val(zipcodeFormat(inputZipcode.val()));
 
 function zipcodeFormat(input) {
-	input = input.replace(/\D/g, '');
+	input = input?.replace(/\D/g, '').substring(0, 7);
 
-	input = input.substring(0, 7);
-
-	const size = input.length;
+	const size = input?.length;
 	if (size == 0) {
 		input = input;
 	} else if (size < 4) {

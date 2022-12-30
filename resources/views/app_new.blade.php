@@ -10,16 +10,16 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <title>@yield('title', 'Document')</title>
-    {{-- <link rel="apple-touch-icon" type="image/x-icon" href="{{ mix('assets_new/img/favicon.png') }}"> --}}
-    {{-- <link rel="icon" href="{{ mix('assets_new/img/favicon.png') }}"> --}}
+    {{-- <link rel="apple-touch-icon" type="image/x-icon" href="{{ mix('assets/img/favicon.png') }}"> --}}
+    {{-- <link rel="icon" href="{{ mix('assets/img/favicon.png') }}"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('before-styles')
-    <link href="{{ mix('assets_new/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('assets/css/app.css') }}" rel="stylesheet">
     @yield('after-styles')
     <!--Script -->
     @yield('before-scripts')
 
-    <script defer src="{{ mix('assets_new/js/app.js') }}"></script>
+    <script defer src="{{ mix('assets/js/app.js') }}"></script>
     @yield('after-scripts')
 </head>
 

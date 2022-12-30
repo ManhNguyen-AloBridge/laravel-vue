@@ -1,15 +1,1 @@
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
-/*!*****************************************************!*\
-  !*** ./resources/assets/js/pages/setting/resume.js ***!
-  \*****************************************************/
-$('.btn-use-template').on('click', function () {
-  $("input[name='template_name']").val($(this).data('name'));
-  $("input[name='template_id']").val($(this).data('id'));
-  $('#modal-select-template').modal('hide');
-});
-$('#btn-select-template').on('click', function () {
-  $('#modal-select-template').modal('show');
-});
-/******/ })()
-;
+$(document).ready((function(){var t=$(".input-template").attr("value");$("#checked-".concat(t)).attr("hidden",!1),$(".img-template").on("click",(function(){$("#modal-success").modal("show"),$(".img-template-modal").attr("src",$(this).attr("src")),$(".carousel-item.active").attr("value",$(this).attr("value"))})),$(".btn-save").on("click",(function(){var t=$(".carousel-item.active").attr("value");$(".input-template").attr("value",t),$(".img-template").removeClass("--selected"),$("#img-template-".concat(t)).addClass("--selected"),$(".icon-check").attr("hidden",!0),$("#checked-".concat(t)).attr("hidden",!1)})),$(".carousel").carousel({interval:!1})}));

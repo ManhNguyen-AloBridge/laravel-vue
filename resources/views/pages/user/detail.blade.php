@@ -51,5 +51,5 @@
     </x-shared-new.card>
 @endsection
 @section('after-scripts')
-    <script defer src="{{ mix('assets_new/js/pages/user/detail.js') }}"></script>
+    <script defer src="{{ mix('assets/js/pages/user/detail.js') }}"></script>
 @endsection

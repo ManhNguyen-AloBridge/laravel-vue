@@ -1,51 +1,52 @@
 .card {
-	&-actions {
-		position: absolute;
-		right: 0;
-		transform: translateY(-100%);
-		border: 3px solid transparent;
-		border-top-left-radius: 0.25rem;
-		border-top-right-radius: 0.25rem;
-		padding: .25rem 1rem;
-		display: flex;
-		column-gap: .5rem;
-		transition: opacity .3s;
-		z-index: -1;
-		opacity: 0;
+	margin-top: 3.4rem;
+	background-color: $color-white;
+	min-width: 55.1rem;
+	border: solid 1px $color-border-default;
+	box-shadow: 0 3px 6px 0 $color-border-box-shadow;
+	padding: 4rem;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	&__title {
+		@extend .text-xl;
+		margin-bottom: 2.6rem;
+		font-weight: 400;
 	}
 
-	&:hover > &-actions {
-		// display: block;
-		opacity: 1;
-		z-index: 1;
+	&__content {
+		@extend .text-sm;
+		color: $color-input;
+		margin-bottom: 2.8rem;
 	}
 
-	&-actions.--success {
-		border-color: $color-success;
+	&.--md {
+		width: 68rem;
 	}
 
-	&-actions__btn {
-		display: inline-block;
-		border: none;
-		outline: none;
-		background-color: $color-white;
-		color: $color-black;
-		border-radius: 5px;
-		margin: 0;
-		padding: 0;
+	&.--has-modal {
+		position: static;
+		left: unset;
+		transform: unset;
 	}
 
-	&-divider {
-		height: 2px;
-		width: 100%;
-	}
+	@media screen and (max-width: 768px) {
+		width: auto !important;
+		min-width: auto;
+		padding: 3.1rem 1.6rem 5.5rem;
 
-	&-cv {
-		margin-bottom: 1rem;
-		margin-top: 2rem;
-	}
+		.page-setting-index .card__title {
+			margin-bottom: 0.8rem;
+		}
 
-	&-cv:first-of-type {
-		margin-top: 1rem;
+		.card-form-table &.--md{
+			padding: 1.63rem;
+		}
+
+		.card__content{
+			margin-bottom:3rem;
+		}
+
 	}
 }

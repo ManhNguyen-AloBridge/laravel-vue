@@ -1,50 +1,47 @@
-$('#submit-form').on('click', function () {
-	$('.alert.text-danger').addClass('d-none');
-	$('.alert.text-danger').text('');
-	$('.form-control').removeClass('is-invalid');
+import loading from '../../components/shared/loading';
 
-	const token = $("input[name='token']").val();
-	const email = $("input[name='email']").val();
-	const password = $("input[name='password']").val();
-	const password_confirmation = $(
-		"input[name='password_confirmation']"
-	).val();
-	const url = $('#form-reset').attr('action');
+$('#form-reset').on('submit', async function (e) {
+	try {
+		e.preventDefault();
+		const data = Object.fromEntries(new FormData(e.target).entries());
+		const url = $('#form-reset').attr('action');
 
-	axios
-		.post(url, {
-			token,
-			email,
-			password,
-			password_confirmation,
-		})
-		.then(function (response) {
-			$('#modal-confirm').modal('show');
-		})
-		.catch(function (error) {
-			const errors = error.response.data.errors;
-			handleErrors(errors);
-		});
+		await axios.post(url, data);
+
+		$('.card').remove();
+		$('.link').remove();
+		$('.desc').after(
+			` <div class="card login-box">
+				<form action="/admin/login" method="GET">
+					<p class="text text-xl" id="text-top">パスワード再設定完了</p>
+					<p class="text" id="text-bottom">パスワードの再設定が完了しました。</p>
+					<button class="btn" type="submit">
+						ログインページ
+					</button>
+				</form>
+			</div>`
+		);
+		$('body').removeClass('reset-password');
+		$('body').addClass('changed-password');
+		loading.hide();
+	} catch (error) {
+		loading.hide();
+		const errors = error.response.data.errors;
+		handleErrors(errors);
+	}
 });
 
 function handleErrors(errors) {
-	if (errors['messages']) {
-		$('#error-handle').text(errors['messages']);
-		$('#error-handle').removeClass('d-none');
+	$('.validation-error').remove();
+	if (errors.messages) {
+		$('.form-group-password').before(
+			`<p class="validation-error u-text-align-center">${errors.messages}</p>`
+		);
 	}
-
-	for (const key in errors) {
-		if (errors[key]) {
-			const error = `#error-${key}`;
-			const idError = error.replace('_', '-');
-			const idInput = `#${key}`;
-			$(idInput).addClass('is-invalid');
-			$(idError).text(errors[key][0]);
-			$(idError).removeClass('d-none');
-		}
-	}
+	$.each(errors, function (key, value) {
+		$(`input[name='${key}']`).addClass('--error');
+		$(`input[name='${key}']`).after(
+			`<p class="validation-error">${value}</p>`
+		);
+	});
 }
-
-$('#modal-confirm').on('hidden.bs.modal', function() {
-	window.location.href = 'login'
-});

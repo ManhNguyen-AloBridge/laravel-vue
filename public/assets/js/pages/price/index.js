@@ -1,0 +1,1 @@
+(()=>{var e=$("#btn-save-price"),n=$("#btn-add-price"),d=$("#field-input-price"),i=$("#field-input-description");n.on("click",(function(){n.addClass("d-none"),e.removeClass("d-none"),d.removeClass("d-none"),i.removeClass("d-none")}))})();

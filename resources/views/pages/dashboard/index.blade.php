@@ -406,10 +406,10 @@ $isConfirm = false;
 @endsection
 
 @section('after-scripts')
-    <script src="{{ mix('assets_new/js/pages/dashboard/index.js') }}" defer></script>
-    <script defer src="{{ mix('assets_new/js/components/show-input-in-list.js') }}"></script>
-    <script defer src="{{ mix('assets_new/js/pages/setting/index.js') }}"></script>
-    <script defer src="{{ mix('assets_new/js/components/form-table-input.js') }}"></script>
-    <script defer src="{{ mix('assets_new/js/components/form-table-select.js') }}"></script>
-    <script defer src="{{ mix('assets_new/js/components/modal-delete.js') }}"></script>
+    <script src="{{ mix('assets/js/pages/dashboard/index.js') }}" defer></script>
+    <script defer src="{{ mix('assets/js/components/show-input-in-list.js') }}"></script>
+    <script defer src="{{ mix('assets/js/pages/setting/index.js') }}"></script>
+    <script defer src="{{ mix('assets/js/components/form-table-input.js') }}"></script>
+    <script defer src="{{ mix('assets/js/components/form-table-select.js') }}"></script>
+    <script defer src="{{ mix('assets/js/components/modal-delete.js') }}"></script>
 @endsection

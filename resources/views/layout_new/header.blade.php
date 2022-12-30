@@ -34,7 +34,7 @@
                                 </a>
                             </div>
                             <div class="col-5 p-0">
-                                <img class="navbar__avatar" src="{{ asset('assets_new/img/avatar-default.png') }}"
+                                <img class="navbar__avatar" src="{{ asset('assets/img/avatar-default.png') }}"
                                     alt="">
                             </div>
                             <div class="col-7 p-0">

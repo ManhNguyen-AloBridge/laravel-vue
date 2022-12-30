@@ -1,3 +1,5 @@
+import 'toastr';
+
 $(document).ready(function () {
 	const toastrValue = $('#toastr').val();
 	const type = $('#toastr').attr('data-type');

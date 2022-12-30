@@ -14,53 +14,55 @@ if (process.env.BROWSER_SYNC === 'true') {
 	mix.browserSync(process.env.APP_URL);
 }
 
-const src = 'resources/assets';
-const des = 'public/assets';
+// const src = 'resources/assets';
+// const des = 'public/assets';
 
-mix.sass(`${src}/scss/app.scss`, `${des}/css`);
-mix.css(
-	'node_modules/daterangepicker/daterangepicker.css',
-	`${des}/css/vendors`
-);
-mix.copyDirectory(`${src}/img`, `${des}/img`);
+// mix.sass(`${src}/scss/app.scss`, `${des}/css`);
+// mix.css(
+// 	'node_modules/daterangepicker/daterangepicker.css',
+// 	`${des}/css/vendors`
+// );
+// mix.copyDirectory(`${src}/img`, `${des}/img`);
 
-//// JS
-mix.js(`${src}/js/app.js`, `${des}/js`);
-mix.js(`${src}/js/vendors/toastr.min.js`, `${des}/js/vendors`);
-mix.copy(
-	`${src}/js/vendors/chart/chartjs-plugin-datalabels.js`,
-	`${des}/js/vendors/chart/`
-);
+// //// JS
+// mix.js(`${src}/js/app.js`, `${des}/js`);
+// mix.js(`${src}/js/vendors/toastr.min.js`, `${des}/js/vendors`);
+// mix.copy(
+// 	`${src}/js/vendors/chart/chartjs-plugin-datalabels.js`,
+// 	`${des}/js/vendors/chart/`
+// );
 
-// PAGES
-mix.js(`${src}/js/pages/auth/forgot-password.js`, `${des}/js/pages/auth`);
-mix.js(`${src}/js/pages/auth/reset-password.js`, `${des}/js/pages/auth`);
-mix.js(`${src}/js/pages/setting/resume.js`, `${des}/js/pages/setting`);
-mix.js(`${src}/js/pages/staff/edit-cv.js`, `${des}/js/pages/staff`);
-mix.js(`${src}/js/pages/staff/index.js`, `${des}/js/pages/staff`);
-mix.js(`${src}/js/pages/load-chart-data.js`, `${des}/js/pages`);
-mix.js(`${src}/js/pages/setting/payment.js`, `${des}/js/pages/setting`);
-mix.js(`${src}/js/pages/mail/index.js`, `${des}/js/pages/mail`);
-mix.js(`${src}/js/pages/staff/cv.js`, `${des}/js/pages/staff`);
+// // PAGES
+// mix.js(`${src}/js/pages/auth/forgot-password.js`, `${des}/js/pages/auth`);
+// mix.js(`${src}/js/pages/auth/reset-password.js`, `${des}/js/pages/auth`);
+// mix.js(`${src}/js/pages/setting/resume.js`, `${des}/js/pages/setting`);
+// mix.js(`${src}/js/pages/staff/edit-cv.js`, `${des}/js/pages/staff`);
+// mix.js(`${src}/js/pages/staff/index.js`, `${des}/js/pages/staff`);
+// mix.js(`${src}/js/pages/load-chart-data.js`, `${des}/js/pages`);
+// mix.js(`${src}/js/pages/setting/payment.js`, `${des}/js/pages/setting`);
+// mix.js(`${src}/js/pages/mail/index.js`, `${des}/js/pages/mail`);
+// mix.js(`${src}/js/pages/staff/cv.js`, `${des}/js/pages/staff`);
 
-// COMPONENTS
-mix.js(`${src}/js/components/table-cv.js`, `${des}/js/components`);
-mix.js(`${src}/js/components/format-phone.js`, `${des}/js/components`);
-mix.js(`${src}/js/components/auto-format-zipcode.js`, `${des}/js/components`);
-mix.js(`${src}/js/components/show-input-in-list.js`, `${des}/js/components`);
-mix.js(`${src}/js/components/block-multi-click.js`, `${des}/js/components`);
-mix.js(`${src}/js/components/pass-data-to-modal.js`, `${des}/js/components`);
+// // COMPONENTS
+// mix.js(`${src}/js/components/table-cv.js`, `${des}/js/components`);
+// mix.js(`${src}/js/components/format-phone.js`, `${des}/js/components`);
+// mix.js(`${src}/js/components/auto-format-zipcode.js`, `${des}/js/components`);
+// mix.js(`${src}/js/components/show-input-in-list.js`, `${des}/js/components`);
+// mix.js(`${src}/js/components/block-multi-click.js`, `${des}/js/components`);
+// mix.js(`${src}/js/components/pass-data-to-modal.js`, `${des}/js/components`);
 
-mix.js(
-	`${src}/js/components/shared/back-with-input.js`,
-	`${des}/js/components/shared`
-);
-mix.js(`${src}/js/components/separator-email-input.js`, `${des}/js/components`);
-mix.js(`${src}/js/chart.js`, `${des}/js`);
+// mix.js(
+// 	`${src}/js/components/shared/back-with-input.js`,
+// 	`${des}/js/components/shared`
+// );
+// mix.js(`${src}/js/components/separator-email-input.js`, `${des}/js/components`);
+// mix.js(`${src}/js/chart.js`, `${des}/js`);
 
 /// UI new
-const srcNew = 'resources/assets_new';
-const desNew = 'public/assets_new';
+// const src = 'resources/assets';
+// const des = 'public/assets';
+const srcNew = 'resources/assets';
+const desNew = 'public/assets';
 
 mix.sass(`${srcNew}/scss/app.scss`, `${desNew}/css`);
 

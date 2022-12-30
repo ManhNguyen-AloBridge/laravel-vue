@@ -61,5 +61,5 @@
 @endsection
 
 @section('after-scripts')
-    <script defer src="{{ mix('assets_new/js/pages/register/index.js') }}"></script>
+    <script defer src="{{ mix('assets/js/pages/register/index.js') }}"></script>
 @endsection

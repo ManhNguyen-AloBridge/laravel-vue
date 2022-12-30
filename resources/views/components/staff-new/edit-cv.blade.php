@@ -204,5 +204,5 @@ if ($prevRoute == 'profile' || $route) {
     </div>
 </div>
 
-<script defer src="{{ mix('assets_new/js/pages/staff/edit-cv.js') }}"></script>
-<script defer src="{{ mix('assets_new/js/pages/staff/edit-cv-confirm.js') }}"></script>
+<script defer src="{{ mix('assets/js/pages/staff/edit-cv.js') }}"></script>
+<script defer src="{{ mix('assets/js/pages/staff/edit-cv-confirm.js') }}"></script>

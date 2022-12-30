@@ -1,53 +1,179 @@
-.suggest-search {
-	list-style: none;
-	background-color: $color-white;
-	top: 37px;
-	z-index: 99;
-	max-height: 150px;
-	cursor: default;
-	overflow: auto;
-	border-left: solid 1px $color-border-default;
-	border-right: solid 1px $color-border-default;
-	border-bottom: solid 1px $color-border-default;
-
-	&::-webkit-scrollbar {
-		width: 8px;
+.mail-send-cv {
+	.card {
+		width: 68.3rem;
 	}
 
-	/* Track */
-	&::-webkit-scrollbar-track {
-		background: $color-bg-table-cv-header;
+	.form__group {
+		label {
+			width: 10%;
+			font-weight: 400;
+		}
+
+		.label-special {
+			width: auto;
+		}
+
+		p {
+			color: $color-link-text;
+			padding: 0 1.95rem;
+			min-height: 2.2rem;
+		}
+
+		.validation-error {
+			margin-bottom: 0;
+			color: $color-danger;
+			padding: 0;
+		}
 	}
 
-	/* Handle */
-	&::-webkit-scrollbar-thumb {
-		background: $color-scrollbar-default;
-		border-radius: 5px;
+	.sender label {
+		color: $color-link-text;
 	}
 
-	/* Handle on hover */
-	&::-webkit-scrollbar-thumb:hover {
-		background: $color-scrollbar-hover;
+	.field-bcc {
+		margin-bottom: 2.7rem;
 	}
 
-	&__item:hover {
-		background: $color-primary;
-		color: $color-white;
+	.w-1000 {
+		width: 1000px;
 	}
 
-	&__input {
-		padding-right: 20px;
+	.search-box {
+		padding: 1.13rem 1.5rem;
+		overflow: unset;
+		min-height: 8rem;
+
+		.icon-search {
+			color: $color-link-text;
+			position: absolute;
+			left: 14.5rem;
+			top: 1.9rem;
+			font-size: 1.04rem;
+		}
+
+		.search-staff-name {
+			margin-bottom: 0.77rem;
+		}
+
+		&__input {
+			width: 14.2rem;
+			padding: 0 2rem 0 0;
+		}
+
+		&__input:focus-visible {
+			outline: none;
+		}
 	}
-}
 
-.icon-search {
-	position: absolute;
-	top: 12px;
-	right: 0;
-	color: $color-default-trash;
-}
+	.tag-box {
+		min-height: 4.47rem;
 
-.is-name-hidden-sending  {
-	transform: scale(1.5);
-    margin: 0 1rem 0 0.5rem;
+		.tag {
+			background-color: $color-primary;
+			color: $color-white;
+		}
+	}
+
+	.textarea-body-mail {
+		min-height: 200px;
+	}
+
+	.suggest-search {
+		list-style: none;
+		background-color: $color-white;
+		top: 3.7rem;
+		z-index: 99;
+		max-height: 15rem;
+		cursor: default;
+		overflow: auto;
+		border-bottom: 1px solid $color-border;
+		border-left: 1px solid $color-border;
+		border-right: 1px solid $color-border;
+		border-radius: 0.4rem;
+		width: 44rem;
+
+		&::-webkit-scrollbar {
+			width: 0.8rem;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			background: $color-bg-table-cv-header;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: $color-text-note;
+			border-radius: 0.5rem;
+		}
+
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: $color-badge-normal;
+		}
+
+		&__item:hover {
+			background: $color-primary-border;
+			color: $color-white;
+		}
+
+		&__input {
+			padding-right: 2rem;
+		}
+	}
+
+	.modal {
+		.btn {
+			padding: 0.6rem 4.3rem;
+		}
+
+		&-footer {
+			padding: 2.64rem 3.05rem;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.card {
+			margin-top: 3rem;
+		}
+
+		.main-content-heading {
+			margin-bottom: 0;
+		}
+
+		.field-input {
+			width: calc(100% - 40px);
+		}
+
+		.field-sender {
+			width: calc(100% - 7rem);
+		}
+
+		.w-1000 {
+			width: 1000px;
+		}
+
+		.mail-body {
+			label {
+				width: 40px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 414px) {
+		.field-sender p {
+			border: unset !important;
+			margin-bottom: 0;
+		}
+
+		.form__group.sender {
+			border-bottom: 1px solid $color-border;
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+	}
+
+	@media screen and (max-width: 320px) {
+	}
 }

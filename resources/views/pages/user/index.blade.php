@@ -79,5 +79,5 @@ $user_id = 3;
     </x-setting.confirm-modal>
 @endsection
 @section('after-scripts')
-    <script defer src="{{ mix('assets_new/js/pages/user/index.js') }}"></script>
+    <script defer src="{{ mix('assets/js/pages/user/index.js') }}"></script>
 @endsection
