@@ -7,8 +7,10 @@ use Illuminate\Support\ServiceProvider;
 class RepositoryServiceProvider extends ServiceProvider
 {
     protected $repositories = [
-        'User', 'PasswordReset',
-    ];
+        'User',
+        'PasswordReset',
+		'Room'
+	];
 
     protected $repositoryPath = "App\Repositories";
 

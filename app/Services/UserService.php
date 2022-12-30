@@ -14,6 +14,10 @@ class UserService
     {
     }
 
+    public function getAll():Collection{
+        return $this->userRepository->getList();
+    }
+
     public function list(array $conditions, $page, $perPage): Collection|array|null|LengthAwarePaginator
     {
         return $this->userRepository->list($conditions, $page, $perPage);

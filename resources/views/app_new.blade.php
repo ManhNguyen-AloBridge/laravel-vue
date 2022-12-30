@@ -9,9 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <title>@yield('title', 'SES')</title>
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ mix('assets_new/img/favicon.png') }}">
-    <link rel="icon" href="{{ mix('assets_new/img/favicon.png') }}">
+    <title>@yield('title', 'Document')</title>
+    {{-- <link rel="apple-touch-icon" type="image/x-icon" href="{{ mix('assets_new/img/favicon.png') }}"> --}}
+    {{-- <link rel="icon" href="{{ mix('assets_new/img/favicon.png') }}"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('before-styles')
     <link href="{{ mix('assets_new/css/app.css') }}" rel="stylesheet">

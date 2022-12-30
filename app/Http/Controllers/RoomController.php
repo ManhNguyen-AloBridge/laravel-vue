@@ -10,11 +10,11 @@ use Image;
 
 class RoomController extends Controller
 {
-    public function index(): JsonResponse
-    {
-        $products = Room::all();
-        return response()->json([
-            'rooms' => $products
-        ], 200);
-    }
+    // public function index(): JsonResponse
+    // {
+    //     $products = Room::all();
+    //     return response()->json([
+    //         'rooms' => $products
+    //     ], 200);
+    // }
 }

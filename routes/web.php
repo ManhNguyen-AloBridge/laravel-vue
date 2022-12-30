@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -21,8 +22,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::controller(DemoController::class)->prefix('/demo')->name('demo')->group(function(){
-    Route::post('/','store')->name('.store');
+Route::controller(HomeController::class)->prefix('/home')->name('home')->group(function(){
+    Route::get('/','index');
 });
 
 Route::controller(StatisticController::class)->prefix('/statistic')->name('statistic')->group(function(){
