@@ -1,4 +1,4 @@
-@extends('app_new', ['breadscrumbs' =>
+@extends('app', ['breadscrumbs' =>
     [
         [
             'title' => @trans_page('user/index.page_title')
@@ -12,7 +12,7 @@
 @endsection
 
 @section('title-content-vertical')
-    @trans_page('staff/index.page_title')
+    {{-- @trans_page('staff/index.page_title') --}}
 @endsection
 
 @section('content-class', 'page-company-index')

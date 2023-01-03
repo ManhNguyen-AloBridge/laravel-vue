@@ -1,4 +1,4 @@
-@extends('app_new', ['breadscrumbs' => [['title' => trans_page('user/create.page_index'), 'route' => route('user.index')], ['title' => trans_page('user/create.page_create')]]])
+@extends('app', ['breadscrumbs' => [['title' => trans_page('user/create.page_index'), 'route' => route('user.index')], ['title' => trans_page('user/create.page_create')]]])
 
 @section('inner-title')
     <i class="fas fa-building"></i>@trans_page('user/create.page_title')

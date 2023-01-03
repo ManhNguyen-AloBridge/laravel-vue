@@ -1,4 +1,4 @@
-@extends('app_new', ['breadscrumbs' =>
+@extends('app', ['breadscrumbs' =>
     [
         [
             'title' => @trans_page('dashboard/index.page_title')

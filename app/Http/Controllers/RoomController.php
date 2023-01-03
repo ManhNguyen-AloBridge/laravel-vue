@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\Room;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Image;
+use App\Services\RoomService;
 
 class RoomController extends Controller
 {
-    // public function index(): JsonResponse
-    // {
-    //     $products = Room::all();
-    //     return response()->json([
-    //         'rooms' => $products
-    //     ], 200);
-    // }
+    public function __construct(protected RoomService $roomService)
+    {
+
+    }
+
+    public function index()
+    {
+        $listInfoRoom = $this->roomService->getAllInfo();
+
+        return view('pages.room.index',['listInfoRoom' => $listInfoRoom]);
+    }
 }

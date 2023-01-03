@@ -24,10 +24,10 @@ class ReceiptFactory extends Factory
             'cost_living_id' => $costLiving->id,
             'monthly_bill' => rand(1,12),
             'room_price' => 3000,
-            'electric_price' => $costLiving->gia_dien*3,
-            'water_price' => $costLiving->gia_nuoc*3,
-            'internet_price' => $costLiving->gia_mang*3,
-            'general_hygiene_price' => $costLiving->gia_ve_sinh*3,
+            'electric_price' => $costLiving->electric_price*3,
+            'water_price' => $costLiving->water_price*3,
+            'internet_price' => $costLiving->internet_price*3,
+            'general_hygiene_price' => $costLiving->general_hygiene_price*3,
             'other' => null,
         ];
     }

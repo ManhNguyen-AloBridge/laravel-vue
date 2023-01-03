@@ -14,14 +14,21 @@ class RoomRepository extends RepositoryAbstract implements RoomRepositoryInterfa
         $this->model = $room;
     }
 
-    public function getAllInfo():Collection
+    public function getAllInfo(): Collection
     {
         return $this->model
-        ->select(DB::raw('rooms.id, rooms.number, accounts.url_avatar, users.name'))
-        ->join('users','users.room_id','=','rooms.id')
-        ->whereNull('users.deleted_at')
-        ->join('accounts','accounts.id','=','users.account_id')
-        ->whereNull('accounts.deleted_at')
-        ->get();
+            ->select(DB::raw('
+        rooms.id,
+        rooms.number,
+        users.url_avatar,
+        users.name,
+        room_prices.floor,
+        room_prices.price
+        '))
+            ->join('users', 'users.room_id', '=', 'rooms.id')
+            ->whereNull('users.deleted_at')
+            ->join('room_prices', 'room_prices.id', 'rooms.price_id')
+            ->whereNull('room_prices.deleted_at')
+            ->get();
     }
 }

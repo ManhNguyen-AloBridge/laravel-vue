@@ -21,4 +21,8 @@ class Room extends Model
 
     protected $casts = [
     ];
+
+    public function roomPrice(){
+        return $this->belongsTo(RoomPrice::class, 'price_id','id');
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Account;
 use App\Models\IdCard;
 use App\Models\Room;
 use App\Models\School;
@@ -20,9 +19,10 @@ class UserFactory extends Factory
     public function definition()
     {
 
-        // dd(Account::all()->random()->id);
         return [
-            'account_id' => Account::all()->unique()->random()->id,
+            'email' => $this->faker->email,
+            'password' => $this->faker->password(6,10),
+            'url_avatar' => null,
             'room_id' => Room::all()->random()->id,
             'school_id' => School::all()->random()->id,
             'vehicle_id' => Vehicle::all()->random()->id,

@@ -1,4 +1,4 @@
-@extends('app_new', [
+@extends('app', [
 'usingLayout' => false,
 'page' =>'reset-password'
 ])

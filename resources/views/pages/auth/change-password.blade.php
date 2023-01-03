@@ -1,4 +1,4 @@
-@extends('app_new', [
+@extends('app', [
     'page' => 'forgot-password',
     'breadscrumbs' => [
         [

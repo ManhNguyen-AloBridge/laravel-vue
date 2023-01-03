@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\AccountService;
 use App\Services\RoomService;
 use App\Services\UserService;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends Controller
 {
     public function __construct(
         protected RoomService $roomService,
-        protected UserService $userService,
-        protected AccountService $accountService
+        protected UserService $userService
         )
     {
         // $this->roomService = $roomService;
@@ -22,12 +21,10 @@ class HomeController extends Controller
     {
         $listInfoRoom = $this->roomService->getAllInfo();
 
-        // dd($listRoom);
-
         return view(
             'home',
             [
-                'listInfo' => $listInfoRoom
+                'listInfo' => $listInfoRoom ?? new Collection()
             ]
         );
     }

@@ -1,4 +1,4 @@
-@extends('app_new', [
+@extends('app', [
 'usingLayout' => false,
 'page' =>'login-page'
 ])
@@ -11,7 +11,7 @@
         <x-slot name='mainContent'>
             <div class="login-content">
                 <span class="title u-display-block text text-4xl">@trans_page('auth/login.page_title')</span>
-                <span class="desc u-display-block text">@trans_page('auth/login.page_desc')</span>
+                {{-- <span class="desc u-display-block text">@trans_page('auth/login.page_desc')</span> --}}
                 <div class="card login-box">
                     <form action="{{ route('login') }}" method="post">
                         @csrf
@@ -30,9 +30,9 @@
                             title="{{ @trans_page('auth/login.btn_submit') }}" />
                     </form>
                     <a class="link u-display-block text"
-                        href="{{ route('password.forgot') }}">@trans_page("auth/login.forgot_password")</a>
+                        href="">@trans_page("auth/login.forgot_password")</a>
                     <a class="link u-display-block text"
-                        href="{{ route('register.create') }}">@trans_page("auth/login.link_to_register")</a>
+                        href="">@trans_page("auth/login.link_to_register")</a>
                 </div>
             </div>
         </x-slot>

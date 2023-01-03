@@ -1,4 +1,4 @@
-@extends('app_new', [
+@extends('app', [
     'page' => 'detail-company-page',
     'breadscrumbs' => [['title' => trans_page('user/detail.page_index'), 'route' => route('user.index')], ['title' => trans_page('user/detail.page_detail')]],
 ])

@@ -3,10 +3,10 @@
 return [
 	'dashboard' => 'ダッシュボード',
 	'header_description' => 'クラウド型スキルシート管理webシステム',
-	'list_company' => '会社一覧',
+	'list_company' => 'List User',
 	'list_price' => '価格一覧',
 	'list_maintenance' => 'メンテナンススケジュール',
-	'list_employee' => '要員一覧',
+	'list_employee' => 'List User',
 	'list_project' => '案件一覧画面',
 	'setting' => '設定',
 	'setting_cv' => '経歴書設定',

@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Collection;
 
 class RoomService
 {
-    function __construct(RoomRepository $roomRepository)
+    function __construct(protected RoomRepository $roomRepository)
     {
-        $this->roomRepository = $roomRepository;
+    }
+
+    public function findById(int $roomId){
+        return $this->roomRepository->find($roomId);
     }
 
     public function getAll():Collection

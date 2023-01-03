@@ -21,6 +21,7 @@ class CreateStatisticsTable extends Migration
             $table->integer('month');
             $table->boolean('status_update')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

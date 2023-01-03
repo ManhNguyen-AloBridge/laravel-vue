@@ -5,7 +5,7 @@
 	letter-spacing: 0.16rem;
 	border-radius: 4px;
 	margin: auto;
-	background-color: $color-primary;
+	background-color: $color-border-tab-active;
 	color: $color-white;
 	cursor: pointer;
 	font-size: 1.6rem;
@@ -15,7 +15,7 @@
 	font-weight: 400;
 
 	&:hover {
-		background-color: $color-btn-hover;
+		background-color: $color-primary-border;
 		color: $color-white;
 	}
 
@@ -32,13 +32,13 @@
 			color: $color-input;
 		}
 
-		&.--disabled{
+		&.--disabled {
 			background: $color-text-desc !important;
 			border-color: $color-text-desc;
 			pointer-events: none;
 		}
 
-		&.--disabled:hover{
+		&.--disabled:hover {
 			cursor: default;
 		}
 	}
@@ -125,13 +125,13 @@
 			background-color: $color-hover-button-danger;
 		}
 
-		&.--disabled{
+		&.--disabled {
 			background: $color-danger-disabled !important;
 			border-color: $color-danger-disabled;
 			pointer-events: none;
 		}
 
-		&.--disabled:hover{
+		&.--disabled:hover {
 			cursor: default;
 		}
 	}

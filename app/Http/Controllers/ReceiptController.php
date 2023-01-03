@@ -2,39 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\ReceiptService;
 use Illuminate\Http\Request;
 
 class ReceiptController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct(
+        protected ReceiptService $receiptService,
+        )
     {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -43,9 +20,11 @@ class ReceiptController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $roomId)
     {
-        //
+        // $a = $this->roomService->findById($roomId);
+        $a = $this->receiptService->handleCalculate($roomId);
+
     }
 
     /**

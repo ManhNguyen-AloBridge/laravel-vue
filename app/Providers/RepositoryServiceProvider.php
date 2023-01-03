@@ -11,7 +11,10 @@ class RepositoryServiceProvider extends ServiceProvider
         'PasswordReset',
 		'Room',
 		'Account',
-		'Account'
+		'Account',
+		'Receipt',
+		'CostLiving',
+		'Statistic'
 	];
 
     protected $repositoryPath = "App\Repositories";

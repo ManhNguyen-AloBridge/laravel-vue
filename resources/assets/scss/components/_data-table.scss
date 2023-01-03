@@ -31,13 +31,13 @@
 	.paginate_button {
 		&.current {
 			color: $color-white;
-			background-color: $color-primary;
+			background-color: $color-border-tab-active;
 		}
 		&.disabled {
 			display: none;
 		}
 		text-decoration: none;
-		border: solid 1px #143268;
+		border: solid 1px $color-border-tab-active;
 		margin-left: 0.9rem;
 		color: $color-primary;
 		background-color: $color-white;
@@ -51,7 +51,7 @@
 		transition: 0.1s;
 		&:hover {
 			color: $color-white;
-			background-color: $color-primary;
+			background-color: $color-primary-border;
 		}
 	}
 	.ellipsis {
@@ -63,7 +63,7 @@
 			word-break: break-word;
 		}
 		a:hover {
-			color: $color-btn-hover;
+			color: $color-primary-border;
 		}
 		th {
 			font-weight: 500;
